@@ -1,0 +1,202 @@
+/*
+
+--- 01 TYPOGRAPHY SYSTEM 
+
+- FONT SIZE SYSTEM (px). 
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font size (paragraph): 18px
+
+- Font weights: 300, 400, 600
+Default: 400
+
+- Line heights:
+Default: 1
+ 
+--- 01 COLORS
+
+Brand color: hsl(228, 45%, 44%)
+
+- Tints: 
+- Shades:
+- Accents: 
+- Greys: #555 , #333
+
+- Soft blue: hsl(215, 51%, 70%) -- Primary
+- Cyan: hsl(178, 100%, 50%)
+
+- Very dark blue (main BG): hsl(217, 54%, 11%)
+- Very dark blue (card BG): hsl(216, 50%, 16%)
+- Very dark blue (line): hsl(215, 32%, 27%)
+- White: hsl(0, 0%, 100%)
+
+--- 03 SHADOWS 
+
+--- 04 BORDER RADIUS
+
+--- 05 WHITE SPACE
+
+- SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+<style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+*/
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: hsl(215, 51%, 70%);
+  background-color: hsl(217, 54%, 11%);
+  max-width: 144rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 35rem;
+  max-height: auto;
+  padding: 2.5rem;
+  background-color: hsl(216, 50%, 16%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  border-radius: 1.5rem;
+}
+
+/* styling title link */
+div.card h3 a:link,
+div.card h3 a:visited {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+div.card h3 > a:hover,
+div.card h3 > a:active,
+div.card h3 > a:focus {
+  color:hsl(178, 100%, 50%);
+}
+
+/* styling title undertext */
+div.card p {
+  font-weight: 350;
+  margin-top: -0.5rem;
+}
+
+/* styling main img */
+.equilibrium-img {
+  background: url("images/image-equilibrium.jpg");
+  max-width: 100%;
+  max-height: auto;
+  border-radius: 1rem;
+}
+
+div.card a:first-child {
+  position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: hsl(178, 100%, 50%);
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.views {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+div.card a:first-child:hover .overlay {
+  opacity: 0.7;
+}
+div.card a:first-child:hover .views {
+  opacity: 1;
+}
+
+/* styling time and cost section */
+.cost-time-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cost-time-section .cost_s,
+.cost-time-section .time_s {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.eth-price {
+  color:hsl(178, 100%, 50%);
+}
+
+/* styling section creator */
+.creator-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-top: 0.1rem solid rgba(236, 236, 236, 0.15);
+  padding-top: 1.6rem;
+}
+
+/* styling author name and img */
+.author-img {
+  max-width: 3.4rem;
+  max-height: 3.4rem;
+  border: 0.15rem solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+
+.card .creator-section p {
+  font-size: 1.6rem;
+}
+
+.card .creator-section a:link,
+.card .creator-section a:visited {
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card .creator-section a:hover,
+.card .creator-section a:active,
+.card .creator-section a:focus {
+  color: hsl(178, 100%, 50%);
+}

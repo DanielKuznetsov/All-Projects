@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Accordion Example #1</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="accordion">
+        <div class="card card-1">
+          <header>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="card-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 11l5-5m0 0l5 5m-5-5v12"
+              />
+            </svg>
+            <span class="card-header-text"
+              >How do you create an accordion?</span
+            >
+          </header>
+          <main class="card-body card-body--1">
+            <p class="card-body-text">
+              Easy! As long as you don't have to support IE11 or older browsers
+              you could use <strong>details</strong> and
+              <strong>summary</strong> natively.
+            </p>
+          </main>
+        </div>
+
+        <div class="card card-2">
+          <header>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="card-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 11l5-5m0 0l5 5m-5-5v12"
+              />
+            </svg>
+            <span class="card-header-text"
+              >What if I have to support IE11 or older browsers?</span
+            >
+          </header>
+          <main class="card-body card-body--2">
+            <p class="card-body-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil
+              totam quos tempora quisquam praesentium, nesciunt, repellat ad
+              reiciendis vero repellendus doloremque itaque eaque eum illo non,
+              recusandae saepe ipsa amet?
+            </p>
+          </main>
+        </div>
+
+        <div class="card card-3">
+          <header>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="card-icon"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 11l5-5m0 0l5 5m-5-5v12"
+              />
+            </svg>
+            <span class="card-header-text"
+              >What type of content can I have inside one of these?</span
+            >
+          </header>
+          <main class="card-body card-body--3">
+            <p class="card-body-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil
+              totam quos tempora quisquam praesentium, nesciunt, repellat ad
+              reiciendis vero repellendus doloremque itaque eaque eum illo non,
+              recusandae saepe ipsa amet?
+            </p>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
