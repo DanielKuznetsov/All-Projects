@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <title>100 Days with CSS</title>
+  </head>
+  <body>
+    <div class="to-do-list-card">
+      <section class="to-do-list-card--time">
+        <p class="day">Friday</p>
+        <p class="date">March 4th, 2016</p>
+      </section>
+      <div class="border"></div>
+      <section class="to-do-list-card--list">
+        <div class="card--list__1">
+          <input type="checkbox" name="create" id="create" />
+          <label class="text" for="create">Create a list</label>
+          <label class="checkmark" for="create"></label>
+          <ion-icon class="icon" name="checkmark-outline">
+            <polyline points="1,5 6,9 14,1" />
+          </ion-icon>
+        </div>
+        <div class="card--list__1">
+          <input type="checkbox" name="task" id="task" />
+          <label class="text" for="task">Complete first task</label>
+          <label class="checkmark" for="task"></label>
+          <ion-icon class="icon" name="checkmark-outline"></ion-icon>
+        </div>
+        <div class="card--list__1">
+          <input type="checkbox" name="code" id="code" />
+          <label class="text" for="code">Write some CSS code</label>
+          <label class="checkmark" for="code"></label>
+          <ion-icon class="icon" name="checkmark-outline"></ion-icon>
+        </div>
+        <div class="card--list__1">
+          <input type="checkbox" name="amaze" id="amaze" />
+          <label class="text" for="amaze">Amaze the world</label>
+          <label class="checkmark" for="amaze"></label>
+          <ion-icon class="icon" name="checkmark-outline"></ion-icon>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

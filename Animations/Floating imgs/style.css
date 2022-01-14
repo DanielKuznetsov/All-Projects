@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5.2rem;
+
+  max-width: 100vw;
+  min-height: 100vh;
+
+  position: relative;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  width: 25rem;
+  height: 7rem;
+  border-radius: 3rem;
+  animation: moveDown 1s ease-out 0.25s;
+  animation-fill-mode: backwards;
+  transition: all .3s ease-out;
+}
+
+.btn-1 {
+  background: hsl(100, 50%, 60%);
+}
+.btn-2 {
+  background: hsl(75, 50%, 50%);
+}
+.btn-3 {
+  background: hsl(50, 50%, 50%);
+}
+
+.btn:hover {
+  transform: translateY(-.4rem);
+  box-shadow: 0 .5rem .5rem 0 rgba(0, 0, 0, 0.2);
+  transition: all .3s ease-out;
+}
+
+
+.btn:active {
+  transform: translateY(-.15rem);
+  box-shadow: 0 .25rem .25rem 0 rgba(0, 0, 0, 0.2);
+  transition: all .3s ease-out;
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  animation: moveIn 1s ease-in;
+}
+
+@keyframes moveIn {
+  0% {
+    transform: scale(.5);
+  }
+
+  80% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+img {
+  position: absolute;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.img1 {
+  top: 50%;
+  left: 10%;
+  transition: all 1s;
+
+  animation: floatOne 3s ease-in-out .75s infinite alternate;
+  animation-fill-mode: backwards;
+}
+.img2 {
+  top: 10%;
+  left: 50%;
+}
+
+/* .btn:active ~ .img1 {
+  animation: floatOne 1s ease-in-out .25s infinite alternate;
+} */
+
+/* .btn:visited ~ .img1 {
+  transform: translateY(0rem);
+  transition: all 1s;
+} */
+
+
+.img3 {
+  bottom: 50%;
+  right: 10%;
+  animation: floatOne 3s ease-in-out 1.25s infinite alternate;
+}
+.img4 {
+  left: 50%;
+  bottom: 10%;
+  animation: floatTwo 2s ease-in-out 1.25s infinite alternate;
+}
+
+@keyframes floatOne {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-30rem);
+  }
+}
+
+@keyframes floatTwo {
+  0% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(20rem);
+  }
+
+  100% {
+    transform: translateX(10rem);
+  }
+}

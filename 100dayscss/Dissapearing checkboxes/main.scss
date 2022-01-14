@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$figure-color: rgb(197, 176, 59);
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: $figure-color;
+  font-size: 1.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.to-do-list-card {
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  color: #666;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .border {
+    width: 70%;
+    height: 0.1rem;
+    background-color: #ddd;
+  }
+
+  .to-do-list-card--time {
+    padding: 3rem 6rem 2rem 6rem;
+    text-align: center;
+
+    .day {
+      font-weight: bold;
+      font-size: 3.2rem;
+      color: #777;
+    }
+  }
+
+  .to-do-list-card--list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-size: 1.6rem;
+
+    padding: 2rem 4rem 0 4rem;
+    margin-bottom: 5rem;
+
+    & > div {
+      position: relative;
+
+      .text {
+        cursor: pointer;
+        transition: all 0.6s ease-in-out;
+      }
+
+    }
+
+     input {
+      float: right;
+      position: absolute;
+      top: 0.5px;
+      right: 0.5px;
+      opacity: 0;
+      cursor: pointer;
+
+      // & > div {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   position: relative;
+    
+      &:checked ~ .text {
+        color: #ddd;
+        // text-decoration: line-through;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &:checked ~ .checkmark {
+        transition: all 0.4s ease-in;
+        transform: scale(1.5);
+        opacity: 0;
+      }
+
+      &:checked ~ .icon {
+        opacity: 1;
+        transition: all .5s ease-out .5s;
+      }
+    }
+
+    .checkmark {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 1px solid #000;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-left: 5rem;
+      transition: all 0.4s ease-out 0.7s;
+      float: right;
+      cursor: pointer;
+
+    }
+    .icon {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+
+      right: 0;
+      top: 0.5px;
+      transition: all .5s ease-out .5s;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  max-width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #d7e1ec;
+}
+
+.wrapper {
+  width: 40rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.wrapper .icon {
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.wrapper .icon .i {
+  font-size: 3rem;
+  color: #333;
+}
+
+.wrapper .icon {
+  position: relative;
+}
+
+.wrapper .icon .tooltip {
+  font-size: 2rem;
+  background-color: #fff;
+  padding: 1.3rem 1.5rem;
+  border-radius: 2.5rem;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon .tooltip {
+  position: relative;
+}
+
+.icon .tooltip::before {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+
+  position: absolute;
+  bottom: -.7rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  background: #fff;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  transform: translate(50%, -150%);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon span {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.wrapper .icon:hover .tooltip,
+.wrapper .icon:hover span .i {
+  color: #fff;
+}
+
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before,
+.wrapper .facebook:hover span{
+  background: #3B5999;
+}
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before,
+.wrapper .youtube:hover span {
+  background: #DE463B;
+}
+.wrapper .whatsapp:hover .tooltip,
+.wrapper .whatsapp:hover .tooltip::before,
+.wrapper .whatsapp:hover span {
+  background: #25D366;
+}
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before,
+.wrapper .twitter:hover span {
+  background: #1DA1F2;
+}
+.wrapper .twitch:hover .tooltip,
+.wrapper .twitch:hover .tooltip::before,
+.wrapper .twitch:hover span {
+  background: #6441a5;
+}
