@@ -1,0 +1,106 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+.header {
+  max-width: 100vw;
+  height: 13.5rem;
+  background-color: #136596;
+  padding: 0 10rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__logo-box {
+    display: flex;
+    gap: 1rem;
+
+    .logo {
+      height: 6rem;
+      width: auto;
+      margin-bottom: 3rem;
+      align-self: flex-end;
+    }
+  }
+
+  &__right-side {
+    display: flex;
+    align-items: flex-end;
+    gap: 2.4rem;
+  }
+}
+
+.header__navigation {
+  align-self: flex-end;
+}
+
+.nav {
+  display: flex;
+
+  &-item {
+    list-style: none;
+    height: 13.5rem;
+    display: flex;
+  }
+
+  &-link:link,
+  &-link:visited {
+    display: inline-block;
+    align-self: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0 1rem 2rem 0rem;
+    color: #fff;
+    text-decoration: none;
+    align-self: flex-end;
+    padding: 1rem 1rem;
+  }
+
+  &-link1:link,
+  &-link1:visited {
+    display: inline-block;
+    align-self: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    // margin: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+    align-self: flex-end;
+    margin-bottom: 2rem;
+  }
+}
+
+.btn-link {
+  background-color: #e44c9a;
+  padding: 1rem 2rem;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3.3rem;
+
+  &--icon {
+    font-size: 2.2rem;
+    color: #fff;
+  }
+}
