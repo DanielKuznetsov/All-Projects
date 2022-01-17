@@ -20,16 +20,15 @@
 
 .header {
   max-width: 100vw;
-  height: 13.5rem;
-  background-color: #136596;
+  height: $header-height;
+  background-color: $header-bg-color;
   padding: 0 10rem;
 
   display: flex;
   justify-content: space-between;
 
   &__logo-box {
-    display: flex;
-    gap: 1rem;
+    @include flex(auto, 1rem);
 
     .logo {
       height: 6rem;
@@ -40,9 +39,7 @@
   }
 
   &__right-side {
-    display: flex;
-    align-items: flex-end;
-    gap: 2.4rem;
+    @include flex(flex-end, 2.4rem);
   }
 }
 
@@ -55,7 +52,7 @@
 
   &-item {
     list-style: none;
-    height: 13.5rem;
+    height: $header-height;
     display: flex;
 
     &:not(:last-child) {
@@ -65,35 +62,19 @@
 
   &-link:link,
   &-link:visited {
-    display: inline-block;
-    font-size: 1.7rem;
-    line-height: 1.7;
+    @include link-style;
 
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 2rem;
-    color: #fff;
-    text-decoration: none;
-    align-self: flex-end;
     padding: 1rem 1rem;
   }
 }
 
 .btn-link:link,
 .btn-link:visited {
-  display: inline-block;
-  font-size: 1.7rem;
-  line-height: 1.7;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: #fff;
-  text-decoration: none;
-  align-self: flex-end;
-  margin-bottom: 2rem;
-  background-color: #e44c9a;
+  @include link-style;
+
   padding: 1rem 2rem;
+  background-color: $btn-link-pink;
   position: relative;
-  z-index: 20;
 
   &::before {
     content: "Apply now";
@@ -109,21 +90,19 @@
     transition: opacity 0.3s ease-in;
     opacity: 0;
   }
-}
 
-.btn-link:hover::before {
-  opacity: 1;
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 .social {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  @include flex(center, 2rem);
   padding: 1rem 1rem;
   margin-bottom: 2.4rem;
 
   &--icon {
     font-size: 1.9rem;
-    color: #fff;
+    color: $color-white;
   }
 }

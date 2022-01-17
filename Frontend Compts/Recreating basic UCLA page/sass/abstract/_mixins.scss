@@ -6,3 +6,21 @@
 //     clear: both;
 //   }
 // }
+
+@mixin link-style {
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  line-height: 1.7;
+  color: #fff;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+}
+
+@mixin flex($align, $gap) {
+  display: flex;
+  align-items: $align;
+  gap: $gap;
+}

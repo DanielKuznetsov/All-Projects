@@ -24,6 +24,7 @@ body {
   justify-content: space-between; }
   .header__logo-box {
     display: flex;
+    align-items: auto;
     gap: 1rem; }
     .header__logo-box .logo {
       height: 6rem;
@@ -49,30 +50,29 @@ body {
   .nav-link:link, .nav-link:visited {
     display: inline-block;
     font-size: 1.7rem;
-    line-height: 1.7;
     font-weight: 600;
     letter-spacing: 0.5px;
-    margin-bottom: 2rem;
-    color: #fff;
     text-decoration: none;
+    line-height: 1.7;
+    color: #fff;
     align-self: flex-end;
+    margin-bottom: 2rem;
     padding: 1rem 1rem; }
 
 .btn-link:link,
 .btn-link:visited {
   display: inline-block;
   font-size: 1.7rem;
-  line-height: 1.7;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #fff;
   text-decoration: none;
+  line-height: 1.7;
+  color: #fff;
   align-self: flex-end;
   margin-bottom: 2rem;
-  background-color: #e44c9a;
   padding: 1rem 2rem;
-  position: relative;
-  z-index: 20; }
+  background-color: #e44c9a;
+  position: relative; }
   .btn-link:link::before,
   .btn-link:visited::before {
     content: "Apply now";
@@ -87,9 +87,9 @@ body {
     background-image: linear-gradient(to right, #ffe552 0, #e44c9a 70%);
     transition: opacity 0.3s ease-in;
     opacity: 0; }
-
-.btn-link:hover::before {
-  opacity: 1; }
+  .btn-link:link:hover::before,
+  .btn-link:visited:hover::before {
+    opacity: 1; }
 
 .social {
   display: flex;
