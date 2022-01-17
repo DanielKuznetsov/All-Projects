@@ -46,10 +46,35 @@ body {
     .movie-card--img .social-box .icons {
       display: flex;
       align-items: center;
-      gap: 1rem; }
+      gap: 1rem;
+      cursor: pointer; }
       .movie-card--img .social-box .icons .icon {
         color: #fff;
         font-size: 1.8rem; }
+      .movie-card--img .social-box .icons .icon--n-18 {
+        position: relative; }
+      .movie-card--img .social-box .icons .icon--n-18::after {
+        content: "18";
+        font-size: 1rem;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        opacity: 0;
+        transition: all 0.3s ease-in-out; }
+      .movie-card--img .social-box .icons .icon--n-3 {
+        position: relative; }
+      .movie-card--img .social-box .icons .icon--n-3::after {
+        content: "3";
+        opacity: 0;
+        font-size: 1rem;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        transition: all 0.3s ease-in-out; }
 
 .movie-card--date {
   height: 15%;
@@ -82,7 +107,7 @@ body {
   bottom: 0;
   left: 0;
   transform: translateY(35%);
-  transition: all .3s ease-in-out; }
+  transition: all 0.3s ease-in-out; }
   .movie-card--text-box .links {
     width: 100%;
     height: auto;
@@ -94,12 +119,12 @@ body {
       font-size: 1.2rem; }
     .movie-card--text-box .links .dots span {
       display: inline-block;
-      height: .5rem;
-      width: .5rem;
+      height: 0.5rem;
+      width: 0.5rem;
       border-radius: 50%;
       background-color: #777; }
       .movie-card--text-box .links .dots span:not(:last-child) {
-        margin-right: .5rem; }
+        margin-right: 0.5rem; }
   .movie-card--text-box .text-box {
     display: flex;
     flex-direction: column;
@@ -145,7 +170,7 @@ body {
   background-color: transparent;
   width: 95%;
   transform: translateY(45%);
-  transition: all .3s ease-in-out; }
+  transition: all 0.3s ease-in-out; }
   .movie-card--text-box2 .last-link {
     color: #fff;
     margin-top: -2.4rem;
@@ -153,11 +178,25 @@ body {
     text-decoration: none;
     font-weight: 400;
     font-size: 1.4rem; }
+    .movie-card--text-box2 .last-link span {
+      margin-left: 1rem;
+      opacity: 0;
+      transition: all 0.3s ease-in-out; }
 
 .movie-card--img:hover .movie-card--text-box {
   transform: translateY(0);
-  transition: all .3s ease-in-out; }
+  transition: all 0.3s ease-in-out; }
 
 .movie-card--img2:hover .movie-card--text-box {
   transform: translateY(0);
-  transition: all .3s ease-in-out; }
+  transition: all 0.3s ease-in-out; }
+
+.movie-card--text-box2 .last-link:hover span {
+  opacity: 1;
+  transition: all 0.3s ease-in-out; }
+
+.movie-card--img:hover .icons .icon--n-18::after,
+.movie-card--img:hover .icons .icon--n-3::after {
+  opacity: 1;
+  transform: translate(-50%, 2rem);
+  transition: all 0.3s ease-in-out; }

@@ -50,7 +50,6 @@
       align-items: center;
 
       .dates {
-
         span {
           color: $color-white;
           font-size: $small-font-size;
@@ -62,17 +61,47 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+        cursor: pointer;
 
         .icon {
           color: $color-white;
           font-size: 1.8rem;
         }
+
+        .icon--n-18 {
+          position: relative;
+        }
+
+        .icon--n-18::after {
+          content: "18";
+          font-size: 1rem;
+          color: $color-white;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+          opacity: 0;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .icon--n-3 {
+          position: relative;
+        }
+
+        .icon--n-3::after {
+          content: "3";
+          opacity: 0;
+          font-size: 1rem;
+          color: $color-white;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+          transition: all 0.3s ease-in-out;
+        }
       }
     }
-
-
   }
-
 
   &--date {
     height: 15%;
@@ -111,8 +140,8 @@
     bottom: 0;
     left: 0;
     transform: translateY(35%);
-    transition: all .3s ease-in-out;
-    
+    transition: all 0.3s ease-in-out;
+
     .links {
       width: 100%;
       height: auto;
@@ -125,18 +154,17 @@
       .author {
         font-size: $small-font-size;
       }
-      
-      .dots {
 
+      .dots {
         span {
           display: inline-block;
-          height: .5rem;
-          width: .5rem;
+          height: 0.5rem;
+          width: 0.5rem;
           border-radius: 50%;
           background-color: $color-grey-dark;
 
           &:not(:last-child) {
-            margin-right: .5rem;
+            margin-right: 0.5rem;
           }
         }
       }
@@ -151,7 +179,6 @@
       padding: 0 2rem;
 
       h1 {
-
         a:link,
         a:visited {
           text-decoration: none;
@@ -204,8 +231,7 @@
     background-color: transparent;
     width: 95%;
     transform: translateY(45%);
-    transition: all .3s ease-in-out;
-    
+    transition: all 0.3s ease-in-out;
 
     .last-link {
       color: $color-white;
@@ -214,18 +240,34 @@
       text-decoration: none;
       font-weight: 400;
       font-size: 1.4rem;
+
+      span {
+        margin-left: 1rem;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
 
   &--img:hover .movie-card--text-box {
     transform: translateY(0);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   &--img2:hover .movie-card--text-box {
     transform: translateY(0);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
+  &--text-box2 .last-link:hover span {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
 
+  &--img:hover .icons .icon--n-18::after, 
+  &--img:hover .icons .icon--n-3::after {
+    opacity: 1;
+    transform: translate(-50%, 2rem);
+    transition: all 0.3s ease-in-out;
+  }
 }
