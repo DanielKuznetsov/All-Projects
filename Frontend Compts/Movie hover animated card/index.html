@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
     <title>Starter</title>
   </head>
   <body>
@@ -52,26 +61,39 @@
       </div>
 
       <div class="card movie-card">
-        <div class="movie-card--img">
-          <img class="img" src="./img/movies/us.jpeg" alt="Dora Film" />
+        <div class="movie-card--img movie-card--img2">
+          <img class="img" src="./img/movies/us.jpeg" alt="Us Film" />
+          <div class="social-box">
+            <div class="dates">
+              <span>12</span>
+              <span>Aug</span>
+              <span>2016</span>
+            </div>
+            <div class="icons">
+              <ion-icon class="icon" name="bookmark-outline"></ion-icon>
+              <ion-icon class="icon" name="heart-outline"></ion-icon>
+              <ion-icon
+                class="icon"
+                name="ellipsis-horizontal-circle-outline"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div class="movie-card--text-box movie-card--text-box2">
+            <div class="text-box">
+              <h1 class="h1--card2">
+                <a href="#">Stranger Things: The sound of the Upside Down </a>
+                <div class="author">Jane Doe</div>
+              </h1>
+              <p class="p2">
+                The antsy bingers of Netflix will eagerly anticipate the digital
+                release of the Survive soundtrack, out today.
+              </p>
+              <a class="last-link" href="#">Read more</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- THIS IS AN EXAMPLE OF BEM .CLASS STRUCTURE-->
-    <!-- <header class="header">
-      <div class="header__logo-box">
-        <img src="./img/logo-white.png" alt="Logo" class="header__logo" />
-      </div>
-
-      <div class="header__text-box">
-        <h1 class="heading-primary">
-          <span class="heading-primary--main">Outdoors</span>
-          <span class="heading-primary--sub">is where life happens</span>
-        </h1>
-
-        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
-      </div>
-    </header> -->
   </body>
 </html>

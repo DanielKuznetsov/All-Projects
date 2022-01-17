@@ -36,7 +36,41 @@
 
     .img {
       height: 55rem;
+      width: 38rem;
     }
+
+    .social-box {
+      width: 100%;
+      padding: 1.2rem 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .dates {
+
+        span {
+          color: $color-white;
+          font-size: $small-font-size;
+          font-weight: 300;
+        }
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .icon {
+          color: $color-white;
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+
   }
 
 
@@ -129,6 +163,28 @@
         }
       }
 
+      .h1--card2 {
+        position: relative;
+        color: $color-white;
+
+        a:link,
+        a:visited {
+          text-decoration: none;
+          color: $color-white;
+          font-weight: 300;
+          font-size: 3rem;
+          letter-spacing: 1.1px;
+          line-height: 1.4;
+        }
+
+        .author {
+          position: absolute;
+          top: -20%;
+          font-size: $small-font-size;
+          font-weight: 300;
+        }
+      }
+
       p {
         opacity: 1;
         font-size: 1.6rem;
@@ -137,6 +193,27 @@
         color: $color-black;
         margin-bottom: 2rem;
       }
+
+      .p2 {
+        color: $color-white;
+      }
+    }
+  }
+
+  &--text-box2 {
+    background-color: transparent;
+    width: 95%;
+    transform: translateY(45%);
+    transition: all .3s ease-in-out;
+    
+
+    .last-link {
+      color: $color-white;
+      margin-top: -2.4rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 1.4rem;
     }
   }
 
@@ -144,4 +221,11 @@
     transform: translateY(0);
     transition: all .3s ease-in-out;
   }
+
+  &--img2:hover .movie-card--text-box {
+    transform: translateY(0);
+    transition: all .3s ease-in-out;
+  }
+
+
 }

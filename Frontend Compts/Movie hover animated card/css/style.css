@@ -28,7 +28,28 @@ body {
   position: relative;
   overflow: hidden; }
   .movie-card--img .img {
-    height: 55rem; }
+    height: 55rem;
+    width: 38rem; }
+  .movie-card--img .social-box {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .movie-card--img .social-box .dates span {
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 300; }
+    .movie-card--img .social-box .icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem; }
+      .movie-card--img .social-box .icons .icon {
+        color: #fff;
+        font-size: 1.8rem; }
 
 .movie-card--date {
   height: 15%;
@@ -94,6 +115,22 @@ body {
       font-size: 3rem;
       letter-spacing: 1.1px;
       line-height: 1.4; }
+    .movie-card--text-box .text-box .h1--card2 {
+      position: relative;
+      color: #fff; }
+      .movie-card--text-box .text-box .h1--card2 a:link,
+      .movie-card--text-box .text-box .h1--card2 a:visited {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 300;
+        font-size: 3rem;
+        letter-spacing: 1.1px;
+        line-height: 1.4; }
+      .movie-card--text-box .text-box .h1--card2 .author {
+        position: absolute;
+        top: -20%;
+        font-size: 1.2rem;
+        font-weight: 300; }
     .movie-card--text-box .text-box p {
       opacity: 1;
       font-size: 1.6rem;
@@ -101,7 +138,26 @@ body {
       line-height: 1.3;
       color: #000;
       margin-bottom: 2rem; }
+    .movie-card--text-box .text-box .p2 {
+      color: #fff; }
+
+.movie-card--text-box2 {
+  background-color: transparent;
+  width: 95%;
+  transform: translateY(45%);
+  transition: all .3s ease-in-out; }
+  .movie-card--text-box2 .last-link {
+    color: #fff;
+    margin-top: -2.4rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.4rem; }
 
 .movie-card--img:hover .movie-card--text-box {
+  transform: translateY(0);
+  transition: all .3s ease-in-out; }
+
+.movie-card--img2:hover .movie-card--text-box {
   transform: translateY(0);
   transition: all .3s ease-in-out; }
