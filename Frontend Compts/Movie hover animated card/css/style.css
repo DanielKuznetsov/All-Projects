@@ -31,14 +31,14 @@ body {
     height: 55rem;
     width: 38rem; }
   .movie-card--img .social-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 1.2rem 2rem;
     position: absolute;
     top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
+    left: 0; }
     .movie-card--img .social-box .dates span {
       color: #fff;
       font-size: 1.2rem;

@@ -1,0 +1,62 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+.pricing-cards {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+.card {
+  position: relative;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 50rem;
+  width: 30rem;
+
+  &__side {
+    color: #fff;
+    width: 30rem;
+    height: 50rem;
+    margin: 10rem auto;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: all 0.8s ease;
+
+    &--front {
+      background-color: green;
+    }
+
+    &--back {
+      background-color: orange;
+      transform: rotateY(180deg);
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}

@@ -40,14 +40,13 @@
     }
 
     .social-box {
+      @include flexbox-sp-btw;
       width: 100%;
       padding: 1.2rem 2rem;
       position: absolute;
       top: 0;
       left: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+     
 
       .dates {
         span {
