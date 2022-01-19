@@ -36,13 +36,13 @@ body {
     top: 0;
     left: 0;
     backface-visibility: hidden;
-    transition: all 0.8s ease; }
+    transition: all .8s ease; }
     .card__side--front {
       background-color: green; }
     .card__side--back {
       background-color: orange;
-      transform: rotateY(180deg); }
+      transform: rotateY(-180deg); }
   .card:hover .card__side--front {
-    transform: rotateY(-180deg); }
+    transform: rotateY(180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }

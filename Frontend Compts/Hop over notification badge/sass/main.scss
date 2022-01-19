@@ -1,0 +1,95 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif__badge {
+  display: flex;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
+  margin-top: 25rem;
+}
+
+.ntf__box {
+  position: relative;
+
+  &--btn:link,
+  &--btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 2rem 3rem;
+    background-color: #86B2BB;
+    border-right: 1px solid #eee;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &--left-border {
+    border-left: 1px solid #eee;
+  }
+
+  &--coin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.3rem;
+    height: 3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: .25rem .5rem;
+    color: #fff;
+    border-radius: 30rem;
+    background-color: seagreen;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    animation-fill-mode: both;
+    z-index: -1;
+  }
+
+  &:hover &--coin {
+    animation: pop-up .3s ease;
+    animation-fill-mode: both;
+  }
+
+  &--coin-big {
+    width: 5.3rem;
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    transform: translateY(0%);
+    z-index: -1;
+  }
+  50% {
+    transform: translateY(-145%);
+    z-index: -1;
+  }
+  100% {
+    transform: translateY(-100%);
+    z-index: 1;
+  }
+}

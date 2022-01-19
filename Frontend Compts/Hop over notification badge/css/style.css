@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.notif__badge {
+  display: flex;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+  margin-top: 25rem; }
+
+.ntf__box {
+  position: relative; }
+  .ntf__box--btn:link, .ntf__box--btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 2rem 3rem;
+    background-color: #86B2BB;
+    border-right: 1px solid #eee;
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .ntf__box--left-border {
+    border-left: 1px solid #eee; }
+  .ntf__box--coin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.3rem;
+    height: 3rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: .25rem .5rem;
+    color: #fff;
+    border-radius: 30rem;
+    background-color: seagreen;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    animation-fill-mode: both;
+    z-index: -1; }
+  .ntf__box:hover .ntf__box--coin {
+    animation: pop-up .3s ease;
+    animation-fill-mode: both; }
+  .ntf__box--coin-big {
+    width: 5.3rem; }
+
+@keyframes pop-up {
+  0% {
+    transform: translateY(0%);
+    z-index: -1; }
+  50% {
+    transform: translateY(-145%);
+    z-index: -1; }
+  100% {
+    transform: translateY(-100%);
+    z-index: 1; } }
