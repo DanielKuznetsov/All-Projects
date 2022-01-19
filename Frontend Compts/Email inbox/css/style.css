@@ -18,7 +18,7 @@ body {
 .mail {
   max-width: 85vw;
   height: 55rem;
-  background-color: orange;
+  background-color: #fff;
   margin: 5rem auto;
   display: flex; }
 
@@ -66,7 +66,9 @@ body {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 3rem; }
+  gap: 3rem;
+  padding-top: 3rem;
+  margin: 0 2.5rem; }
   .mail__inbox .search {
     display: flex;
     justify-content: space-between; }
@@ -82,30 +84,57 @@ body {
       border-radius: 0.6rem;
       padding-left: 0.25rem; }
   .mail__inbox .activity {
-    border-bottom: 2px solid #aaa;
+    border-bottom: 2px solid #adb5bd;
     padding: 1rem 0 0 0;
     display: flex;
     align-items: center;
     justify-content: end;
-    gap: 2rem; }
+    gap: 2rem;
+    position: relative;
+    margin-top: 3rem; }
     .mail__inbox .activity--sort {
-      font-size: 1.3rem;
-      color: grey;
+      font-size: 1.4rem;
+      color: #adb5bd;
       font-weight: 400;
       padding-bottom: 1rem;
-      display: block; }
-    .mail__inbox .activity--recent:hover {
-      border-bottom: 2px solid #000; }
+      margin-bottom: 1rem;
+      transition: all .2s ease; }
+      .mail__inbox .activity--sort:hover {
+        border-bottom: 2px solid #000;
+        color: #000;
+        transition: all .2s ease; }
+    .mail__inbox .activity--recent {
+      position: absolute;
+      top: -1.4rem;
+      right: 10rem; }
+    .mail__inbox .activity--abc {
+      position: absolute;
+      top: -1.4rem;
+      right: 0; }
   .mail__inbox .logs {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); }
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem; }
     .mail__inbox .logs--style {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      font-size: 1.4rem; }
+      font-size: 1.3rem;
+      color: #adb5bd;
+      position: relative; }
     .mail__inbox .logs--time {
       text-align: right; }
+    .mail__inbox .logs--relation {
+      padding: .5rem .6rem;
+      border-radius: 4px;
+      color: #fff;
+      margin-right: .5rem; }
+      .mail__inbox .logs--relation-1 {
+        background-color: #74c0fc; }
+      .mail__inbox .logs--relation-2 {
+        background-color: #8ce99a; }
+      .mail__inbox .logs--relation-3 {
+        background-color: #ffe066; }
 
 .mail__compose {
   background-color: #7fb395; }
