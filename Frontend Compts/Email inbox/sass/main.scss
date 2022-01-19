@@ -84,7 +84,73 @@
 }
 
 .mail__inbox {
-  background-color: saddlebrown;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .search {
+    display: flex;
+    justify-content: space-between;
+
+    &--title {
+      font-size: 2.2rem;
+      color: $color-black;
+      font-weight: 500;
+    }
+
+    &--search {
+      width: 40%;
+      font-size: 1.8rem;
+      outline: none;
+      border: #aaa 3px solid;
+      border-radius: 0.6rem;
+      padding-left: 0.25rem;
+    }
+  }
+
+  .activity {
+    border-bottom: 2px solid #aaa;
+    padding: 1rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 2rem;
+
+    &--sort {
+      font-size: 1.3rem;
+      color: grey;
+      font-weight: 400;
+      padding-bottom: 1rem;
+      display: block;
+    }
+
+    &--recent:hover {
+      border-bottom: 2px solid $color-black;
+    }
+  }
+
+  .logs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &--style {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-size: 1.4rem;
+    }
+
+    &--name {
+    }
+
+    &--type {
+    }
+
+    &--time {
+      text-align: right;
+    }
+  }
 }
 
 .mail__compose {
