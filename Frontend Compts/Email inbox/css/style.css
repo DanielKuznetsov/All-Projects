@@ -31,17 +31,6 @@ body {
     align-items: center;
     justify-content: center;
     padding: 3rem 3rem; }
-  .navbar .btn {
-    display: block;
-    border: none;
-    font-size: 1.6rem;
-    padding: 0.75rem 3rem;
-    border-radius: 5px;
-    background-color: rgba(240, 62, 62, 0.8);
-    color: #eee;
-    font-weight: 500; }
-    .navbar .btn:hover {
-      background-color: #f03e3e; }
   .navbar--menu {
     list-style: none; }
     .navbar--menu li {
@@ -50,25 +39,24 @@ body {
       color: #bbb;
       transition: all 0.1s ease; }
     .navbar--menu li:nth-child(1) {
-      background-color: #fff;
+      background-color: #eee;
       color: #000; }
     .navbar--menu li:hover {
-      background-color: #fff;
+      background-color: #eee;
       color: #000;
       transition: all 0.1s ease; }
 
 .grid {
   width: 83%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: 1fr 1fr; }
 
 .mail__inbox {
   background-color: #fff;
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding-top: 3rem;
-  margin: 0 2.5rem; }
+  padding: 3rem 2.5rem; }
   .mail__inbox .search {
     display: flex;
     justify-content: space-between; }
@@ -137,4 +125,45 @@ body {
         background-color: #ffe066; }
 
 .mail__compose {
-  background-color: #7fb395; }
+  background-color: #fff;
+  padding: 3rem 2.5rem; }
+  .mail__compose--title {
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000; }
+  .mail__compose--author {
+    margin-top: 1.6rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #000; }
+  .mail__compose--text {
+    font-size: 1.8rem;
+    color: #adb5bd;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-top: 4rem; }
+  .mail__compose--textarea {
+    margin-top: 4rem;
+    resize: none;
+    border: 2px solid #aaa;
+    border-radius: 1rem; }
+
+.btn {
+  display: block;
+  border: none;
+  font-size: 1.6rem;
+  padding: 0.75rem 3rem;
+  border-radius: 5px;
+  background-color: rgba(240, 62, 62, 0.8);
+  color: #eee;
+  font-weight: 500; }
+  .btn:hover {
+    background-color: #f03e3e; }
+  .btn-flex {
+    display: flex;
+    justify-content: end;
+    margin-top: 3rem; }
+
+body {
+  background-color: #dee2e6; }
