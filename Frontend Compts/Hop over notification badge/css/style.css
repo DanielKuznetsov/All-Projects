@@ -57,6 +57,9 @@ body {
     right: 1rem;
     animation-fill-mode: both;
     z-index: -1; }
+    .ntf__box--coin--gold {
+      background-color: gold;
+      color: #777; }
   .ntf__box:hover .ntf__box--coin {
     animation: pop-up .3s ease;
     animation-fill-mode: both; }

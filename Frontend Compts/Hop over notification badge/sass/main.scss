@@ -67,6 +67,11 @@ body {
     right: 1rem;
     animation-fill-mode: both;
     z-index: -1;
+
+    &--gold {
+      background-color: gold;
+      color: #777;
+    }
   }
 
   &:hover &--coin {

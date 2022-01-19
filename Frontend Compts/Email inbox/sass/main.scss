@@ -1,0 +1,92 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+.mail {
+  max-width: 85vw;
+  height: 55rem;
+  background-color: orange;
+  margin: 5rem auto;
+
+  display: flex;
+}
+
+.navbar {
+  width: 17%;
+  height: 100%;
+  background-color: #212529;
+
+  &--btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 3rem;
+  }
+
+  .btn {
+    display: block;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.75rem 3rem;
+    border-radius: 5px;
+    background-color: rgba(#f03e3e, 0.8);
+    color: #eee;
+    font-weight: 500;
+
+    &:hover {
+      background-color: rgba(#f03e3e, 1);
+    }
+  }
+
+  &--menu {
+    list-style: none;
+
+    li {
+      font-size: 1.8rem;
+      padding: 1.2rem 4rem;
+      color: #bbb;
+      transition: all 0.1s ease;
+    }
+
+    li:nth-child(1) {
+      background-color: $color-white;
+      color: $color-black;
+    }
+
+    li:hover {
+      background-color: $color-white;
+      color: $color-black;
+      transition: all 0.1s ease;
+    }
+  }
+}
+
+.grid {
+  width: 83%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mail__inbox {
+  background-color: saddlebrown;
+}
+
+.mail__compose {
+  background-color: rgb(127, 179, 149);
+}

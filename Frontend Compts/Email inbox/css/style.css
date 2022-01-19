@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+.mail {
+  max-width: 85vw;
+  height: 55rem;
+  background-color: orange;
+  margin: 5rem auto;
+  display: flex; }
+
+.navbar {
+  width: 17%;
+  height: 100%;
+  background-color: #212529; }
+  .navbar--btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 3rem; }
+  .navbar .btn {
+    display: block;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.75rem 3rem;
+    border-radius: 5px;
+    background-color: rgba(240, 62, 62, 0.8);
+    color: #eee;
+    font-weight: 500; }
+    .navbar .btn:hover {
+      background-color: #f03e3e; }
+  .navbar--menu {
+    list-style: none; }
+    .navbar--menu li {
+      font-size: 1.8rem;
+      padding: 1.2rem 4rem;
+      color: #bbb;
+      transition: all 0.1s ease; }
+    .navbar--menu li:nth-child(1) {
+      background-color: #fff;
+      color: #000; }
+    .navbar--menu li:hover {
+      background-color: #fff;
+      color: #000;
+      transition: all 0.1s ease; }
+
+.grid {
+  width: 83%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+
+.mail__inbox {
+  background-color: saddlebrown; }
+
+.mail__compose {
+  background-color: #7fb395; }
