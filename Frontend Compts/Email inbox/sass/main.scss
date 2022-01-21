@@ -198,7 +198,8 @@
 
   &--text {
     font-size: 1.8rem;
-    color: #adb5bd;
+    font-weight: 400;
+    color: #868e96;
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
@@ -235,6 +236,7 @@
   }
 }
 
+// OVERWRITE 
 body {
   background-color: #dee2e6;
 }
