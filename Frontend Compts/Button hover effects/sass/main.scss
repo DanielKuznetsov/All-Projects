@@ -1,0 +1,103 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  width: 30rem;
+  height: 40rem;
+  background-color: $color-grey-light-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__link {
+    position: relative;
+
+    &:link,
+    &:visited {
+      padding: 2rem 3rem;
+      font-size: 2.4rem;
+      text-decoration: none;
+      border: 2px solid $color-primary;
+      background-color: $color-secondary-dark;
+      color: $color-white;
+    }
+
+    &-1 {
+      &:link,
+      &:visited {
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          $color-white 50%
+        );
+        background-size: 225%;
+        transition: all 0.4s;
+      }
+      &:hover,
+      &:active {
+        background-position: 100%;
+        color: $color-primary;
+        transform: translateX(1rem);
+      }
+    }
+
+    &-2::after {
+      content: "";
+      height: 100%;
+      width: 0.5rem;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: -2rem;
+      transform: skew(-20deg);
+      // transition: all .2s;
+      opacity: 0;
+      filter: blur(5px);
+    }
+
+    &-2:hover::after {
+      // left: 100%;
+      // opacity: 1;
+      animation: opacity .3s ease-in-out .2s;
+    }
+  }
+}
+
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
