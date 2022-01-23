@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+figure {
+  width: 100vw;
+  display: flex;
+  gap: 5rem; }
+
+.img {
+  width: 40rem;
+  height: 30rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  background-size: cover;
+  background-position: 100%;
+  background-blend-mode: screen;
+  margin-bottom: 5rem; }
+  .img-1 {
+    background-image: linear-gradient(to right, #ffb900, #ff7730), url(../img/nat-9.jpg); }
+  .img-2 {
+    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-9.jpg); }
