@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: yellowgreen;
+  margin-bottom: 2rem;
+  border-radius: 20rem;
+  transition: all .3s; }
+  .btn__circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-image: linear-gradient(to right bottom, #40fcab, #406ffc);
+    position: relative;
+    margin-right: 2rem; }
+    .btn__circle::before {
+      content: "";
+      width: inherit;
+      height: inherit;
+      border-radius: inherit;
+      background-color: #999;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scale(1.1);
+      transition: all 0.3s; }
+  .btn__input {
+    display: none;
+    transition: all 0.3s; }
+  .btn__input:checked ~ .btn__circle:before {
+    transform: scale(0); }
+  .btn__input:checked ~ .btn__text {
+    color: #f7f7f7; }
+  .btn:hover {
+    background-color: #ff7730; }
+  .btn__text {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s; }
