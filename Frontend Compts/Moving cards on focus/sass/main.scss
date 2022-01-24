@@ -20,16 +20,21 @@
 
 body {
   background-color: #fff9db;
+  position: relative;
+  min-height: 100vh;
 }
 
 .section-cards {
-  @include centerDiv;
-
+  // @include centerDiv;
+  margin: 0 5rem;
   height: 40rem;
   background-color: #fff9db;
   border-radius: 3rem;
   display: flex;
-  margin-left: 70rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .card {
@@ -40,18 +45,14 @@ body {
     -1rem 0 2rem -1.5rem rgba($color-black, 0.2);
   transition: all 0.3s ease;
   background-color: #fff;
-  backface-visibility: hidden;
-  z-index: -1;
+  z-index: 2;
+  padding: 3rem;
+  position: relative;
+  
+  //FUNCTIONALITY
 
   &:not(:first-child) {
-    margin-left: -8rem;
-  }
-
-  &-1 {
-  }
-  &-2 {
-  }
-  &-3 {
+    margin-left: -7rem;
   }
 
   &:hover {
@@ -59,7 +60,103 @@ body {
   }
 
   &:hover + & {
+    transform: translateX(7rem);
+    // animation: moveOut .3s ease;
+    // animation-fill-mode: forwards;
+  }
+
+  &:hover > * {
+    z-index: 10;
+  }
+
+  // STYLING
+
+  &__media-group {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__media-tag {
+    background-image: linear-gradient(to right, #51cf66, #63e6be);
+    background-clip: text;
+    color: transparent;
+    font-size: 1.8rem;
+
+    &-2 {
+      background-image: linear-gradient(to right, #c2255c, #9c36b5, #3b5bdb);
+    }
+  }
+
+  &__date {
+    color: $color-grey-dark-2;
+
+    span {
+      &:not(:last-child) {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  &__effects-group {
+  }
+
+  &__effect {
+    a {
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: hsl(255, 53%, 40%);
+        font-weight: 900;
+        font-size: 2.6rem;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    &-2 {
+      a {
+        &:link,
+        &:visited {
+          color: #d9480f;
+        }
+      }
+    }
+  }
+
+  &__tags-group {
+    display: flex;
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+  }
+
+  &__tag {
+    padding: 1rem 1.5rem;
+    border-radius: 5rem;
+    border: 1px solid #e8590c;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    display: inline-block;
+  }
+}
+
+@keyframes moveOut {
+  0% {
+    z-index: 1;
+    transform: translateX(0);
+  }
+
+  50% {
+    z-index: 1;
+  }
+
+  100% {
+    z-index: 1;
     transform: translateX(8rem);
   }
-  
 }

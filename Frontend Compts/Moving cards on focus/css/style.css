@@ -16,18 +16,20 @@ body {
   color: #777; }
 
 body {
-  background-color: #fff9db; }
+  background-color: #fff9db;
+  position: relative;
+  min-height: 100vh; }
 
 .section-cards {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 5rem;
   height: 40rem;
   background-color: #fff9db;
   border-radius: 3rem;
   display: flex;
-  margin-left: 70rem; }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .card {
   width: 30rem;
@@ -36,11 +38,62 @@ body {
   box-shadow: -1rem -1rem 5rem -0.3rem rgba(0, 0, 0, 0.1), -1rem 0 2rem -1.5rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   background-color: #fff;
-  backface-visibility: hidden;
-  z-index: -1; }
+  z-index: 2;
+  padding: 3rem;
+  position: relative; }
   .card:not(:first-child) {
-    margin-left: -8rem; }
+    margin-left: -7rem; }
   .card:hover {
     transform: translateY(-5rem); }
   .card:hover + .card {
-    transform: translateX(8rem); }
+    transform: translateX(7rem); }
+  .card:hover > * {
+    z-index: 10; }
+  .card__media-group {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 2rem; }
+  .card__media-tag {
+    background-image: linear-gradient(to right, #51cf66, #63e6be);
+    background-clip: text;
+    color: transparent;
+    font-size: 1.8rem; }
+    .card__media-tag-2 {
+      background-image: linear-gradient(to right, #c2255c, #9c36b5, #3b5bdb); }
+  .card__date {
+    color: #999; }
+    .card__date span:not(:last-child) {
+      margin-right: 0.25rem; }
+  .card__effect a:link, .card__effect a:visited {
+    text-decoration: none;
+    color: #4b309c;
+    font-weight: 900;
+    font-size: 2.6rem; }
+  .card__effect:not(:last-child) {
+    margin-bottom: 0.5rem; }
+  .card__effect-2 a:link, .card__effect-2 a:visited {
+    color: #d9480f; }
+  .card__tags-group {
+    display: flex;
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem; }
+  .card__tag {
+    padding: 1rem 1.5rem;
+    border-radius: 5rem;
+    border: 1px solid #e8590c;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    display: inline-block; }
+
+@keyframes moveOut {
+  0% {
+    z-index: 1;
+    transform: translateX(0); }
+  50% {
+    z-index: 1; }
+  100% {
+    z-index: 1;
+    transform: translateX(8rem); } }
