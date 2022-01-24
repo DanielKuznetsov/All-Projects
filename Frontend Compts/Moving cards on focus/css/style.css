@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+.section-cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40rem;
+  width: 100rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  display: flex;
+  gap: 5rem; }
+
+.card {
+  width: 30rem;
+  height: inherit;
+  border-radius: inherit;
+  box-shadow: 1rem 1rem 1.5rem -0.3rem rgba(0, 0, 0, 0.2);
+  transition: all .2s ease-in-out; }
+  .card-1 {
+    background-color: orange; }
+  .card-2 {
+    background-color: green;
+    transform: translateX(-10rem); }
+  .card-3 {
+    background-color: blue;
+    transform: translateX(-20rem); }
+  .card-1:hover {
+    transform: translateY(-5rem); }
+  .card-1:hover ~ .card-2 {
+    transform: translateX(-5rem); }

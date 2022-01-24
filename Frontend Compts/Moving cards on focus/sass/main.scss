@@ -1,0 +1,61 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+.section-cards {
+  @include centerDiv;
+
+  height: 40rem;
+  width: 100rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  display: flex;
+  gap: 5rem;
+}
+
+.card {
+  width: 30rem;
+  height: inherit;
+  border-radius: inherit;
+  box-shadow: 1rem 1rem 1.5rem -.3rem rgba($color-black, .2);
+  transition: all .2s ease-in-out;
+
+  &-1 {
+    background-color: orange;
+  }
+  &-2 {
+    background-color: green;
+    transform: translateX(-10rem);
+
+  }
+  &-3 {
+    background-color: blue;
+    transform: translateX(-20rem);
+  }
+
+  &-1:hover {
+    transform: translateY(-5rem);
+  }
+
+  &-1:hover ~ &-2 {
+    transform: translateX(-5rem);
+  }
+
+}
