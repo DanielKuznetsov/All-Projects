@@ -4,7 +4,6 @@
 @import "abstract/mixins";
 @import "abstract/variables";
 
-
 @import "base/base";
 @import "base/animations";
 @import "base/typography";
@@ -19,43 +18,48 @@
 
 @import "pages/home";
 
+body {
+  background-color: #fff9db;
+}
+
 .section-cards {
   @include centerDiv;
 
   height: 40rem;
-  width: 100rem;
-  background-color: #fff;
+  background-color: #fff9db;
   border-radius: 3rem;
   display: flex;
-  gap: 5rem;
+  margin-left: 70rem;
 }
 
 .card {
   width: 30rem;
   height: inherit;
   border-radius: inherit;
-  box-shadow: 1rem 1rem 1.5rem -.3rem rgba($color-black, .2);
-  transition: all .2s ease-in-out;
+  box-shadow: -1rem -1rem 5rem -0.3rem rgba($color-black, 0.1),
+    -1rem 0 2rem -1.5rem rgba($color-black, 0.2);
+  transition: all 0.3s ease;
+  background-color: #fff;
+  backface-visibility: hidden;
+  z-index: -1;
+
+  &:not(:first-child) {
+    margin-left: -8rem;
+  }
 
   &-1 {
-    background-color: orange;
   }
   &-2 {
-    background-color: green;
-    transform: translateX(-10rem);
-
   }
   &-3 {
-    background-color: blue;
-    transform: translateX(-20rem);
   }
 
-  &-1:hover {
+  &:hover {
     transform: translateY(-5rem);
   }
 
-  &-1:hover ~ &-2 {
-    transform: translateX(-5rem);
+  &:hover + & {
+    transform: translateX(8rem);
   }
-
+  
 }
