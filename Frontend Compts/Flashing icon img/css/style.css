@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.container {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  animation: imgs 1s ease-in-out infinite alternate;
+  background-size: cover; }
+
+@keyframes imgs {
+  0% {
+    background-image: url(../img/people/ben.jpg); }
+  50% {
+    background-image: url(../img/people/dave.jpg); }
+  100% {
+    background-image: url(../img/people/hannah.jpg); } }
