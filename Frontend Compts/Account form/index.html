@@ -19,6 +19,13 @@
     <main>
       <section class="section-form">
         <div class="container">
+          <input
+            class="form__links--input"
+            type="radio"
+            name="links"
+            id="one"
+          />
+
           <form class="form form-1" action="#">
             <h3 class="form__title">CREATE YOUR ACCOUNT</h3>
             <p class="form__text">This is step 1</p>
@@ -44,7 +51,15 @@
               placeholder="Confirm Password"
             />
             <div class="form__links">
-              <a class="form__links--link form__links--link-2-move" href="#">Next</a>
+              <label
+                for="one"
+                class="form__links--link form__links--link-2-move"
+              >
+                <p>Next</p>
+              </label>
+              <!-- <a class="form__links--link form__links--link-2-move" href="#"
+                >Next</a
+              > -->
             </div>
           </form>
 
@@ -73,10 +88,13 @@
               placeholder="Google Plus"
             />
             <div class="form__links">
+              <!-- <label for="#" class="form__links--link form__links--link-2-back">Previous</label> -->
               <a class="form__links--link form__links--link-2-back" href="#"
                 >Previous</a
               >
-              <a class="form__links--link form__links--link-2-move" href="#">Next</a>
+              <a class="form__links--link form__links--link-2-move" href="#"
+                >Next</a
+              >
             </div>
           </form>
 

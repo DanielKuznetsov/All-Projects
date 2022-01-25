@@ -38,8 +38,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  
-
+  &-1 {
+    opacity: 1;
+  }
   &-2,
   &-3 {
     opacity: 0;
@@ -97,8 +98,7 @@
     display: flex;
     gap: 1.2rem;
 
-    &--link:link,
-    &--link:visited {
+    &--link {
       font-size: 1.4rem;
       font-weight: 400;
       color: $color-white;
@@ -110,10 +110,26 @@
       cursor: pointer;
     }
 
-    &--link:hover,
-    &--link:active {
+    &--link:hover {
       box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
       cursor: pointer;
+    }
+
+    &--input {
+      // display: none;
+    }
+  }
+
+  &__links--input:checked + & {
+    &-1 {
+      opacity: 1;
+      // visibility: hidden;
+      // pointer-events: none;
+    }
+    &-2 {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
   }
 }

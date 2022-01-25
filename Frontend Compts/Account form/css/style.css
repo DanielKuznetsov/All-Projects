@@ -32,6 +32,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
+  .form-1 {
+    opacity: 1; }
   .form-2, .form-3 {
     opacity: 0;
     visibility: hidden;
@@ -70,7 +72,7 @@ body {
     margin-top: 2rem;
     display: flex;
     gap: 1.2rem; }
-    .form__links--link:link, .form__links--link:visited {
+    .form__links--link {
       font-size: 1.4rem;
       font-weight: 400;
       color: #fff;
@@ -80,9 +82,15 @@ body {
       display: inline-block;
       border-radius: 2px;
       cursor: pointer; }
-    .form__links--link:hover, .form__links--link:active {
+    .form__links--link:hover {
       box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
       cursor: pointer; }
+  .form__links--input:checked + .form-1 {
+    opacity: 1; }
+  .form__links--input:checked + .form-2 {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; }
 
 .u-margin-top-small {
   margin-top: 2rem; }

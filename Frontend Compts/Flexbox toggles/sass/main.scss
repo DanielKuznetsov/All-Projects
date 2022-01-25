@@ -51,6 +51,7 @@ body {
   opacity: 0.5;
   cursor: pointer;
   transition: all 1s ease;
+  flex-grow: 1;
 
   &__input {
     display: none;
