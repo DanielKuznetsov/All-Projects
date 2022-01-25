@@ -1,0 +1,112 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  background: linear-gradient(to bottom, #4678F3, #64D6EE);
+  min-height: 100vh;
+}
+
+.option-row {
+  @include centerDiv;
+  width: 40rem;
+  height: 15rem;
+
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+
+.radio-button {
+  background-color: $color-white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+
+
+  &__input {
+    display: none;
+  }
+
+  &__btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #64D6EE;
+    border-radius: 50%;
+    position: absolute; 
+    top: 1.6rem;
+    right: 1.6rem;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: #64D6EE;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      opacity: 0;
+    }
+  }
+
+  &__number-group {
+    color: $color-black;
+    // background-color: blueviolet;
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: .5rem;
+      width: 100%;
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      background-color: aqua;
+    }
+  }
+
+  &__number {
+    font-size: 4.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-right: .5rem;
+  }
+
+  &__size {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  &--1 {
+    flex-grow: 1;
+  }
+
+  &--2 {
+    flex-grow: 1;
+  }
+}
