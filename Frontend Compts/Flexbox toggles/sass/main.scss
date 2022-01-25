@@ -19,12 +19,17 @@
 @import "pages/home";
 
 body {
-  background: linear-gradient(to bottom, #4678F3, #64D6EE);
+  background: linear-gradient(to bottom, #4678f3, #64d6ee);
+  max-width: 100%;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .option-row {
-  @include centerDiv;
   width: 40rem;
   height: 15rem;
 
@@ -35,15 +40,17 @@ body {
   gap: 1rem;
 }
 
-
 .radio-button {
+  background-color: rgba($color-black, 0.2);
   background-color: $color-white;
   padding: 3rem 2rem;
   border-radius: 1rem;
   display: flex;
   align-items: flex-end;
   position: relative;
-
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 1s ease;
 
   &__input {
     display: none;
@@ -52,9 +59,9 @@ body {
   &__btn {
     width: 1.5rem;
     height: 1.5rem;
-    border: 1px solid #64D6EE;
+    border: 1px solid #64d6ee;
     border-radius: 50%;
-    position: absolute; 
+    position: absolute;
     top: 1.6rem;
     right: 1.6rem;
 
@@ -62,12 +69,13 @@ body {
       content: "";
       width: 100%;
       height: 100%;
-      background-color: #64D6EE;
+      background-color: #64d6ee;
       position: absolute;
       top: 0;
       left: 0;
       border-radius: 50%;
       opacity: 0;
+      transition: all 0.5s ease;
     }
   }
 
@@ -80,12 +88,13 @@ body {
     &::after {
       content: "";
       display: inline-block;
-      height: .5rem;
-      width: 100%;
+      height: 0.5rem;
+      width: 20%;
       position: absolute;
       bottom: -1rem;
       left: 0;
       background-color: aqua;
+      transition: all 0.5s ease;
     }
   }
 
@@ -93,20 +102,36 @@ body {
     font-size: 4.8rem;
     font-weight: 700;
     display: inline-block;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
   }
 
   &__size {
     text-transform: uppercase;
     font-size: 1.6rem;
     font-weight: 700;
+    transition: all 0.3s ease;
   }
 
-  &--1 {
-    flex-grow: 1;
-  }
+  // BUILDING FUNCTIONALITY BELOW
+  &__input:checked + & {
+    flex-grow: 4;
+    opacity: 1;
 
-  &--2 {
-    flex-grow: 1;
+    .radio-button__btn::after {
+      opacity: 1;
+    }
+
+    .radio-button__number-group::after {
+      width: 100%;
+    }
+
+    .radio-button__number {
+      font-size: 6.8rem;
+    }
+
+    .radio-button__size {
+      font-size: 2.6rem;
+    }
   }
 }
