@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+body {
+  min-height: 100vh;
+  position: relative; }
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.5rem;
+  height: 6rem;
+  border: 2px solid #aaa;
+  border-radius: 3rem; }
+  .button::after {
+    content: "";
+    width: .2rem;
+    height: .75rem;
+    background-color: #aaa;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: opacityMove 1s ease infinite running;
+    opacity: 0;
+    animation-fill-mode: backwards; }
+
+@keyframes opacityMove {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0); }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 2rem); } }

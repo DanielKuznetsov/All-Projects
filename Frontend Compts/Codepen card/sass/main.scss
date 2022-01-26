@@ -66,13 +66,12 @@ body {
     height: 20rem;
     border-radius: 1rem;
     // right: calc(100% - 2rem);
-    left: 2.3333rem;
+    right: 2.3333rem;
     bottom: 10rem;
     transition: all .2s ease;
   }
 
   &__card:hover > &__card--1 {
-    // width: 105%;
     width: calc(100% + 2.3333rem);
     height: 32rem;
   }

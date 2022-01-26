@@ -1,0 +1,59 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.button {
+  @include centerDiv;
+
+  width: 3.5rem;
+  height: 6rem;
+  border: 2px solid #aaa;
+  border-radius: 3rem;
+
+  &::after {
+    content: "";
+    width: .2rem;
+    height: .75rem;
+    background-color: #aaa;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: opacityMove 1s ease infinite running;
+    opacity: 0;
+    animation-fill-mode: backwards;
+  }
+}
+
+@keyframes opacityMove {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 2rem);
+  }
+}
