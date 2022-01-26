@@ -18,18 +18,46 @@ body {
 body {
   height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  background-color: #ddd; }
 
-.div2 {
-  position: absolute;
-  left: 10%;
-  bottom: 10%;
-  width: 22rem;
+.codepen-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+  column-gap: 1.5rem;
+  width: 100rem;
+  height: 60rem;
+  background-color: red;
+  margin: 10rem auto;
+  position: relative; }
+
+.codepen__card {
+  width: auto;
   height: 30rem;
-  background: grey;
-  transition: all 0.15s; }
-  .div2:hover {
-    width: 25rem;
-    height: 33rem; }
+  position: relative; }
+  .codepen__card--1 {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: yellow;
+    border-radius: 1rem;
+    transition: all .2s ease; }
+
+.codepen__background {
+  position: absolute;
+  background-color: #fff;
+  width: 30rem;
+  height: 20rem;
+  border-radius: 1rem;
+  left: 2.3333rem;
+  bottom: 10rem;
+  transition: all .2s ease; }
+
+.codepen__card:hover > .codepen__card--1 {
+  width: calc(100% + 2.3333rem);
+  height: 32rem; }
+
+.codepen__card:hover .codepen__background {
+  right: 2.3333rem; }
