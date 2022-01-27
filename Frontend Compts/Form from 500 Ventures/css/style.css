@@ -33,12 +33,12 @@ body {
     position: absolute;
     top: 2rem;
     pointer-events: none;
-    transition: all .3s ease-in-out; }
+    transition: all 0.3s ease-in-out; }
   .form__input {
     display: block;
     width: 100%;
     border: none;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid #fff;
     background-color: transparent;
     color: #fff;
     padding: 1.5rem 0;
@@ -47,6 +47,34 @@ body {
     font-weight: 300; }
   .form__input:focus + .form__label,
   .form__input:not(:placeholder-shown) + .form__label {
-    top: -.5rem;
+    top: -0.5rem;
     font-size: 1.2rem;
     color: lightgreen; }
+  .form__textarea-group {
+    position: relative; }
+  .form__label-textarea {
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1.2px;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.6;
+    position: absolute;
+    top: 7.2rem;
+    left: 3rem;
+    width: 90%;
+    transition: all .3s ease-in-out; }
+  .form__textarea {
+    width: 100%;
+    padding: 2.5rem 3rem;
+    letter-spacing: none;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #fff;
+    margin-top: 5rem;
+    color: #fff;
+    font-size: 1.8rem;
+    letter-spacing: -1px; }
+  .form__textarea:focus + .form__label-textarea,
+  .form__textarea:not(:placeholder-shown) + .form__label-textarea {
+    opacity: 0; }

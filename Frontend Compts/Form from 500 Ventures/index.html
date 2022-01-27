@@ -17,12 +17,25 @@
   </head>
   <body>
     <div class="form">
-      <input class="form__input" id="company" type="text" placeholder=" " />
-      <label class="form__label" for="company"
-        >What's your company's legal name?</label
-      >
+      <div>
+        <input class="form__input" id="company" type="text" placeholder=" " />
+        <label class="form__label" for="company"
+          >What's your company's legal name?</label
+        >
+      </div>
 
-      <textarea class="form__textarea" id="company-text"></textarea>
+      <div class="form__textarea-group">
+        <textarea
+          class="form__textarea"
+          id="company-text"
+          rows="10"
+          placeholder=" "
+        ></textarea>
+        <label class="form__label-textarea" for="company-text"
+          >Describe your business model. How does (or will) your company make
+          money, even if it is not making any today? <br> 150 words or fewer  </label
+        >
+      </div>
     </div>
   </body>
 </html>
