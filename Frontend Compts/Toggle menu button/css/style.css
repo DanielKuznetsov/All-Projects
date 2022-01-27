@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-color: beige;
+  position: relative; }
+
+.toggle {
+  width: 100%;
+  position: fixed; }
+  .toggle__input {
+    display: none; }
+  .toggle--size {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    border-radius: 50%; }
+  .toggle__button {
+    background-color: #fff;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .toggle__button span {
+      width: 2.85rem;
+      height: 0.2rem;
+      background: #000; }
+      .toggle__button span::before {
+        content: "";
+        width: inherit;
+        height: inherit;
+        background-color: #000;
+        position: absolute;
+        top: 30%; }
+      .toggle__button span::after {
+        content: "";
+        width: inherit;
+        height: inherit;
+        background-color: #000;
+        position: absolute;
+        bottom: 30%; }
+      .toggle__button span::before {
+        content: "";
+        width: inherit;
+        height: inherit;
+        background-color: #000;
+        position: absolute;
+        top: 30%; }
+  .toggle__background {
+    background-image: radial-gradient(#7ed56f, #28b485);
+    transform: scale(1); }
+  .toggle__input:checked ~ .toggle__button span::before {
+    top: 35%; }
+  .toggle__input:checked ~ .toggle__button span::after {
+    bottom: 35%; }
+  .toggle__input:checked ~ .toggle__background {
+    transform: scale(100); }
