@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+body {
+  background-color: #0a1e25;
+  min-height: 100vh;
+  color: #fff; }
+
+.form {
+  margin: 20rem auto;
+  width: 65rem;
+  position: relative; }
+  .form__label {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    color: #ddd;
+    text-transform: uppercase;
+    position: absolute;
+    top: 2rem;
+    pointer-events: none;
+    transition: all .3s ease-in-out; }
+  .form__input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid yellow;
+    background-color: transparent;
+    color: #fff;
+    padding: 1.5rem 0;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 300; }
+  .form__input:focus + .form__label,
+  .form__input:not(:placeholder-shown) + .form__label {
+    top: -.5rem;
+    font-size: 1.2rem;
+    color: lightgreen; }
