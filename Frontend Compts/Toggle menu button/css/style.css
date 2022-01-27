@@ -41,38 +41,38 @@ body {
     z-index: 10;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    box-shadow: 0 0 1.5rem -0.5rem rgba(0, 0, 0, 0.4); }
     .toggle__button span {
       width: 2.85rem;
       height: 0.2rem;
       background: #000; }
-      .toggle__button span::before {
+      .toggle__button span::before, .toggle__button span::after {
         content: "";
         width: inherit;
         height: inherit;
         background-color: #000;
         position: absolute;
-        top: 30%; }
+        transition: all 0.2s; }
+      .toggle__button span::before {
+        top: 38%; }
       .toggle__button span::after {
-        content: "";
-        width: inherit;
-        height: inherit;
-        background-color: #000;
-        position: absolute;
-        bottom: 30%; }
-      .toggle__button span::before {
-        content: "";
-        width: inherit;
-        height: inherit;
-        background-color: #000;
-        position: absolute;
-        top: 30%; }
+        bottom: 38%; }
   .toggle__background {
     background-image: radial-gradient(#7ed56f, #28b485);
-    transform: scale(1); }
-  .toggle__input:checked ~ .toggle__button span::before {
+    transform: scale(1);
+    transition: all .55s ease-in-out; }
+  .toggle__button:hover span::before {
     top: 35%; }
-  .toggle__input:checked ~ .toggle__button span::after {
+  .toggle__button:hover span::after {
     bottom: 35%; }
+  .toggle__input:checked ~ .toggle__button span {
+    background-color: transparent; }
+  .toggle__input:checked ~ .toggle__button span::before {
+    top: 50%;
+    transform: rotate(135deg); }
+  .toggle__input:checked ~ .toggle__button span::after {
+    top: 50%;
+    transform: rotate(-135deg); }
   .toggle__input:checked ~ .toggle__background {
-    transform: scale(100); }
+    transform: scale(60); }
