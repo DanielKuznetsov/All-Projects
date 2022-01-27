@@ -24,6 +24,10 @@ body {
   margin: 20rem auto;
   width: 65rem;
   position: relative; }
+  .form__input-group {
+    height: auto;
+    width: inherit;
+    position: relative; }
   .form__label {
     font-size: 1.6rem;
     font-weight: 300;
@@ -43,16 +47,35 @@ body {
     color: #fff;
     padding: 1.5rem 0;
     outline: none;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300; }
   .form__input:focus + .form__label,
   .form__input:not(:placeholder-shown) + .form__label {
     top: -0.5rem;
     font-size: 1.2rem;
     color: lightgreen; }
-  .form__textarea-group {
+  .form__input:placeholder-shown ~ .form__required {
+    opacity: 1; }
+  .form__input:focus ~ .form__required {
+    opacity: 0; }
+  .form__required {
+    color: rgba(240, 62, 62, 0.8);
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: -1.75rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out; }
+
+.form1 {
+  margin: -20rem auto;
+  width: 65rem;
+  position: relative; }
+  .form1__textarea-group {
     position: relative; }
-  .form__label-textarea {
+  .form1__label-textarea {
     text-transform: uppercase;
     color: #fff;
     letter-spacing: 1.2px;
@@ -63,8 +86,8 @@ body {
     top: 7.2rem;
     left: 3rem;
     width: 90%;
-    transition: all .3s ease-in-out; }
-  .form__textarea {
+    transition: all 0.3s ease-in-out; }
+  .form1__textarea {
     width: 100%;
     padding: 2.5rem 3rem;
     letter-spacing: none;
@@ -75,6 +98,18 @@ body {
     color: #fff;
     font-size: 1.8rem;
     letter-spacing: -1px; }
-  .form__textarea:focus + .form__label-textarea,
-  .form__textarea:not(:placeholder-shown) + .form__label-textarea {
+  .form1__textarea:focus + .form1__label-textarea,
+  .form1__textarea:not(:placeholder-shown) + .form1__label-textarea {
+    opacity: 0; }
+  .form1__required {
+    color: rgba(240, 62, 62, 0.8);
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    opacity: 1;
+    transition: all 0.3s ease-in-out; }
+  .form1__textarea:focus ~ .form1__required,
+  .form1__textarea:not(:placeholder-shown) ~ .form1__required {
     opacity: 0; }

@@ -17,24 +17,36 @@
   </head>
   <body>
     <div class="form">
-      <div>
-        <input class="form__input" id="company" type="text" placeholder=" " />
+      <div class="form_input-group">
+        <input
+          class="form__input"
+          id="company"
+          type="text"
+          placeholder=" "
+          required
+        />
         <label class="form__label" for="company"
           >What's your company's legal name?</label
         >
+        <p class="form__required">Please complete this required field.</p>
       </div>
+    </div>
 
-      <div class="form__textarea-group">
+    <div class="form1">
+      <div class="form1__textarea-group">
         <textarea
-          class="form__textarea"
+          class="form1__textarea"
           id="company-text"
           rows="10"
           placeholder=" "
+          required
         ></textarea>
-        <label class="form__label-textarea" for="company-text"
+        <label class="form1__label-textarea" for="company-text"
           >Describe your business model. How does (or will) your company make
-          money, even if it is not making any today? <br> 150 words or fewer  </label
-        >
+          money, even if it is not making any today? <br />
+          150 words or fewer
+        </label>
+        <p class="form1__required">Please complete this required field.</p>
       </div>
     </div>
   </body>

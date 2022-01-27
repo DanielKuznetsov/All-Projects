@@ -29,6 +29,12 @@ body {
   width: 65rem;
   position: relative;
 
+  &__input-group {
+    height: auto;
+    width: inherit;
+    position: relative;
+  }
+
   &__label {
     font-size: 1.6rem;
     font-weight: 300;
@@ -50,7 +56,7 @@ body {
     color: #fff;
     padding: 1.5rem 0;
     outline: none;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300;
 
     // &::placeholder {
@@ -64,6 +70,32 @@ body {
     font-size: 1.2rem;
     color: lightgreen;
   }
+
+  &__input:placeholder-shown ~ &__required {
+    opacity: 1;
+  }
+
+  &__input:focus ~ &__required {
+    opacity: 0;
+  }
+
+  &__required {
+    color: rgba(#f03e3e, 0.8);
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: -1.75rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.form1 {
+  margin: -20rem auto;
+  width: 65rem;
+  position: relative;
 
   &__textarea-group {
     position: relative;
@@ -80,7 +112,7 @@ body {
     top: 7.2rem;
     left: 3rem;
     width: 90%;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   &__textarea {
@@ -98,6 +130,22 @@ body {
 
   &__textarea:focus + &__label-textarea,
   &__textarea:not(:placeholder-shown) + &__label-textarea {
+    opacity: 0;
+  }
+
+  &__required {
+    color: rgba(#f03e3e, 0.8);
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &__textarea:focus ~ &__required,
+  &__textarea:not(:placeholder-shown) ~ &__required {
     opacity: 0;
   }
 }
