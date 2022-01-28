@@ -27,19 +27,25 @@ body {
   height: 60rem;
   overflow: hidden;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/newyork.jpg);
-  padding: 7% 8rem; }
-
-.buttons {
-  display: flex;
-  gap: 2rem; }
+  padding: 7% 8rem;
+  position: relative; }
 
 .radio-button__input {
-  display: block; }
+  display: none; }
 
 .radio-button__button {
   text-transform: uppercase;
   font-size: 2.4rem;
-  color: #fff; }
+  color: #fff;
+  position: absolute;
+  left: 8rem;
+  top: 8rem;
+  padding: .25rem; }
+  .radio-button__button--2 {
+    left: 19rem; }
+
+.radio-button__input:checked ~ .radio-button__button {
+  border-bottom: 1.5px solid #1c7ed6; }
 
 .form {
   margin-top: 4.5rem;
@@ -88,6 +94,9 @@ body {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.5);
       cursor: pointer; }
+    .form__forgot-psw a:hover,
+    .form__forgot-psw a:active {
+      color: white; }
 
 .checkbox {
   width: 2rem;
