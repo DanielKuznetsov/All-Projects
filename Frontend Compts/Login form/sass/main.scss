@@ -1,0 +1,187 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  @include flexDiv;
+  background-color: beige;
+  min-height: 100vh;
+}
+
+.login-section {
+  width: 50rem;
+  height: 60rem;
+  overflow: hidden;
+  background-image: linear-gradient(
+      rgba($color-black, 0.5),
+      rgba($color-black, 0.5)
+    ),
+    url(../img/newyork.jpg);
+  padding: 7% 8rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
+  // margin-top: 20%;
+}
+
+.radio-button {
+  &__input {
+    display: block;
+  }
+  &__button {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color-white;
+    // border-bottom: 1.5px solid yellow;
+  }
+}
+
+.form {
+  margin-top: 4.5rem;
+  position: relative;
+
+  &--front,
+  &--back {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: absolute;
+    width: 100%;
+  }
+
+  &--back {
+    transform: translateX(50rem);
+  }
+
+  &__label {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: $color-grey-light-2;
+  }
+  &__input {
+    margin-top: 0.5rem;
+    display: block;
+    border: none;
+    background-color: rgba($color-white, 0.25);
+    color: $color-white;
+    font-size: 1.3rem;
+    padding: 1.25rem 2rem;
+    width: 100%;
+    border-radius: 10rem;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__button {
+    display: block;
+    padding: 1.35rem 2rem;
+    color: $color-white;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10rem;
+    background-color: #1c7ed6;
+    cursor: pointer;
+  }
+
+  &__forgot-psw {
+    text-align: center;
+    margin-top: 3rem;
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: rgba($color-white, 0.5);
+      cursor: pointer;
+    }
+  }
+}
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: 1px solid #1c7ed6;
+  position: relative;
+  transition: all 0.15s ease-in-out;
+
+  & {
+    &::before {
+      content: "";
+      width: 0.1rem;
+      height: 1rem;
+      background-color: #1c7ed6;
+      position: absolute;
+      left: 0.15rem;
+      top: 35%;
+      transform: rotate(-45deg);
+      opacity: 0;
+      transition: all 0.15s ease-in-out;
+    }
+
+    &::after {
+      content: "";
+      width: 0.1rem;
+      height: 2rem;
+      background-color: #1c7ed6;
+      position: absolute;
+      left: 60%;
+      bottom: 0.1rem;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: all 0.15s ease-in-out;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked ~ & {
+    border: transparent;
+  }
+
+  &__input:checked ~ &::before,
+  &__input:checked ~ &::after {
+    opacity: 1;
+  }
+
+  &__input:checked ~ &__text {
+    color: $color-white;
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    color: #aaa;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: #aaa;
+}

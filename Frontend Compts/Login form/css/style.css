@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  min-height: 100vh; }
+
+.login-section {
+  width: 50rem;
+  height: 60rem;
+  overflow: hidden;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/newyork.jpg);
+  padding: 7% 8rem; }
+
+.buttons {
+  display: flex;
+  gap: 2rem; }
+
+.radio-button__input {
+  display: block; }
+
+.radio-button__button {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: #fff; }
+
+.form {
+  margin-top: 4.5rem;
+  position: relative; }
+  .form--front, .form--back {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: absolute;
+    width: 100%; }
+  .form--back {
+    transform: translateX(50rem); }
+  .form__label {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #eee; }
+  .form__input {
+    margin-top: 0.5rem;
+    display: block;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 1.25rem 2rem;
+    width: 100%;
+    border-radius: 10rem; }
+  .form__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 2rem; }
+  .form__button {
+    display: block;
+    padding: 1.35rem 2rem;
+    color: #fff;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10rem;
+    background-color: #1c7ed6;
+    cursor: pointer; }
+  .form__forgot-psw {
+    text-align: center;
+    margin-top: 3rem; }
+    .form__forgot-psw a:link,
+    .form__forgot-psw a:visited {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer; }
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: 1px solid #1c7ed6;
+  position: relative;
+  transition: all 0.15s ease-in-out; }
+  .checkbox::before {
+    content: "";
+    width: 0.1rem;
+    height: 1rem;
+    background-color: #1c7ed6;
+    position: absolute;
+    left: 0.15rem;
+    top: 35%;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: all 0.15s ease-in-out; }
+  .checkbox::after {
+    content: "";
+    width: 0.1rem;
+    height: 2rem;
+    background-color: #1c7ed6;
+    position: absolute;
+    left: 60%;
+    bottom: 0.1rem;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.15s ease-in-out; }
+  .checkbox__input {
+    display: none; }
+  .checkbox__input:checked ~ .checkbox {
+    border: transparent; }
+  .checkbox__input:checked ~ .checkbox::before,
+  .checkbox__input:checked ~ .checkbox::after {
+    opacity: 1; }
+  .checkbox__input:checked ~ .checkbox__text {
+    color: #fff; }
+  .checkbox__text {
+    font-size: 1.3rem;
+    color: #aaa;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out; }
+
+.line {
+  width: 100%;
+  height: 0.1rem;
+  background-color: #aaa; }
