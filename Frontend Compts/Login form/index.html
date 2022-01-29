@@ -17,17 +17,24 @@
   </head>
   <body>
     <div class="login-section">
-      <div class="radio-button">
-        <input
-          class="radio-button__input"
-          type="radio"
-          name="login"
-          id="sign-in"
-        />
-        <label class="radio-button__button" for="sign-in">Sign in</label>
-      </div>
-      <form class="form" action="#">
-        <div class="form--front">
+      <input
+        class="radio-button__input radio-button__input--1"
+        type="radio"
+        name="login"
+        id="sign-in"
+      />
+      <label class="radio-button__button" for="sign-in">Sign in</label>
+      <input
+        class="radio-button__input radio-button__input--2"
+        type="radio"
+        name="login"
+        id="sign-up"
+      />
+      <label class="radio-button__button radio-button__button--2" for="sign-up"
+        >Sign up</label
+      >
+      <div class="form" action="#">
+        <div class="form--1">
           <div>
             <label class="form__label" for="username">Username</label>
             <input class="form__input" type="text" name="form" id="username" />
@@ -51,30 +58,21 @@
 
           <button class="form__button">Sign in</button>
           <!-- <div class="line"></div> -->
-          <div class="form__forgot-psw">
+          <div class="form__forgot-psw form__forgot-psw--1">
             <a href="#">Forgot Password?</a>
           </div>
         </div>
-      </form>
-
-      <div class="radio-button">
-        <input
-          class="radio-button__input"
-          type="radio"
-          name="login"
-          id="sign-up"
-        />
-        <label class="radio-button__button radio-button__button--2" for="sign-up">Sign up</label>
-      </div>
-      <form action="#" class="form">
-        <div class="form--back">
+        <div class="form--2">
           <div>
             <label class="form__label" for="username">Username</label>
             <input class="form__input" type="text" name="form" id="username" />
           </div>
-
           <div>
             <label class="form__label" for="password">Password</label>
+            <input class="form__input" type="text" name="form" id="password" />
+          </div>
+          <div>
+            <label class="form__label" for="password">Re-enter Password</label>
             <input class="form__input" type="text" name="form" id="password" />
           </div>
 
@@ -90,12 +88,13 @@
           </div>
 
           <button class="form__button">Sign in</button>
-          <!-- <div class="line"></div> -->
-          <div class="form__forgot-psw">
+          <div class="form__forgot-psw form__forgot-psw--2">
             <a href="#">Forgot Password?</a>
           </div>
         </div>
-      </form>
+      </div>
+
+      
     </div>
   </body>
 </html>

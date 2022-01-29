@@ -35,6 +35,7 @@ body {
     url(../img/newyork.jpg);
   padding: 7% 8rem;
   position: relative;
+  box-shadow: 0 0 2rem 0.5rem rgba($color-black, 0.3);
 }
 
 .radio-button {
@@ -49,33 +50,50 @@ body {
     position: absolute;
     left: 8rem;
     top: 8rem;
-    padding: .25rem;
+    padding: 0.25rem;
 
     &--2 {
       left: 19rem;
     }
   }
 
-  &__input:checked ~ &__button {
+  &__input:checked + &__button {
     border-bottom: 1.5px solid #1c7ed6;
   }
+}
+
+.radio-button__input--1:checked + .radio-button__button + .radio-button__input--2 + .radio-button__button + .form .form--1 {
+  transform: rotate(0);
+  // opacity: 0;
+}
+.radio-button__input--2:checked + .radio-button__button + .form .form--2 {
+  transform: rotate(0);
+  // opacity: 0;
+}
+.radio-button__input--2:checked + .radio-button__button + .form .form--1 {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .form {
   margin-top: 4.5rem;
   position: relative;
 
-  &--front,
-  &--back {
+  &--1,
+  &--2 {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    position: absolute;
     width: 100%;
+    transform: rotateY(180deg);
+    transition: all 0.4s linear;
   }
 
-  &--back {
-    transform: translateX(50rem);
+  &--2 {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
   }
 
   &__label {
@@ -115,7 +133,12 @@ body {
 
   &__forgot-psw {
     text-align: center;
-    margin-top: 3rem;
+    
+
+    &--1 {
+      margin-top: 3rem;
+
+    }
 
     a:link,
     a:visited {
