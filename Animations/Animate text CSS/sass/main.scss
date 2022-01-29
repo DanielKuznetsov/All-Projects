@@ -1,0 +1,146 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+.header {
+  height: 100vh;
+  width: inherit;
+  background-color: #f5f4f0;
+  display: flex;
+  align-items: center;
+  padding: 10rem 5rem;
+
+  &__left-side {
+    width: 50%;
+    height: auto;
+    // background-color: orange;
+    padding: 0 10rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  &__right-side {
+    width: 50%;
+    height: 100%;
+    // background-color: red;
+    overflow: hidden;
+  }
+
+  &__img {
+    background-image: url(../img/nat-5.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    animation: heightImg 1.1s ease-in-out 3s;
+    animation-fill-mode: both;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    p {
+      animation: moveUp 1s ease-in-out 3.5s;
+      animation-fill-mode: both;
+    }
+  }
+
+  &__bottom {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    animation: moveRight 2s ease-in-out 1.25s;
+    animation-fill-mode: both;
+  }
+}
+
+.text {
+  &-primary {
+    font-size: 7.4rem;
+    line-height: 1.1;
+    color: #3d4747;
+    animation: moveRight 2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  &-secondary {
+    font-size: 2.4rem;
+    color: #3d4747;
+  }
+}
+
+.line {
+  // width: 10rem;
+  height: 0.3rem;
+  background-color: #3d4747;
+  display: block;
+  margin-top: 0.3rem;
+  animation: widthRise 2s ease-in-out 4s;
+  animation-fill-mode: both;
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateX(-70rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveUp {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes widthRise {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 7rem;
+    opacity: 1;
+  }
+}
+
+@keyframes heightImg {
+  from {
+    height: 0;
+    visibility: hidden;
+  }
+  to {
+    height: 100%;
+    visibility: visible;
+  }
+}
