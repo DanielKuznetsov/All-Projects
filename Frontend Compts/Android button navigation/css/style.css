@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #777; }
+
+body {
+  min-height: 100vh;
+  max-width: 100vw; }
+
+body > div {
+  display: flex;
+  width: 70rem;
+  margin: 20rem auto;
+  overflow: hidden; }
+
+label {
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  cursor: pointer;
+  position: relative;
+  width: calc(100% / 4); }
+
+input[type="radio"] {
+  display: none; }
+
+.input:checked ~ .circle {
+  animation: active 4s linear forwards;
+  transform: translate(-50%, -50%); }
+
+.input--1:checked ~ .circle {
+  background-color: purple; }
+
+.input--2:checked ~ .circle {
+  background-color: red; }
+
+.input--3:checked ~ .circle {
+  background-color: lightblue; }
+
+.input--4:checked ~ .circle {
+  background-color: pink; }
+
+a {
+  z-index: 20; }
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: block;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 10; }
+
+.icon {
+  font-size: 2.4rem;
+  color: #fff;
+  z-index: 20; }
+
+@keyframes active {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(130); } }
