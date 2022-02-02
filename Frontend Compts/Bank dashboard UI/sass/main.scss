@@ -1,0 +1,156 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --c-gray-900: #000000;
+  --c-gray-800: #1f1f1f;
+  --c-gray-700: #2e2e2e;
+  --c-gray-600: #313131;
+  --c-gray-500: #969593;
+  --c-gray-400: #a6a6a6;
+  --c-gray-300: #bdbbb7;
+  --c-gray-200: #f1f1f1;
+  --c-gray-100: #ffffff;
+
+  --c-green-500: #45ffbc;
+  --c-olive-500: #e3ffa8;
+
+  --c-white: var(--c-gray-100);
+
+  --c-text-primary: var(--c-gray-100);
+  --c-text-secondary: var(--c-gray-200);
+  --c-text-tertiary: var(--c-gray-500);
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-family: "Be Vietnam Pro", sans-serif;
+  background-color: var(--c-gray-900);
+  color: var(--c-text-primary);
+  display: flex;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  justify-content: center;
+  background-color: #1f1f1f;
+}
+
+.dashboard {
+  background-color: #1f1f1f;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+}
+
+.header-left {
+  flex: 0 0 12%;
+  // background-color: purple;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 6rem 1rem 0;
+  border-bottom: 1px solid var(--c-gray-400);
+
+  &__img {
+    height: 3.5rem;
+    width: auto;
+  }
+
+  &__bank-name {
+    margin-top: -0.25rem;
+  }
+
+  &__bank-name--subtitle {
+    color: var(--c-gray-400);
+    align-self: flex-end;
+  }
+
+  p {
+    line-height: 1.2;
+  }
+}
+
+.header-middle {
+  flex: 0 0 40%;
+  // background-color: yellowgreen;
+  color: var(--c-gray-500);
+  border-bottom: 1px solid var(--c-gray-400);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &__list {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    border: 2px solid transparent;
+    padding: 1.75rem 0.2rem 1.25rem;
+
+    a:link,
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+      padding: 1.5rem 0;
+    }
+
+    &--active {
+      a:link,
+      a:visited {
+        border-top: 2px solid #fff;
+      }
+    }
+
+    &:hover > a {
+      border-top: 2px solid #fff;
+      color: #fff;
+    }
+
+    &:active,
+    &:focus {
+      border: 2px solid var(--c-gray-500);
+    }
+  }
+}
+
+.author-info {
+  flex: 0 0 20%;
+  background-color: orangered;
+}
+
+.header-buttons {
+  flex: 0 0 10%;
+  background-color: lightblue;
+}
