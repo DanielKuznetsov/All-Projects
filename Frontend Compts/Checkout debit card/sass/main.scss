@@ -1,0 +1,179 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  background-color: #ddeefc;
+  min-height: 100vh;
+}
+
+.card {
+  width: 57rem;
+  min-height: 50rem;
+  background-color: #fff;
+  margin: 20rem auto;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+}
+
+.debit-card {
+  width: 75%;
+  height: auto;
+  border-radius: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: absolute;
+  top: -25%;
+  left: 12.5%;
+  backface-visibility: hidden;
+  transition: all 0.8s ease;
+  // padding: 2.5rem;
+  overflow: hidden;
+  background-image: linear-gradient(to right, #ab64f6, #61dbf7);
+
+  &--front {
+    padding: 2.5rem;
+  }
+
+  &--back {
+    transform: rotateY(-180deg);
+  }
+}
+
+.card:hover .debit-card--front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .debit-card--back {
+  transform: rotate(0);
+}
+
+.debit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__photo {
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+
+    &--back {
+      align-self: flex-end;
+      margin: 0 2.5rem 2.5rem 2.5rem;
+      // background-color: yellow;
+      // -webkit-mask-image: url(../img/visa.png);
+      // -webkit-mask-size: cover;
+    }
+  }
+
+  &__chip {
+    width: 7rem;
+    height: 5rem;
+    background-image: url(../img/chip.png);
+  }
+  &__logo {
+    width: 8rem;
+    height: 5rem;
+    background-image: url(../img/visa.png);
+  }
+}
+
+.debit-numbers {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-right: 2rem;
+
+  &__group > span {
+    font-size: 2.4rem;
+    letter-spacing: -1.5px;
+    color: #fff;
+    display: inline-block;
+    transform: rotate(-2deg);
+  }
+}
+
+.debit-info {
+  display: flex;
+
+  &__holder {
+    flex: 1;
+  }
+
+  &__exp-date {
+    flex: 0 0 20%;
+  }
+
+  &__holder,
+  &__exp-date {
+    padding: 0.75rem 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+  &__holder p,
+  &__exp-date p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 0.5rem;
+  }
+  &__holder span,
+  &__exp-date span {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: #fff;
+  }
+}
+
+.debit-card--back {
+  &__black-line {
+    height: 7rem;
+    width: 100%;
+    // margin-left: -3rem;
+    background-color: #000;
+    margin-top: 2.5rem;
+  }
+
+  &__cvv {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5rem 0 2.5rem;
+  }
+
+  &__cvv p {
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  &__cvv span {
+    width: 100%;
+    height: 4rem;
+    background-color: #fff;
+    display: block;
+    border-radius: 0.5rem;
+  }
+}
