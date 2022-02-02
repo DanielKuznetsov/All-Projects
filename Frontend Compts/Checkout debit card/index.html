@@ -59,15 +59,103 @@
           </div>
         </div>
       </div>
-      
+
       <div class="debit-card debit-card--back">
         <div class="debit-card--back__black-line"></div>
         <div class="debit-card--back__cvv">
           <p>CVV</p>
           <span></span>
         </div>
-        <div class="debit-header__logo debit-header__photo debit-header__photo--back"></div>
+        <div
+          class="debit-header__logo debit-header__photo debit-header__photo--back"
+        ></div>
       </div>
+
+      <form class="debit-form" action="#">
+        <div>
+          <label class="debit-form__label" for="card-number">Card Number</label>
+          <input
+            class="debit-form__input"
+            type="text"
+            name="debit-card"
+            id="card-number"
+          />
+        </div>
+
+        <div>
+          <label class="debit-form__label" for="card-name">Card Holders</label>
+          <input
+            class="debit-form__input"
+            type="text"
+            name="debit-card"
+            id="card-name"
+          />
+        </div>
+
+        <div class="debit-form__select-group">
+          <div class="debit-form__select-wrapper margin-right">
+            <label class="debit-form__label" for="card-exp-month"
+              >Expiration Date</label
+            >
+            <select
+              class="debit-form__select"
+              name="card-ex-dates"
+              id="card-exp-month"
+            >
+              <option value="">Month</option>
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+              <option value="">7</option>
+              <option value="">8</option>
+              <option value="">9</option>
+              <option value="">10</option>
+              <option value="">11</option>
+              <option value="">12</option>
+            </select>
+          </div>
+
+          <div class="debit-form__select-wrapper marign-auto">
+            <label>&nbsp;</label>
+            <select
+              class="debit-form__select"
+              name="card-ex-dates"
+              id="card-exp-year"
+            >
+              <option value="">Year</option>
+              <option value="">2022</option>
+              <option value="">2023</option>
+              <option value="">2024</option>
+              <option value="">2025</option>
+              <option value="">2026</option>
+              <option value="">2027</option>
+              <option value="">2028</option>
+              <option value="">2029</option>
+              <option value="">2030</option>
+              <option value="">2031</option>
+              <option value="">2032</option>
+              <option value="">2033</option>
+            </select>
+          </div>
+          <div class="debit-form__cvv-group">
+            <label class="debit-form__label" for="card-cvv">CVV</label>
+            <input
+              class="debit-form__cvv"
+              type="text"
+              name="card-cvv"
+              id="card-cvv"
+            />
+          </div>
+        </div>
+
+        <button>Submit</button>
+        <a href="https://codepen.io/JavaScriptJunkie/pen/YzzNGeR?editors=1100"
+          >Didnt finish. Need to know JS in order to complete - much easier.</a
+        >
+      </form>
     </div>
     <!-- <a href="gradients.html">Gradients</a> -->
   </body>

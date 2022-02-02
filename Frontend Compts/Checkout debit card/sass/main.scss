@@ -26,17 +26,19 @@ body {
 
 .card {
   width: 57rem;
-  min-height: 50rem;
+  height: auto;
   background-color: #fff;
   margin: 20rem auto;
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+
+  
 }
 
 .debit-card {
   width: 75%;
-  height: auto;
+  height: 27rem;
   border-radius: 1rem;
   margin: 0 auto;
   display: flex;
@@ -58,14 +60,6 @@ body {
   &--back {
     transform: rotateY(-180deg);
   }
-}
-
-.card:hover .debit-card--front {
-  transform: rotateY(180deg);
-}
-
-.card:hover .debit-card--back {
-  transform: rotate(0);
 }
 
 .debit-header {
@@ -176,4 +170,66 @@ body {
     display: block;
     border-radius: 0.5rem;
   }
+}
+
+.card:hover .debit-card--front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .debit-card--back {
+  transform: rotate(0);
+}
+
+.debit-form {
+  padding: 18rem 2.5rem 2.5rem 2.5rem;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__label {
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 5rem;
+    margin-top: 0.5rem;
+  }
+
+  &__select-group {
+    display: flex;
+  }
+
+  &__select-wrapper {
+  }
+
+  &__select {
+    margin-top: 0.5rem;
+  }
+
+  &__cvv-group {
+    margin-left: auto;
+  }
+
+  &__cvv {
+    margin-top: 0.5rem;
+  }
+
+  &__select,
+  &__cvv {
+    display: block;
+    width: 15rem;
+    height: 5rem;
+  }
+
+  button {
+    width: 100%;
+    height: 5rem;
+    margin-top: 2rem;
+  }
+}
+
+.margin-right {
+  margin-right: 1rem;
 }
