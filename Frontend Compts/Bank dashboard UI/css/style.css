@@ -420,7 +420,7 @@ body {
 .header-middle {
   flex: 0 0 40%;
   color: var(--c-gray-500);
-  border-bottom: 1px solid var(--c-gray-400);
+  border-bottom: 1px solid var(--c-gray-300);
   display: flex;
   align-items: flex-end;
   justify-content: space-between; }
@@ -431,7 +431,8 @@ body {
     justify-content: space-between; }
   .header-middle__item {
     border: 2px solid transparent;
-    padding: 1.75rem 0.2rem 1.25rem; }
+    padding: 1.75rem 0.2rem 1.25rem;
+    transition: all 0.2s ease-in-out; }
     .header-middle__item a:link,
     .header-middle__item a:visited {
       text-decoration: none;
@@ -447,9 +448,48 @@ body {
       border: 2px solid var(--c-gray-500); }
 
 .author-info {
-  flex: 0 0 20%;
-  background-color: orangered; }
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out; }
+  .author-info__author {
+    color: var(--c-gray-500);
+    font-size: 1.8rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--c-gray-300);
+    transition: all 0.2s ease-in-out; }
+  .author-info__img {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-size: cover;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out; }
+  .author-info:hover .author-info__img {
+    box-shadow: 0 0 0 4px #1f1f1f, 0 0 0 5px #fff; }
+  .author-info:hover .author-info__author {
+    color: #fff; }
 
-.header-buttons {
+.header-icons {
   flex: 0 0 10%;
-  background-color: lightblue; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-left: 1px solid var(--c-gray-300); }
+  .header-icons__wrap {
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out; }
+    .header-icons__wrap:hover {
+      box-shadow: 0 0 0 4px #1f1f1f, 0 0 0 5px #fff;
+      background-color: var(--c-gray-600); }
+  .header-icons__icon {
+    width: 2rem;
+    height: 2rem; }
