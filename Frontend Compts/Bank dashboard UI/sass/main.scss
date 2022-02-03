@@ -84,6 +84,7 @@ body {
   gap: 0.75rem;
   padding: 1.6rem 0;
   border-bottom: 1px solid var(--c-gray-600);
+  cursor: pointer;
 
   &-icon {
     width: 3.2rem;
@@ -116,7 +117,19 @@ body {
   a:visited {
     text-decoration: none;
     color: var(--c-text-tertiary);
-    padding: 1.6rem 0;
+    padding: 1.6rem 0.35rem;
+    border: 1px solid transparent;
+    transition: border .25s ease-in-out;
+    display: inline-block;
+  }
+
+  a:hover,
+  a:active {
+    border: 1px solid var(--c-gray-200);
+  }
+
+  .hover-on {
+    border-top: 2px solid var(--c-gray-200) !important;
   }
 }
 
@@ -126,6 +139,15 @@ body {
   &__author {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    border: 1px solid transparent;
+    transition: border .25s ease-in-out;
+
+
+    &:hover {
+      border: 1px solid var(--c-gray-200);
+    }
 
     span:first-child {
       font-size: 1.8rem;
@@ -160,6 +182,7 @@ body {
     .icon {
       width: 2.4rem;
       height: 2.4rem;
+      cursor: pointer;
 
       &-button {
         width: 4.2rem;
@@ -169,6 +192,12 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: box-shadow .2s ease-in-out;
+
+        &:hover {
+          box-shadow: 0 0 0 5px var(--c-gray-800),
+                      0 0 0 6px var(--c-gray-500);
+        }
       }
     }
   }
