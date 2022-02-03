@@ -543,7 +543,7 @@ body {
     font-family: "Be Vietnam Pro", sans-serif;
     border: 2px solid transparent;
     cursor: pointer;
-    transition: border .2s ease; }
+    transition: border 0.2s ease; }
     .app-form__button:hover {
       border: 2px solid var(--c-gray-300); }
 
@@ -587,3 +587,70 @@ body {
     color: var(--c-gray-300); }
     .dropdown-field select option {
       color: var(--c-text-tertiary); }
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.6rem;
+  margin-top: 2.25rem; }
+
+.card {
+  padding: 1.35rem 1.75rem;
+  height: 20rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease; }
+  .card:hover {
+    transform: translateY(-0.5rem); }
+  .card--1 {
+    background-color: var(--c-olive-500); }
+    .card--1:active {
+      box-shadow: 0 0 0 3px var(--c-gray-800), 0 0 0 5px var(--c-olive-500); }
+  .card--2 {
+    background-color: var(--c-green-500); }
+    .card--2:active {
+      box-shadow: 0 0 0 3px var(--c-gray-800), 0 0 0 5px var(--c-green-500); }
+  .card--3 {
+    background-color: var(--c-gray-300); }
+    .card--3:active {
+      box-shadow: 0 0 0 3px var(--c-gray-800), 0 0 0 5px var(--c-gray-300); }
+
+.card__top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--c-gray-600); }
+  .card__top--icon {
+    width: 3.75rem;
+    height: 3.75rem; }
+  .card__top--title {
+    font-size: 1.6rem;
+    font-weight: 600; }
+  .card__top--subtitle {
+    font-size: 1.3rem;
+    font-weight: 300; }
+
+.card__bottom {
+  color: var(--c-gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .card__bottom--text {
+    display: flex;
+    font-weight: 600;
+    font-size: 1.7rem; }
+  .card__bottom--icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    cursor: pointer; }
+    .card__bottom--icon-span {
+      width: 3.25rem;
+      height: 3.25rem;
+      border: 1px solid var(--c-gray-700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%; }
