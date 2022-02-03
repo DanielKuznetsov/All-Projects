@@ -380,7 +380,7 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
   background-color: var(--c-gray-900);
   color: var(--c-text-primary);
-  padding-top: 3vw;
+  padding-top: 0.5vw;
   padding-bottom: 3vw;
   justify-content: center;
   background-color: #1f1f1f; }
@@ -389,7 +389,7 @@ body {
   background-color: #1f1f1f;
   width: 100%;
   max-width: 160rem;
-  padding: 2vw 4vw 4vw;
+  padding: 0 4vw 4vw;
   display: flex;
   flex-direction: column; }
 
@@ -473,21 +473,23 @@ body {
     margin-left: 4rem;
     padding-left: 4rem;
     border-left: 1px solid var(--c-gray-600); }
-    .header-activity__icons .icon {
-      width: 2.4rem;
-      height: 2.4rem;
-      cursor: pointer; }
-      .header-activity__icons .icon-button {
-        width: 4.2rem;
-        height: 4.2rem;
-        border: 1px solid var(--c-gray-500);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: box-shadow 0.2s ease-in-out; }
-        .header-activity__icons .icon-button:hover {
-          box-shadow: 0 0 0 5px var(--c-gray-800), 0 0 0 6px var(--c-gray-500); }
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer; }
+  .icon-button {
+    width: 4.2rem;
+    height: 4.2rem;
+    border: 1px solid var(--c-gray-500);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out; }
+    .icon-button:hover {
+      box-shadow: 0 0 0 5px var(--c-gray-800), 0 0 0 6px var(--c-gray-500);
+      background-color: var(--c-gray-700); }
 
 .app {
   width: inherit;
@@ -596,7 +598,7 @@ body {
 
 .card {
   padding: 1.35rem 1.75rem;
-  height: 20rem;
+  min-height: 20rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -654,3 +656,43 @@ body {
       align-items: center;
       justify-content: center;
       border-radius: 50%; }
+
+.notice-text {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center; }
+  .notice-text span {
+    font-size: 1.6rem;
+    color: var(--c-gray-400); }
+
+.transfer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-gray-600);
+  margin-top: 4rem; }
+  .transfer--text {
+    flex: 0 1 40%;
+    border-right: 1px solid var(--c-gray-600); }
+  .transfer--filter {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3rem; }
+    .transfer--filter span {
+      color: var(--c-gray-300);
+      font-size: 1.4rem;
+      display: flex; }
+  .transfer--icons {
+    display: flex;
+    gap: 1.25rem; }
+    .transfer--icons .icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      color: var(--c-text-primary); }
+      .transfer--icons .icon-button {
+        width: 3rem;
+        height: 3rem; }

@@ -48,7 +48,7 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
   background-color: var(--c-gray-900);
   color: var(--c-text-primary);
-  padding-top: 3vw;
+  padding-top: 0.5vw;
   padding-bottom: 3vw;
   justify-content: center;
   background-color: #1f1f1f;
@@ -58,7 +58,7 @@ body {
   background-color: #1f1f1f;
   width: 100%;
   max-width: 160rem;
-  padding: 2vw 4vw 4vw;
+  padding: 0 4vw 4vw;
   display: flex;
   flex-direction: column;
 }
@@ -177,26 +177,28 @@ body {
     margin-left: 4rem;
     padding-left: 4rem;
     border-left: 1px solid var(--c-gray-600);
+  }
+}
 
-    .icon {
-      width: 2.4rem;
-      height: 2.4rem;
-      cursor: pointer;
+//ICON STYLE
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
 
-      &-button {
-        width: 4.2rem;
-        height: 4.2rem;
-        border: 1px solid var(--c-gray-500);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: box-shadow 0.2s ease-in-out;
+  &-button {
+    width: 4.2rem;
+    height: 4.2rem;
+    border: 1px solid var(--c-gray-500);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
 
-        &:hover {
-          box-shadow: 0 0 0 5px var(--c-gray-800), 0 0 0 6px var(--c-gray-500);
-        }
-      }
+    &:hover {
+      box-shadow: 0 0 0 5px var(--c-gray-800), 0 0 0 6px var(--c-gray-500);
+      background-color: var(--c-gray-700);
     }
   }
 }
@@ -346,7 +348,7 @@ body {
 
 .card {
   padding: 1.35rem 1.75rem;
-  height: 20rem;
+  min-height: 20rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -432,3 +434,84 @@ body {
     }
   }
 }
+
+//BUILDING NOTICE CARD
+.notice-text {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+
+  span {
+    font-size: 1.6rem;
+    color: var(--c-gray-400);
+  }
+}
+
+//BUILDING TRANSFER SECTION
+.transfer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-gray-600);
+  margin-top: 4rem;
+
+  &--text {
+    flex: 0 1 40%;
+    border-right: 1px solid var(--c-gray-600);
+  }
+
+  &--filter {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3rem;
+
+    span {
+      color: var(--c-gray-300);
+      font-size: 1.4rem;
+      display: flex;
+    }
+  }
+
+  &--icons {
+    display: flex;
+    gap: 1.25rem;
+
+    .icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      color: var(--c-text-primary);
+
+      &-button {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+
+//BUILDING PAYMENT DETAILS SECTION
+// .details {
+//   width: 100%;
+//   background-color: pink;
+//   display: grid;
+//   grid-template-columns: repeat(5, 1fr);
+
+
+//   .logo {
+//     width: 2rem;
+//     height: 2rem;
+//     background-color: yellow;
+//   }
+// }
+
+// .span-white {
+//   color: var(--c-text-primary);
+// }
+
+// .span-gray {
+//   color: var(--c-gray-300);
+// }
