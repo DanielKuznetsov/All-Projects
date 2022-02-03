@@ -53,13 +53,12 @@ body {
   justify-content: center;
   background-color: #1f1f1f;
 }
-
+// BUILDING HEADER
 .dashboard {
   background-color: #1f1f1f;
-  width: 95%;
-  min-height: 80vh;
+  width: 100%;
   max-width: 160rem;
-  padding: 2vw 4vw 6vw;
+  padding: 2vw 4vw 4vw;
   display: flex;
   flex-direction: column;
 }
@@ -71,7 +70,8 @@ body {
       400px
     );
   align-items: flex-end;
-  column-gap: 4rem;
+  column-gap: 6rem;
+  width: 95%;
 }
 
 .header-logo {
@@ -119,17 +119,17 @@ body {
     color: var(--c-text-tertiary);
     padding: 1.6rem 0.35rem;
     border: 1px solid transparent;
-    transition: border .25s ease-in-out;
+    transition: border 0.25s ease-in-out;
     display: inline-block;
+  }
+
+  a:link:nth-child(2) {
+    border-top: 2px solid var(--c-gray-200);
   }
 
   a:hover,
   a:active {
     border: 1px solid var(--c-gray-200);
-  }
-
-  .hover-on {
-    border-top: 2px solid var(--c-gray-200) !important;
   }
 }
 
@@ -142,8 +142,7 @@ body {
     cursor: pointer;
     padding: 0 0.5rem;
     border: 1px solid transparent;
-    transition: border .25s ease-in-out;
-
+    transition: border 0.25s ease-in-out;
 
     &:hover {
       border: 1px solid var(--c-gray-200);
@@ -192,13 +191,60 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: box-shadow .2s ease-in-out;
+        transition: box-shadow 0.2s ease-in-out;
 
         &:hover {
-          box-shadow: 0 0 0 5px var(--c-gray-800),
-                      0 0 0 6px var(--c-gray-500);
+          box-shadow: 0 0 0 5px var(--c-gray-800), 0 0 0 6px var(--c-gray-500);
         }
       }
     }
+  }
+}
+
+//BUILDING BODY
+.app {
+  width: inherit;
+  display: grid;
+  grid-template-columns: minmax(min-content, 175px) minmax(max-content, 1fr) minmax(
+      max-content,
+      400px
+    );
+  column-gap: 6rem;
+  margin-top: 5rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: var(--c-text-tertiary);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .35rem .25rem;
+    border: 2px solid transparent;
+    transition: all .2s ease-in;
+  }
+
+  &__link:hover,
+  &__link:active {
+    transform: translateX(.75rem);
+    color: var(--c-text-primary);
+  }
+
+  &__link:focus {
+    border: 2px solid var(--c-gray-200);
+    transform: translateX(.75rem);
+    color: var(--c-text-primary);
+  }
+
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 }
