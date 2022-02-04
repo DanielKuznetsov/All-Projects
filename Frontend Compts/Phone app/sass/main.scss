@@ -51,7 +51,7 @@ body {
 //APP LAYOUT
 .phone-app {
   margin: auto;
-  width: 30rem;
+  width: 32.5rem;
   height: 55rem;
   border-radius: 2.5rem;
   padding: 2.4rem;
@@ -154,8 +154,104 @@ body {
 
       &:hover {
         transform: translateY(-0.35rem);
-        box-shadow: 0 0.75rem 1rem -.25rem rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0.75rem 1rem -0.25rem rgba(0, 0, 0, 0.3);
       }
     }
+  }
+}
+
+//APP TEXT SECTION
+.app-text {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  &__title {
+    font-size: 1.8rem;
+    color: var(--c-gray-900);
+    margin-top: 1.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+//LOOKUP SECTION
+.lookup {
+  width: 100%;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 1;
+
+  &__inner {
+    width: inherit;
+    height: 3.5rem;
+    background-color: #fff;
+    border: 1px solid var(--c-gray-900);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    transition: transform .25s ease;
+  }
+
+  &__button {
+    height: 100%;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-gray-100);
+    border: none;
+    border-right: 1px solid var(--c-gray-900);
+    outline: none;
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-left: 1.25rem;
+    font-size: 1.2rem;
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 1.2rem;
+      color: var(--c-gray-800);
+      font-weight: 500;
+    }
+  }
+
+  .hidden-element {
+    display: block;
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--c-gray-100);
+    border: 1px solid var(--c-gray-900);
+    border-radius: 2rem;
+    z-index: -1;
+  }
+
+  &:hover &__inner {
+    transform: translateY(-.25rem);
+  }
+
+  &:hover &__input::placeholder {
+    color: var(--c-gray-500);
   }
 }
