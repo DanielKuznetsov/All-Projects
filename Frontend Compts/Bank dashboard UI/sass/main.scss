@@ -278,7 +278,6 @@ body {
         font-weight: 300;
       }
     }
-
   }
 }
 
@@ -567,7 +566,7 @@ body {
   }
 
   &__company {
-   margin-left: -5rem;
+    margin-left: -5rem;
   }
 
   &__digits {
@@ -581,9 +580,75 @@ body {
 
 .span-gray {
   color: var(--c-gray-300);
+  font-size: 1.4rem;
 }
 
 .copy {
   font-size: 1.3rem;
-  margin-left: .25rem;
+  margin-left: 0.25rem;
+}
+
+//BUILDING SIDE PAYMENT HISTORY SECTION
+.payment {
+  &__card {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    span {
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3.4rem;
+      width: 5rem;
+      border-radius: 4px;
+      transition: all 0.2s ease-in;
+      border: 2px solid transparent;
+
+      &:first-child {
+        border: 2px solid var(--c-gray-600);
+
+        .icon {
+          color: var(--c-text-primary);
+        }
+      }
+
+      &:last-child {
+        background-color: var(--c-text-primary);
+
+        .icon {
+          color: var(--c-gray-800);
+        }
+      }
+    }
+
+    button:hover {
+      background-color: var(--c-text-primary);
+      border: 2px solid transparent;
+    }
+
+    button:hover .icon {
+      color: var(--c-gray-800);
+    }
+
+    .icon {
+      height: 2.4rem;
+      width: 6rem;
+      transition: all 0.2s ease-in;
+    }
+  }
 }

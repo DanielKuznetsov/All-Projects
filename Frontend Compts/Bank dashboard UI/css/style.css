@@ -752,8 +752,50 @@ body {
   color: var(--c-text-primary); }
 
 .span-gray {
-  color: var(--c-gray-300); }
+  color: var(--c-gray-300);
+  font-size: 1.4rem; }
 
 .copy {
   font-size: 1.3rem;
-  margin-left: .25rem; }
+  margin-left: 0.25rem; }
+
+.payment__card {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; }
+
+.payment__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem; }
+  .payment__icons button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.4rem;
+    width: 5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease-in;
+    border: 2px solid transparent; }
+    .payment__icons button:first-child {
+      border: 2px solid var(--c-gray-600); }
+      .payment__icons button:first-child .icon {
+        color: var(--c-text-primary); }
+    .payment__icons button:last-child {
+      background-color: var(--c-text-primary); }
+      .payment__icons button:last-child .icon {
+        color: var(--c-gray-800); }
+  .payment__icons button:hover {
+    background-color: var(--c-text-primary);
+    border: 2px solid transparent; }
+  .payment__icons button:hover .icon {
+    color: var(--c-gray-800); }
+  .payment__icons .icon {
+    height: 2.4rem;
+    width: 6rem;
+    transition: all 0.2s ease-in; }
