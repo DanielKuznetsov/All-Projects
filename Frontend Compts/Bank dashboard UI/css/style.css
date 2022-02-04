@@ -799,3 +799,50 @@ body {
     height: 2.4rem;
     width: 6rem;
     transition: all 0.2s ease-in; }
+
+.options {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; }
+
+.option {
+  display: flex;
+  gap: 2.5rem; }
+  .option__debit {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem;
+    flex: 0 0 12.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 6px; }
+    .option__debit--1 {
+      background-color: var(--c-green-500); }
+    .option__debit--2 {
+      background-color: var(--c-olive-500); }
+    .option__debit--3 {
+      background-color: var(--c-gray-300); }
+    .option__debit span:last-child {
+      align-self: flex-end; }
+    .option__debit span {
+      color: var(--c-gray-800); }
+  .option__info {
+    flex: 1; }
+    .option__info > span {
+      font-size: 1.6rem;
+      color: var(--c-gray-500);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--c-gray-600);
+      display: flex; }
+  .option__price {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .option__price div span {
+      font-size: 2.6rem; }
+    .option__price .icon-button {
+      width: 3.2rem;
+      height: 3.2rem; }

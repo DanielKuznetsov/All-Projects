@@ -652,3 +652,72 @@ body {
     }
   }
 }
+
+//BUILDING NEW PAYMENTS CARDS SECTION
+.options {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.option {
+  display: flex;
+  gap: 2.5rem;
+
+  &__debit {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem;
+    flex: 0 0 12.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 6px;
+
+    &--1 {
+      background-color: var(--c-green-500);
+    }
+    &--2 {
+      background-color: var(--c-olive-500);
+    }
+    &--3 {
+      background-color: var(--c-gray-300);
+    }
+
+    span:last-child {
+      align-self: flex-end;
+    }
+
+    span {
+      color: var(--c-gray-800);
+    }
+  }
+
+  &__info {
+    flex: 1;
+
+    & > span {
+      font-size: 1.6rem;
+      color: var(--c-gray-500);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--c-gray-600);
+      display: flex;
+    }
+  }
+  &__price {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div span {
+      font-size: 2.6rem;
+    }
+
+    .icon-button {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}
