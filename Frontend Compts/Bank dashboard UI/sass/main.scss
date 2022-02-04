@@ -518,6 +518,7 @@ body {
       &-button {
         width: 3rem;
         height: 3rem;
+        cursor: pointer;
       }
     }
   }
@@ -579,7 +580,7 @@ body {
 }
 
 .span-gray {
-  color: var(--c-gray-300);
+  color: var(--c-gray-500);
   font-size: 1.4rem;
 }
 
@@ -664,6 +665,7 @@ body {
 .option {
   display: flex;
   gap: 2.5rem;
+  line-height: 1;
 
   &__debit {
     font-size: 1.2rem;
@@ -700,24 +702,121 @@ body {
     & > span {
       font-size: 1.6rem;
       color: var(--c-gray-500);
-      padding-bottom: 1rem;
+      padding-bottom: 1.25rem;
       border-bottom: 1px solid var(--c-gray-600);
       display: flex;
     }
   }
   &__price {
-    margin-top: 1rem;
+    margin-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--c-gray-600);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     div span {
-      font-size: 2.6rem;
+      font-size: 2.4rem;
     }
 
     .icon-button {
       width: 3.2rem;
       height: 3.2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+//BUILDING NEW PAYMENTS FOOTER
+.payment-footer {
+  margin-top: 3rem;
+
+  & > span {
+    padding-bottom: 1.3rem;
+    border-bottom: 1px solid var(--c-gray-600);
+    display: flex;
+  }
+}
+
+.footer {
+  &__form {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid var(--c-gray-600);
+
+    h6 {
+      font-size: 1.4rem;
+      padding-right: 1.75rem;
+      border-right: 1px solid var(--c-gray-600);
+    }
+    input {
+      font-size: 1.4rem;
+      padding-left: 2rem;
+
+      &::placeholder {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+
+    button {
+      background-color: transparent;
+      border: 1px solid var(--c-gray-500);
+      border-radius: 8px;
+      outline: none;
+      cursor: pointer;
+      padding: 1.5rem 4rem;
+      font-size: inherit;
+      color: var(--c-gray-500);
+      transition: all 0.25s ease-in;
+    }
+
+    button:hover {
+      border: 1px solid var(--c-text-primary);
+      color: var(--c-text-primary);
+    }
+
+    button:active,
+    button:focus {
+      box-shadow: 0 0 0 3px var(--c-gray-800), 0 0 0 5px var(--c-gray-500);
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      gap: 0.6rem;
+      cursor: pointer;
+      padding: 0.3rem;
+      border: 2px solid transparent;
+      transition: all 0.25s ease-in;
+
+      span {
+        display: flex;
+        transition: all 0.25s ease-in;
+        color: var(--c-gray-500);
+      }
+
+      span .icon {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+
+      &:hover span {
+        color: var(--c-text-primary);
+      }
+
+      &:active {
+        border: 2px solid var(--c-gray-500);
+      }
     }
   }
 }
