@@ -502,8 +502,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem; }
+  justify-content: space-between; }
   .navbar__link:link, .navbar__link:visited {
     text-decoration: none;
     color: var(--c-text-tertiary);
@@ -520,6 +519,8 @@ body {
     border: 2px solid var(--c-gray-200);
     transform: translateX(0.75rem);
     color: var(--c-text-primary); }
+  .navbar__link:not(:last-child) {
+    margin-bottom: 1rem; }
   .navbar__icon {
     width: 1.8rem;
     height: 1.8rem; }

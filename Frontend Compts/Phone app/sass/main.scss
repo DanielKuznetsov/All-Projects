@@ -1,0 +1,161 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --c-gray-100: #fbf8f2;
+  --c-gray-200: #fcfdfe;
+  --c-gray-300: #e9ebec;
+  --c-gray-400: #e3e4ea;
+  --c-gray-500: #5f5f5f;
+  --c-gray-900: #1d1d1d;
+  --c-blue-300: #a8dee2;
+  --c-blue-500: #2ab3c0;
+  --c-green-500: #80b895;
+  --c-green-300: #bad5ca;
+  --c-red-500: #ea605e;
+  --c-yellow-300: #f8e0b1;
+  --c-yellow-500: #f9bc73;
+
+  --rotation: -3deg;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  line-height: 1;
+  min-height: 100vh;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  background-color: var(--c-gray-400);
+}
+
+//APP LAYOUT
+.phone-app {
+  margin: auto;
+  width: 30rem;
+  height: 55rem;
+  border-radius: 2.5rem;
+  padding: 2.4rem;
+  margin-top: 8rem;
+  box-shadow: 0 0 0 0.8rem var(--c-gray-300), 0 0 0 0.9rem var(--c-gray-200);
+  background-color: #fff;
+}
+
+//HEADER LAYOUT
+.header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+
+  &__logo {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: var(--c-blue-300);
+    border: 1px solid var(--c-gray-900);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo-inner {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: var(--c-yellow-500);
+        display: flex;
+        border: 1px solid var(--c-gray-900);
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--c-gray-900);
+  text-align: center;
+}
+
+//HEADER IMGS AND ICONS
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+
+  &__icon-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+
+    .icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      color: var(--c-gray-500);
+    }
+    .circle {
+      position: absolute;
+      top: -0.2rem;
+      right: -0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.35rem;
+      height: 1.35rem;
+      border: 1px solid var(--c-gray-900);
+      border-radius: 50%;
+      background-color: var(--c-red-500);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--c-gray-900);
+    }
+
+    &:hover {
+      transform: rotate(10deg) scale(0.9);
+    }
+  }
+  &__photo {
+    img {
+      width: 3.2rem;
+      height: 3.2rem;
+      background-size: cover;
+      border-radius: 1rem;
+      border: 2px solid var(--c-gray-200);
+      box-shadow: 0 0.5rem 0.6rem -0.15rem rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-0.35rem);
+        box-shadow: 0 0.75rem 1rem -.25rem rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}

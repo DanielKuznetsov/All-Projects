@@ -220,7 +220,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem;
 
   &__link:link,
   &__link:visited {
@@ -244,6 +243,10 @@ body {
     border: 2px solid var(--c-gray-200);
     transform: translateX(0.75rem);
     color: var(--c-text-primary);
+  }
+
+  &__link:not(:last-child) {
+    margin-bottom: 1rem;
   }
 
   &__icon {
