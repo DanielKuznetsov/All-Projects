@@ -383,13 +383,14 @@ body {
 
 .phone-app {
   margin: auto;
-  width: 32.5rem;
+  width: 35rem;
   height: 55rem;
   border-radius: 2.5rem;
   padding: 2.4rem;
   margin-top: 8rem;
   box-shadow: 0 0 0 0.8rem var(--c-gray-300), 0 0 0 0.9rem var(--c-gray-200);
-  background-color: #fff; }
+  background-color: #fff;
+  overflow: hidden; }
 
 .header {
   display: grid;
@@ -487,13 +488,13 @@ body {
   z-index: 1; }
   .lookup__inner {
     width: inherit;
-    height: 3.5rem;
+    height: 4rem;
     background-color: #fff;
     border: 1px solid var(--c-gray-900);
     border-radius: 1rem;
     display: flex;
     align-items: center;
-    transition: transform .25s ease; }
+    transition: transform 0.25s ease; }
   .lookup__button {
     height: 100%;
     padding: 0 1.25rem;
@@ -539,3 +540,48 @@ body {
     transform: translateY(-0.25rem); }
   .lookup:hover .lookup__input::placeholder {
     color: var(--c-gray-500); }
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  margin-top: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--c-gray-900); }
+
+.link {
+  transition: all .3s ease; }
+  .link:link, .link:visited {
+    text-decoration: none;
+    color: var(--c-gray-900);
+    font-weight: 500;
+    font-size: 1.4rem;
+    display: inline-block;
+    padding: 0.5rem;
+    position: relative; }
+  .link__span-link {
+    position: relative;
+    z-index: 1;
+    display: block; }
+    .link__span-link--active {
+      font-weight: 800; }
+  .link__shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    transition: all .3s ease; }
+    .link__shadow--active {
+      height: 45%;
+      background-color: var(--c-yellow-500); }
+  .link:hover .link__shadow {
+    background-color: var(--c-yellow-500);
+    height: 45%; }
+  .link:focus .link__shadow {
+    height: 100%; }
+  .link:focus {
+    font-weight: 800;
+    transition: all .25s ease; }

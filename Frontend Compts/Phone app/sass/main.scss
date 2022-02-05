@@ -51,13 +51,14 @@ body {
 //APP LAYOUT
 .phone-app {
   margin: auto;
-  width: 32.5rem;
+  width: 35rem;
   height: 55rem;
   border-radius: 2.5rem;
   padding: 2.4rem;
   margin-top: 8rem;
   box-shadow: 0 0 0 0.8rem var(--c-gray-300), 0 0 0 0.9rem var(--c-gray-200);
   background-color: #fff;
+  overflow: hidden;
 }
 
 //HEADER LAYOUT
@@ -187,13 +188,13 @@ body {
 
   &__inner {
     width: inherit;
-    height: 3.5rem;
+    height: 4rem;
     background-color: #fff;
     border: 1px solid var(--c-gray-900);
     border-radius: 1rem;
     display: flex;
     align-items: center;
-    transition: transform .25s ease;
+    transition: transform 0.25s ease;
   }
 
   &__button {
@@ -248,10 +249,75 @@ body {
   }
 
   &:hover &__inner {
-    transform: translateY(-.25rem);
+    transform: translateY(-0.25rem);
   }
 
   &:hover &__input::placeholder {
     color: var(--c-gray-500);
+  }
+}
+
+//LINKS SECTION
+.links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  margin-top: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--c-gray-900);
+}
+
+//reusable element
+.link {
+  transition: all .3s ease;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: var(--c-gray-900);
+    font-weight: 500;
+    font-size: 1.4rem;
+    display: inline-block;
+    padding: 0.5rem;
+    position: relative;
+  }
+
+  &__span-link {
+    position: relative;
+    z-index: 1;
+    display: block;
+
+    &--active {
+      font-weight: 800;
+    }
+  }
+
+  &__shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    transition: all .3s ease;
+
+    &--active {
+      height: 45%;
+      background-color: var(--c-yellow-500);
+    }
+  }
+
+  &:hover &__shadow {
+    background-color: var(--c-yellow-500);
+    height: 45%;
+  }
+
+  &:focus &__shadow {
+    height: 100%;
+  }
+  &:focus {
+    font-weight: 800;
+    transition: all .25s ease;
   }
 }
