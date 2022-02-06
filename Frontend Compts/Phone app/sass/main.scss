@@ -277,6 +277,10 @@ body {
   &--song {
     background-color: var(--c-green-500);
   }
+
+  &--navbar {
+    background-color: var(--c-gray-100);
+  }
 }
 
 //LINKS SECTION
@@ -519,9 +523,9 @@ body {
   }
 
   &--song-bottom {
-    bottom: -2.25rem;
+    bottom: -2rem;
     right: -0.75rem;
-    transform: rotate(-45deg);
+    transform: rotate(-55deg);
   }
 }
 
@@ -594,5 +598,55 @@ body {
         color: var(--c-gray-500);
       }
     }
+  }
+}
+
+//NAVIGATION SECTION
+.navigation {
+  position: relative;
+  z-index: 1;
+  margin-top: 5rem;
+}
+.navbar {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  border: 1px solid var(--c-gray-900);
+  padding: 1rem;
+  background-color: var(--c-blue-500);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  a:link,
+  a:visited {
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--c-yellow-500);
+      border: 1px solid var(--c-gray-900);
+      border-radius: 1rem;
+      
+      .navbar__icon {
+        color: var(--c-gray-900);
+      }
+    }
+
+    // &:hover .navbar__icon,
+    // &:focus .navbar__icon {
+    //   color: var(--c-gray-900);
+    // }
+  }
+
+
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--c-gray-200);
   }
 }

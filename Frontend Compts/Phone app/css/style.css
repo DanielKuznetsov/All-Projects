@@ -551,6 +551,8 @@ body {
     background-color: var(--c-blue-300); }
   .hidden-element--song {
     background-color: var(--c-green-500); }
+  .hidden-element--navbar {
+    background-color: var(--c-gray-100); }
 
 .links {
   display: flex;
@@ -715,9 +717,9 @@ body {
     left: -0.75rem;
     transform: rotate(-45deg); }
   .hanger--song-bottom {
-    bottom: -2.25rem;
+    bottom: -2rem;
     right: -0.75rem;
-    transform: rotate(-45deg); }
+    transform: rotate(-55deg); }
 
 .song {
   position: relative;
@@ -765,3 +767,39 @@ body {
         font-size: 1.6rem;
         font-weight: 600;
         color: var(--c-gray-500); }
+
+.navigation {
+  position: relative;
+  z-index: 1;
+  margin-top: 5rem; }
+
+.navbar {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  border: 1px solid var(--c-gray-900);
+  padding: 1rem;
+  background-color: var(--c-blue-500);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .navbar a:link,
+  .navbar a:visited {
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    text-decoration: none; }
+    .navbar a:link:hover, .navbar a:link:focus,
+    .navbar a:visited:hover,
+    .navbar a:visited:focus {
+      background-color: var(--c-yellow-500);
+      border: 1px solid var(--c-gray-900);
+      border-radius: 1rem; }
+      .navbar a:link:hover .navbar__icon, .navbar a:link:focus .navbar__icon,
+      .navbar a:visited:hover .navbar__icon,
+      .navbar a:visited:focus .navbar__icon {
+        color: var(--c-gray-900); }
+  .navbar__icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--c-gray-200); }
