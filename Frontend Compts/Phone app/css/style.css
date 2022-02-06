@@ -508,7 +508,10 @@ body {
     overflow: hidden;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: background-color 0.25s ease; }
+    .lookup__button:hover, .lookup__button:focus {
+      background-color: var(--c-yellow-500); }
   .lookup__icon {
     width: 1.8rem;
     height: 1.8rem; }
@@ -534,12 +537,12 @@ body {
   width: 95%;
   height: 100%;
   position: absolute;
+  top: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   border: 1px solid var(--c-gray-900);
-  z-index: -1;
   border-radius: 1.5rem;
-  top: 0.5rem; }
+  z-index: -1; }
   .hidden-element--input {
     background-color: var(--c-gray-100); }
   .hidden-element--card--1 {
@@ -601,8 +604,17 @@ body {
 .card {
   position: relative;
   z-index: 1;
-  max-width: 100%;
-  cursor: pointer; }
+  width: 100%;
+  cursor: pointer;
+  transition: all .2s ease; }
+  .card:hover {
+    transform: translateY(0.25rem) rotate(-5deg); }
+  .card:hover .hanger--card--1 {
+    top: -2.25rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg); }
+  .card:hover .hanger .hanger__tube {
+    height: 4.5rem; }
   .card--1 {
     transform: rotate(-5deg); }
   .card--2 {
@@ -612,7 +624,8 @@ body {
     padding-bottom: 1.5rem;
     border: 1px solid var(--c-gray-900);
     border-radius: 1.5rem;
-    background-color: var(--c-gray-200); }
+    background-color: var(--c-gray-200);
+    position: relative; }
   .card__img img {
     display: block;
     width: 100%;
@@ -650,3 +663,38 @@ body {
   font-size: 1.4rem;
   color: var(--c-gray-900);
   font-weight: 600; }
+
+.hanger {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all .2s ease; }
+  .hanger--card--1 {
+    left: 50%;
+    top: -2rem;
+    transform: translateX(-50%) rotate(5deg); }
+  .hanger--card--2 {
+    left: 2rem;
+    top: -2rem;
+    transform: rotate(-5.5deg); }
+  .hanger__round {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--c-gray-900);
+    border-radius: 50%; }
+  .hanger__tube {
+    height: 4.25rem;
+    width: 0.5rem;
+    background-color: var(--c-gray-300);
+    border-radius: 1rem;
+    border: 1px solid var(--c-gray-900);
+    margin: -0.7rem 0 -0.65rem 0;
+    z-index: 10;
+    transition: all .2s ease; }
+  .hanger__round--bottom {
+    width: 0.9rem;
+    height: 0.9rem; }
+  .hanger__round--bottom {
+    box-shadow: 0 0 0 2px var(--c-gray-200), 0 0 0 3px var(--c-gray-900); }
