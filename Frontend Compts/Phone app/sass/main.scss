@@ -51,10 +51,10 @@ body {
 //APP LAYOUT
 .phone-app {
   margin: auto;
-  width: 35rem;
-  height: 55rem;
+  width: 37.5rem;
+  height: auto;
   border-radius: 2.5rem;
-  padding: 2.4rem;
+  padding: 3.5rem;
   margin-top: 8rem;
   box-shadow: 0 0 0 0.8rem var(--c-gray-300), 0 0 0 0.9rem var(--c-gray-200);
   background-color: #fff;
@@ -273,6 +273,10 @@ body {
       background-color: var(--c-blue-300);
     }
   }
+
+  &--song {
+    background-color: var(--c-green-500);
+  }
 }
 
 //LINKS SECTION
@@ -461,7 +465,6 @@ body {
   }
 }
 
-
 //reusable class to use the hanger
 .hanger {
   position: absolute;
@@ -470,19 +473,7 @@ body {
   align-items: center;
   transition: all 0.2s ease;
 
-  &--card--1 {
-    left: 50%;
-    top: -2rem;
-    transform: translateX(-50%) rotate(5deg);
-  }
-
-  &--card--2 {
-    left: 2rem;
-    top: -2rem;
-    transform: rotate(-5.5deg);
-  }
-
-  &__round {
+  &__round--top {
     display: block;
     width: 1rem;
     height: 1rem;
@@ -504,9 +495,104 @@ body {
   &__round--bottom {
     width: 0.9rem;
     height: 0.9rem;
+    background-color: var(--c-gray-900);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--c-gray-200), 0 0 0 3px var(--c-gray-900);
   }
 
-  &__round--bottom {
-    box-shadow: 0 0 0 2px var(--c-gray-200), 0 0 0 3px var(--c-gray-900);
+  &--card--1 {
+    left: 50%;
+    top: -2rem;
+    transform: translateX(-50%) rotate(5deg);
+  }
+
+  &--card--2 {
+    left: 2rem;
+    top: -2rem;
+    transform: rotate(-5.5deg);
+  }
+
+  &--song-top {
+    top: -2.25rem;
+    left: -0.75rem;
+    transform: rotate(-45deg);
+  }
+
+  &--song-bottom {
+    bottom: -2.25rem;
+    right: -0.75rem;
+    transform: rotate(-45deg);
+  }
+}
+
+//SONG CARD SECTION
+.song {
+  position: relative;
+  z-index: 1;
+  transform: rotate(5deg);
+  margin-bottom: 2rem;
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: var(--c-gray-200);
+    padding: 1.75rem;
+    border-radius: 1.25rem;
+    border: 1px solid var(--c-gray-900);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--c-gray-100);
+    }
+  }
+
+  //STYLING HANGER TUBES
+  .hanger__tube {
+    height: 3.75rem;
+  }
+
+  .hanger__round--bottom {
+    box-shadow: none;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  //START STYLING SONG CARD
+  &__img {
+    flex-shrink: 0;
+    img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    margin-left: 1rem;
+
+    &--top {
+      margin-bottom: 0.5rem;
+    }
+
+    &--bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+
+      span {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--c-gray-500);
+      }
+    }
   }
 }
