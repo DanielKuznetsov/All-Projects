@@ -606,13 +606,19 @@ body {
   z-index: 1;
   width: 100%;
   cursor: pointer;
-  transition: all .2s ease; }
-  .card:hover {
+  transition: all 0.2s ease; }
+  .card--1:hover {
     transform: translateY(0.25rem) rotate(-5deg); }
+  .card--2:hover {
+    transform: rotate(5deg) translateY(1.75rem); }
   .card:hover .hanger--card--1 {
     top: -2.25rem;
     left: 50%;
     transform: translateX(-50%) rotate(5deg); }
+  .card:hover .hanger--card--2 {
+    left: 2rem;
+    top: -2.25rem;
+    transform: rotate(-5.5deg); }
   .card:hover .hanger .hanger__tube {
     height: 4.5rem; }
   .card--1 {
@@ -625,7 +631,10 @@ body {
     border: 1px solid var(--c-gray-900);
     border-radius: 1.5rem;
     background-color: var(--c-gray-200);
-    position: relative; }
+    position: relative;
+    transition: all 0.2s ease; }
+    .card__inner:hover {
+      background-color: var(--c-gray-100); }
   .card__img img {
     display: block;
     width: 100%;
@@ -669,7 +678,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all .2s ease; }
+  transition: all 0.2s ease; }
   .hanger--card--1 {
     left: 50%;
     top: -2rem;
@@ -692,7 +701,7 @@ body {
     border: 1px solid var(--c-gray-900);
     margin: -0.7rem 0 -0.65rem 0;
     z-index: 10;
-    transition: all .2s ease; }
+    transition: all 0.2s ease; }
   .hanger__round--bottom {
     width: 0.9rem;
     height: 0.9rem; }

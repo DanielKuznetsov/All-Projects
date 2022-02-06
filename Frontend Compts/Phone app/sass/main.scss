@@ -353,22 +353,36 @@ body {
   z-index: 1;
   width: 100%;
   cursor: pointer;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 
-  &:hover {
-    transform: translateY(.25rem) rotate(-5deg);
+  //HOVER EFFECT ON THE CARD
+  &--1:hover {
+    transform: translateY(0.25rem) rotate(-5deg);
   }
 
+  &--2:hover {
+    transform: rotate(5deg) translateY(1.75rem);
+  }
+
+  //HOVER EFFECT ON THE HANGER WHICH STAYS STILL WHILE CARD IS MOVING
   &:hover .hanger--card--1 {
     top: -2.25rem;
     left: 50%;
     transform: translateX(-50%) rotate(5deg);
   }
 
+  &:hover .hanger--card--2 {
+    left: 2rem;
+    top: -2.25rem;
+    transform: rotate(-5.5deg);
+  }
+
+  //HOVER EFFECT ON THE CARD - FOR TUBE TO CHANGE HEIGHT
   &:hover .hanger .hanger__tube {
     height: 4.5rem;
   }
 
+  //CARD ROTATING EFFECT
   &--1 {
     transform: rotate(-5deg);
   }
@@ -377,6 +391,7 @@ body {
     transform: rotate(5deg) translateY(1.5rem);
   }
 
+  //INNER CARD DIV STYLES
   &__inner {
     padding: 1rem;
     padding-bottom: 1.5rem;
@@ -384,6 +399,11 @@ body {
     border-radius: 1.5rem;
     background-color: var(--c-gray-200);
     position: relative;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--c-gray-100);
+    }
   }
 
   &__img {
@@ -396,6 +416,7 @@ body {
     }
   }
 
+  //TEXT ALIGHNMENT
   &__text-group {
     margin-top: 1rem;
     display: flex;
@@ -424,22 +445,9 @@ body {
     height: 1rem;
     color: #fff;
   }
-
-  // &::after {
-  //   content: "";
-  //   width: 90%;
-  //   height: 100%;
-  //   background-color: var(--c-yellow-300);
-  //   border: 1px solid var(--c-gray-900);
-  //   border-radius: 1.5rem;
-  //   position: absolute;
-  //   bottom: -.5rem;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  //   z-index: -1;
-  // }
 }
 
+//reusable class to use main and secondary text
 .app-text {
   &--secondary {
     display: block;
@@ -453,12 +461,14 @@ body {
   }
 }
 
+
+//reusable class to use the hanger
 .hanger {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 
   &--card--1 {
     left: 50%;
@@ -488,7 +498,7 @@ body {
     border: 1px solid var(--c-gray-900);
     margin: -0.7rem 0 -0.65rem 0;
     z-index: 10;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
 
   &__round--bottom {
