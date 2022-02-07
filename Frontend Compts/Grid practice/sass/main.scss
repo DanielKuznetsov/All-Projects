@@ -1,0 +1,61 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  height: 100vh;
+}
+
+.wrapper {
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+  margin: 20rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  padding: 2rem 2.5rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  background-color: #444;
+}
+
+.a {
+  grid-column: 2/3;
+}
+
+.d {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.f {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.e {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
