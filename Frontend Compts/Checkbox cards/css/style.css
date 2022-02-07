@@ -404,6 +404,7 @@ body {
     border: 2px solid #b5bfd9;
     background-color: #fff;
     border-radius: 1rem;
+    overflow: hidden;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -416,10 +417,12 @@ body {
       width: 4rem;
       height: 4rem;
       transition: all 0.2s ease-in-out; }
-    .card__content span {
+    .card__content .text {
       font-size: 1.6rem;
       color: #9c9c9c;
-      transition: all 0.2s ease-in-out; }
+      transition: all 0.2s ease-in-out;
+      height: auto;
+      word-break: break-all; }
   .card__checkbox {
     display: block;
     width: 1.75rem;
