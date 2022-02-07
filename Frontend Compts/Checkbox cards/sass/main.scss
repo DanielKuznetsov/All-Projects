@@ -1,0 +1,157 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --c-gray-900: #000000;
+  --c-gray-800: #1f1f1f;
+  --c-gray-700: #2e2e2e;
+  --c-gray-600: #313131;
+  --c-gray-500: #969593;
+  --c-gray-400: #a6a6a6;
+  --c-gray-300: #bdbbb7;
+  --c-gray-200: #f1f1f1;
+  --c-gray-100: #ffffff;
+
+  --c-green-500: #45ffbc;
+  --c-olive-500: #e3ffa8;
+
+  --c-white: var(--c-gray-100);
+
+  --c-text-primary: var(--c-gray-100);
+  --c-text-secondary: var(--c-gray-200);
+  --c-text-tertiary: var(--c-gray-500);
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f9;
+}
+
+.card {
+  &__input {
+    display: none;
+  }
+
+  &__content {
+    padding: 2rem 1.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 1rem;
+
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    position: relative;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+
+    .icon {
+      width: 4rem;
+      height: 4rem;
+      transition: all 0.2s ease-in-out;
+    }
+
+    span {
+      font-size: 1.6rem;
+      color: #9c9c9c;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &__checkbox {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid #b5bfd9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: auto;
+    transform: scale(0);
+    transition: all 0.1s ease-in-out;
+
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+
+    .icon {
+      width: 75%;
+      color: transparent;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &__input:checked + &__content &__checkbox {
+    transform: scale(1);
+    background-color: #2260ff;
+    border-color: transparent;
+  }
+
+  &__input:checked + &__content &__checkbox .icon {
+    color: #fff;
+  }
+
+  &__input:checked + &__content {
+    border-color: #2260ff;
+    color: #2260ff;
+
+    span {
+      color: #2260ff;
+    }
+  }
+
+  &__content:focus {
+    box-shadow: 0 0 0 3px rgba(#2260ff, 0.3), 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-color: #2260ff;
+
+    .card__checkbox {
+      transform: scale(1);
+    }
+  }
+
+  &__content:hover {
+    border-color: #2260ff;
+  }
+
+  &__content:hover &__checkbox {
+    transform: scale(1);
+  }
+}
