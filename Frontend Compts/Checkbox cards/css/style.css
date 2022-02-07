@@ -388,74 +388,75 @@ body {
   justify-content: center;
   background-color: #f8f8f9; }
 
-.card__input {
-  display: none; }
-
-.card__content {
-  padding: 2rem 1.75rem;
-  border: 2px solid #b5bfd9;
-  background-color: #fff;
-  border-radius: 1rem;
-  cursor: pointer;
+.checkbox-group {
+  width: 60rem;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  position: relative;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  transition: all 0.15s ease; }
-  .card__content .icon {
-    width: 4rem;
-    height: 4rem;
-    transition: all 0.2s ease-in-out; }
-  .card__content span {
-    font-size: 1.6rem;
-    color: #9c9c9c;
-    transition: all 0.2s ease-in-out; }
+  gap: 2rem;
+  flex-wrap: wrap; }
 
-.card__checkbox {
-  display: block;
-  width: 1.75rem;
-  height: 1.75rem;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 2px solid #b5bfd9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: auto;
-  transform: scale(0);
-  transition: all 0.1s ease-in-out;
-  position: absolute;
-  left: 0.5rem;
-  top: 0.5rem; }
-  .card__checkbox .icon {
-    width: 75%;
-    color: transparent;
-    transition: all 0.2s ease-in-out; }
-
-.card__input:checked + .card__content .card__checkbox {
-  transform: scale(1);
-  background-color: #2260ff;
-  border-color: transparent; }
-
-.card__input:checked + .card__content .card__checkbox .icon {
-  color: #fff; }
-
-.card__input:checked + .card__content {
-  border-color: #2260ff;
-  color: #2260ff; }
-  .card__input:checked + .card__content span {
+.card {
+  width: 12rem; }
+  .card__input {
+    display: none; }
+  .card__content {
+    padding: 2rem 1.75rem;
+    border: 2px solid #b5bfd9;
+    background-color: #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease; }
+    .card__content .icon {
+      width: 4rem;
+      height: 4rem;
+      transition: all 0.2s ease-in-out; }
+    .card__content span {
+      font-size: 1.6rem;
+      color: #9c9c9c;
+      transition: all 0.2s ease-in-out; }
+  .card__checkbox {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid #b5bfd9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: auto;
+    transform: scale(0);
+    transition: all 0.1s ease-in-out;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem; }
+    .card__checkbox .icon {
+      width: 75%;
+      color: transparent;
+      transition: all 0.2s ease-in-out; }
+  .card__input:checked + .card__content .card__checkbox {
+    transform: scale(1);
+    background-color: #2260ff;
+    border-color: transparent; }
+  .card__input:checked + .card__content .card__checkbox .icon {
+    color: #fff; }
+  .card__input:checked + .card__content {
+    border-color: #2260ff;
     color: #2260ff; }
-
-.card__content:focus {
-  box-shadow: 0 0 0 3px rgba(34, 96, 255, 0.3), 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
-  border-color: #2260ff; }
-  .card__content:focus .card__checkbox {
+    .card__input:checked + .card__content span {
+      color: #2260ff; }
+  .card__content:focus {
+    box-shadow: 0 0 0 3px rgba(34, 96, 255, 0.3), 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border-color: #2260ff; }
+    .card__content:focus .card__checkbox {
+      transform: scale(1); }
+  .card__content:hover {
+    border-color: #2260ff; }
+  .card__content:hover .card__checkbox {
     transform: scale(1); }
-
-.card__content:hover {
-  border-color: #2260ff; }
-
-.card__content:hover .card__checkbox {
-  transform: scale(1); }

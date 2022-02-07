@@ -58,7 +58,16 @@ body {
   background-color: #f8f8f9;
 }
 
+.checkbox-group {
+  width: 60rem;
+  height: auto;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .card {
+  width: 12rem;
   &__input {
     display: none;
   }
