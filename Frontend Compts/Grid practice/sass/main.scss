@@ -24,16 +24,13 @@ body {
 }
 
 .wrapper {
-  grid-gap: 10px;
   background-color: #fff;
   color: #444;
   margin: 20rem;
 
   display: grid;
-  grid-template-columns: 12rem 1fr;
-  grid-template-areas:
-    ". header"
-    " sidebar content";
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-gap: 10px;
 }
 
 .item {
@@ -42,16 +39,5 @@ body {
   font-weight: 600;
   font-size: 2rem;
   background-color: #444;
-}
-
-.a {
-  grid-area: header;
-}
-
-.b {
-  grid-area: sidebar;
-}
-
-.c {
-  grid-area: content;
+  word-break: break-all;
 }
