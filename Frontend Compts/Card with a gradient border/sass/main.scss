@@ -1,0 +1,163 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --c-blue-900: #081030;
+  --c-blue-800: #111b40;
+  --c-blue-700: #152148;
+  --c-blue-500: #1d7bdb;
+  --c-blue-300: #293359;
+  --c-blue-200: #4e5985;
+  --c-blue-100: #dfe8ff;
+
+  --c-green-400: #4ade80;
+}
+
+/* Some basic CSS overrides */
+body {
+  line-height: 1;
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-blue-900);
+  color: var(--c-blue-100);
+  padding: 10vh 12px;
+}
+
+.card {
+  width: 35rem;
+  height: 60rem;
+  background-color: var(--c-blue-300);
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  padding: 2.5rem;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, yellow, red);
+    border: 5px solid yellow;
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1px solid var(--c-blue-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .icon {
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+  }
+}
+
+.label {
+  &__input {
+    display: none;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .icon {
+      color: #fff;
+      font-size: 1.8rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s ease-in;
+    }
+
+    &::after {
+      content: "";
+      width: 2.25rem;
+      height: 2.25rem;
+      border: 1px solid var(--c-green-400);
+      border-radius: 50%;
+      position: absolute;
+      transition: all 0.2s ease-in;
+    }
+  }
+
+  &__text {
+    margin-left: 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 1px;
+      background-color: var(--c-blue-100);
+      position: absolute;
+      top: 60%;
+      transform: translateY(-50%);
+      left: 0;
+      transition: all 0.4s ease-in;
+    }
+  }
+
+  &__input:checked + &__checkbox &__icon-wrap::after {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__input:checked + &__checkbox > &__icon-wrap .icon {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__input:checked + &__checkbox &__text::after {
+    width: 100%;
+  }
+}
