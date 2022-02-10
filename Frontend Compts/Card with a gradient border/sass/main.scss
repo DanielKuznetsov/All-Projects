@@ -55,20 +55,36 @@ body {
 .card {
   width: 35rem;
   height: 60rem;
-  background-color: var(--c-blue-300);
-  border: 2px solid #fff;
-  border-radius: 2rem;
   padding: 2.5rem;
   position: relative;
+  border-radius: 1.6rem;
+  position: relative;
+  background-color: var(--c-blue-700);
+  background-image: linear-gradient(
+    135deg,
+    rgba(#4ade80, 0.15),
+    rgba(#1d7bdb, 0.1) 20%,
+    var(--c-blue-700) 40%,
+    var(--c-blue-700) 100%
+  );
 
-  &::before {
+  &:after {
+    content: "";
+    display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to right, yellow, red);
-    border: 5px solid yellow;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+    z-index: -1;
+    border-radius: 16px;
+    background-image: linear-gradient(
+      135deg,
+      var(--c-green-400),
+      var(--c-blue-500) 40%,
+      var(--c-blue-300) 60%,
+      var(--c-blue-700) 100%
+    );
   }
 
   &__line {
