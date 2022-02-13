@@ -423,22 +423,22 @@ body {
       font-size: 1.6rem;
       font-weight: 900; }
     .card__icon-wrap span {
+      line-height: 1.5;
       display: block;
       padding: 1rem 1.5rem;
       background-color: var(--c-blue-700);
       border: 2px solid var(--c-blue-200);
-      border-radius: .5rem;
+      border-radius: 0.5rem;
       width: 25rem;
       position: absolute;
       bottom: 3.35rem;
       left: calc(-100% - 7.5rem);
       opacity: 0;
       pointer-events: none;
-      transition: all .25s ease-in-out; }
+      transition: all 0.25s ease-in-out; }
   .card__icon-wrap:hover span {
     opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0); }
+    pointer-events: auto; }
 
 .label__input {
   display: none; }
@@ -454,7 +454,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-right: .65rem; }
+  margin-right: 0.65rem; }
   .label__icon-wrap .icon {
     color: #fff;
     font-size: 1.8rem;
@@ -516,5 +516,5 @@ body {
     margin-top: 1rem; }
   .text p {
     text-align: center;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     margin-bottom: 4rem; }

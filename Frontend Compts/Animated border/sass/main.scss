@@ -1,0 +1,80 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+body {
+  height: 100vh;
+  background: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --border-width: 0.3rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 1.5;
+  width: 25rem;
+  height: 25rem;
+  background: #222;
+  position: relative;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  border: var(--border-width);
+
+  &__hide {
+    position: absolute;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300%;
+    background-position: 0 50%;
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+    opacity: .6;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}

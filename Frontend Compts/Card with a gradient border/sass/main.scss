@@ -113,29 +113,26 @@ body {
     }
 
     span {
-     display: block;
-     padding: 1rem 1.5rem;
-     background-color: var(--c-blue-700);
-     border: 2px solid var(--c-blue-200);
-     border-radius: .5rem;
-     width: 25rem;
-     position: absolute;
-     bottom: 3.35rem;
-     left: calc(-100% - 7.5rem);
-     opacity: 0;
-     pointer-events: none;
-    //  transform: translateY(-1rem);
-     transition: all .25s ease-in-out;
+      line-height: 1.5;
+      display: block;
+      padding: 1rem 1.5rem;
+      background-color: var(--c-blue-700);
+      border: 2px solid var(--c-blue-200);
+      border-radius: 0.5rem;
+      width: 25rem;
+      position: absolute;
+      bottom: 3.35rem;
+      left: calc(-100% - 7.5rem);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease-in-out;
     }
   }
 
   &__icon-wrap:hover span {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
   }
-
-
 }
 
 .label {
@@ -155,7 +152,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-right: .65rem;
+    margin-right: 0.65rem;
 
     .icon {
       color: #fff;
@@ -239,7 +236,7 @@ body {
 
   p {
     text-align: center;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     margin-bottom: 4rem;
   }
 }
