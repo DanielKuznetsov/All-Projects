@@ -386,7 +386,7 @@ body {
 
 .card {
   width: 35rem;
-  height: 60rem;
+  height: auto;
   padding: 2.5rem;
   position: relative;
   border-radius: 1.6rem;
@@ -407,6 +407,8 @@ body {
   .card__line {
     display: flex;
     align-items: center; }
+  .card__line:not(:last-child) {
+    margin-bottom: 2rem; }
   .card__icon-wrap {
     width: 2.25rem;
     height: 2.25rem;
@@ -415,10 +417,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
     .card__icon-wrap .icon {
       font-size: 1.6rem;
       font-weight: 900; }
+    .card__icon-wrap span {
+      display: block;
+      padding: 1rem 1.5rem;
+      background-color: var(--c-blue-700);
+      border: 2px solid var(--c-blue-200);
+      border-radius: .5rem;
+      width: 25rem;
+      position: absolute;
+      bottom: 3.35rem;
+      left: calc(-100% - 7.5rem);
+      opacity: 0;
+      pointer-events: none;
+      transition: all .25s ease-in-out; }
+  .card__icon-wrap:hover span {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0); }
 
 .label__input {
   display: none; }
@@ -433,7 +453,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; }
+  position: relative;
+  margin-right: .65rem; }
   .label__icon-wrap .icon {
     color: #fff;
     font-size: 1.8rem;
@@ -473,3 +494,27 @@ body {
 
 .label__input:checked + .label__checkbox .label__text::after {
   width: 100%; }
+
+.text {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .text h1 {
+    display: flex;
+    align-items: center;
+    gap: 1rem; }
+    .text h1 span:first-child {
+      font-size: 2.4rem;
+      font-weight: 300; }
+    .text h1 span:nth-child(2n) {
+      font-size: 4.8rem;
+      font-weight: 600; }
+  .text h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-top: 1rem; }
+  .text p {
+    text-align: center;
+    margin-top: .5rem;
+    margin-bottom: 4rem; }
