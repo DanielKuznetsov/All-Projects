@@ -19,36 +19,34 @@
 
 @import "pages/home";
 
+// gradient: https://www.gradientmagic.com/collection/rainbowstandard
+
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background: #888;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #222;
 }
 
-:root {
-  --border-width: 0.3rem;
-}
+.gradient-border {
+  --border-width: 3px;
 
-.box {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  font-size: 2rem;
-  line-height: 1.5;
+  align-items: center;
   width: 25rem;
   height: 25rem;
   background: #222;
-  position: relative;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  border: var(--border-width);
+  border-radius: var(--border-width);
 
-  &__hide {
+  &::after {
     position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
     width: calc(100% + var(--border-width) * 2);
     height: calc(100% + var(--border-width) * 2);
     background: linear-gradient(
@@ -62,14 +60,10 @@ body {
       hsl(134, 85%, 66%),
       hsl(179, 85%, 66%)
     );
-    background-size: 300%;
+    background-size: 300% 300%;
     background-position: 0 50%;
-    top: calc(-1 * var(--border-width));
-    left: calc(-1 * var(--border-width));
-    z-index: -1;
     border-radius: calc(2 * var(--border-width));
     animation: moveGradient 4s alternate infinite;
-    opacity: .6;
   }
 }
 
