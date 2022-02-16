@@ -1,0 +1,198 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/_gradients";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
+@import "layout/grid--floats";
+
+@import "pages/home";
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #c4c3ca;
+  background-color: #1f2029;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 4%;
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5rem;
+}
+
+.checkbox {
+  position: relative;
+
+  &__input {
+    display: none;
+  }
+
+  &__container {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 2rem;
+    cursor: pointer;
+  }
+
+  &__lines {
+    display: block;
+    width: 3.6rem;
+    height: 0.25rem;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s linear;
+
+    &::before {
+      content: "";
+      width: 50%;
+      height: 100%;
+      background-color: #fff;
+      position: absolute;
+      top: calc(-1 * (100% + 1rem));
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      content: "";
+      width: 50%;
+      height: 100%;
+      background-color: #fff;
+      position: absolute;
+      bottom: calc(-1 * (100% + 1rem));
+      right: 0;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__container:hover &__lines::before,
+  &__container:hover &__lines::after {
+    width: 100%;
+  }
+
+  &__input:checked + &__container &__lines::before {
+    width: 100%;
+    top: 0;
+    transform: rotate(225deg);
+  }
+
+  &__input:checked + &__container &__lines::after {
+    width: 100%;
+    top: 0;
+    transform: rotate(-225deg);
+  }
+
+  &__input:checked + &__container &__lines {
+    background: transparent;
+  }
+
+  &__input:checked ~ .box,
+  &__input:checked ~ .box .box__hide {
+    transform: scale(1);
+    border-radius: 2rem;
+  }
+
+  &__input:checked ~ .box > .box__hide > .box__list .box__item {
+    transform: translate(4rem, 8rem);
+    opacity: 1;
+  }
+}
+
+.box {
+  width: 25rem;
+  height: 32.5rem;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(#fff, 0.1);
+  background-position: left;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: all 0.45s ease 0.1s;
+  border-bottom-right-radius: 100rem;
+  z-index: -1;
+
+  &__hide {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(black, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: scale(0);
+    transition: all 0.45s ease 0.1s;
+    border-bottom-right-radius: 100rem;
+    overflow: hidden;
+  }
+
+  &__list {
+    list-style: none;
+    margin-top: 2rem;
+  }
+
+  &__item {
+    display: block;
+    color: #fff;
+    font-weight: 500;
+    font-size: 2.4rem;
+    transform: translate(8rem, 8rem);
+    transition: all .65s ease .6s;
+    opacity: 0;
+
+    &--1 {
+      transition-delay: 1s;
+    }
+    &--2 {
+      transition-delay: 1.25s;
+    }
+    &--3 {
+      transition-delay: 1.5s;
+    }
+    &--4 {
+      transition-delay: 1.75s;
+    }
+    &--5 {
+      transition-delay: 2s;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
