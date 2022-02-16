@@ -28,15 +28,144 @@ body {
   font-size: 1.5rem;
   line-height: 1;
   color: #c4c3ca;
-  background-color: #1f2029;
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg");
+  background-color: #1f2029;
   background-position: center;
   background-repeat: repeat;
   background-size: 4%;
   overflow-x: hidden;
 }
 
-.header {
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  &__title {
+    font-size: 4.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__checkbox {
+    cursor: pointer;
+    width: 7rem;
+    height: 0.75rem;
+    background-color: #8167a9;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    position: relative;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked + & &__checkbox {
+    background-color: #000;
+    border: 1px solid #8167a9;
+  }
+
+  &__input:checked + & &__checkbox &__btn {
+    transform: translate(5rem, 50%);
+  }
+
+  &__input:checked + & &__checkbox &__btn::after {
+    left: -6rem;
+  }
+
+  &__input:checked + & .sup-text p:first-child::after {
+    opacity: 0;
+  }
+
+  &__input:checked + & .sup-text p:last-child::after {
+    opacity: 1;
+  }
+
+  &__input:checked + & &__title {
+    color: #000;
+  }
+
+  &__input:checked ~ .navbar .checkbox .checkbox__container .checkbox__lines,
+  &__input:checked
+    ~ .navbar
+    .checkbox
+    .checkbox__container
+    .checkbox__lines::before,
+  &__input:checked
+    ~ .navbar
+    .checkbox
+    .checkbox__container
+    .checkbox__lines::after {
+    background-color: #000;
+  }
+
+  &__btn {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    transform: translateY(50%);
+    transition: all 0.25s ease-in-out;
+  }
+
+  &__checkbox,
+  &__btn,
+  &__btn::after,
+  .sup-text p,
+  .sup-text p::after,
+  &__title {
+    transition: all .2s ease-out;
+  }
+}
+
+.sup-text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  p {
+    letter-spacing: 1.4px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #8167a9;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.75rem;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    &:last-child::after {
+      opacity: 0;
+      background-color: #000;
+    }
+  }
+  span {
+    display: block;
+    width: 0.6rem;
+    height: 0.25rem;
+    background-color: #8167a9;
+  }
+}
+
+.navbar {
   width: 100%;
   height: auto;
   display: flex;
@@ -140,23 +269,26 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(#fff, 0.1);
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg);
   background-position: left;
+  background-repeat: no-repeat;
+  background-size: 300%;
   transform: scale(0);
   transform-origin: top left;
-  transition: all 0.45s ease 0.1s;
+  transition: all 0.45s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
   border-bottom-right-radius: 100rem;
   z-index: -1;
 
   &__hide {
     width: 100%;
     height: 100%;
-    background-color: rgba(black, 0.5);
+    background-color: rgba(9, 9, 12, 0.65);
     position: absolute;
     top: 0;
     left: 0;
     transform-origin: top left;
     transform: scale(0);
-    transition: all 0.45s ease 0.1s;
+    transition: all 0.45s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
     border-bottom-right-radius: 100rem;
     overflow: hidden;
   }
@@ -169,11 +301,16 @@ body {
   &__item {
     display: block;
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 1.4px;
     font-size: 2.4rem;
     transform: translate(8rem, 8rem);
-    transition: all .65s ease .6s;
+    transition: all 0.65s cubic-bezier(0.77, 0, 0.175, 1) 0.6s;
     opacity: 0;
+
+    &:not(:first-child) {
+      color: rgba(#fff, 0.4);
+    }
 
     &--1 {
       transition-delay: 1s;
