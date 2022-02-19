@@ -1,3 +1,4 @@
+////////////////////////////1
 // let population = 300000000;
 
 // const country = "USA";
@@ -23,6 +24,7 @@
 //   console.log(`The number is less than 10`);
 // }
 
+//////////////////////////////2
 //practicing switch conditions
 // const language = "english";
 
@@ -47,13 +49,14 @@
 //     console.log(`Great language too! :D`);
 // }
 
+/////////////////////////////////////3
 //practicing conditional(ternary) operator
-population = Number(prompt(`What is your country's pupolation, in millions?`));
+// population = Number(prompt(`What is your country's pupolation, in millions?`));
 
-console.log(
-  `${
-    population > 33
-      ? "Portugal's population is above average"
-      : "Portugal's population is below average"
-  }`
-);
+// console.log(
+//   `${
+//     population > 33
+//       ? "Portugal's population is above average"
+//       : "Portugal's population is below average"
+//   }`
+// );
