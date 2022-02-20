@@ -2,8 +2,8 @@
 
 //////////////////////////////////
 //declaration function
-function calcPercentage1(population) {
-  return (population / 7900) * 100;
+function calcPercentage1(population1) {
+  return (population1 / 7900) * 100;
 }
 
 const percentageOfWorld1 = calcPercentage1(150);
@@ -30,22 +30,65 @@ console.log(percentageOfWorld3);
 
 //////////////////////////////////
 // arrow function with a conditional operator
-const calcAge1 = (currentYear, birthYear) => currentYear - birthYear;
+// const calcAge1 = (currentYear, birthYear) => currentYear - birthYear;
 
-const age1 = calcAge1(2022, 1998);
-console.log(age1);
+// const age1 = calcAge1(2022, 1998);
+// console.log(age1);
 
-const yearsUntilRetirement = (
-  currentYear,
-  birthYear,
-  retirementAge,
-  firstName
-) => {
-  const age = currentYear - birthYear;
-  const retirement = retirementAge - age;
-  return `${firstName} is ${age} years old and has ${retirement} ${
-    retirement > 0 ? "years until retirement" : "years since he retired"
-  }`;
+// const yearsUntilRetirement = (
+//   currentYear,
+//   birthYear,
+//   retirementAge,
+//   firstName
+// ) => {
+//   const age = currentYear - birthYear;
+//   const retirement = retirementAge - age;
+//   return `${firstName} is ${age} years old and has ${retirement} ${
+//     retirement > 0 ? "years until retirement" : "years since he retired"
+//   }`;
+// };
+
+// console.log(yearsUntilRetirement(2022, 1998, 65, "Daniel"));
+
+//////////////////////////////////
+// calling functions
+
+//EXAMPLE 1
+const cutPieces = function (fruit) {
+  return fruit * 4;
 };
 
-console.log(yearsUntilRetirement(2022, 1998, 65, "Daniel"));
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutPieces(apples);
+  const orangePieces = cutPieces(oranges);
+
+  const juice = `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+
+//EXAMPLE 2
+const describePopulation = (country, population) => {
+  const percentage = calcPercentage1(population);
+  const description = `${country} has ${population} million people, which is about ${percentage}% of the world`;
+
+  return description;
+};
+
+console.log(describePopulation("Russia", 150));
+
+//EXAMPLE 3
+const calcAge = (currentYear, birthYear) => currentYear - birthYear;
+
+const yearsUntilRetirement = function (firstName, currentYear, birthYear) {
+  const retirementAge = 65;
+  const age = calcAge(currentYear, birthYear);
+  const retirement = retirementAge - age;
+  const retirementDescription = `${firstName} is ${age} years old and has ${retirement} ${
+    retirement > 0 ? "years until retirement" : "years since he retired"
+  }`;
+  return retirementDescription;
+};
+
+console.log(yearsUntilRetirement("Daniel", 2022, 1998));
