@@ -135,3 +135,69 @@ if (!neighbours.includes("Germany")) {
 
 neighbours[neighbours.indexOf("Canada")] = "Brazil";
 console.log(neighbours);
+
+//objects
+// const daniel = {
+//   firstName: "Daniel",
+//   lastName: "Kuznetsov",
+//   occupation: "student",
+//   friends: ["Michael", "Peter", "Robert"],
+// };
+
+// console.log(daniel);
+// console.log(daniel.lastName);
+// console.log(daniel["lastName"]);
+
+// const nameKey = "Name";
+// console.log(daniel["first" + nameKey]);
+// console.log(daniel["last" + nameKey]);
+
+// daniel.location = "USA";
+// daniel["twitter"] = "@danielkuznetsov";
+// console.log(daniel);
+
+// const interestedIn = prompt(
+//   "What do you want to know about Daniel? Choose between firstName, lastName, occupation, friends."
+// );
+
+// console.log(daniel[interestedIn]);
+
+// const text = `${daniel.firstName} has ${daniel.friends.length} friends, and his best friend is called ${daniel.friends[0]}`;
+
+// console.log(text);
+
+const daniel = {
+  firstName: "Daniel",
+  lastName: "Kuznetsov",
+  currentYear: 2022,
+  birthYear: 1998,
+  occupation: "student",
+  friends: ["Michael", "Peter", "Robert"],
+  hasDriversLicense: true,
+
+  // calcAge: function (currentYear, birthYear) {
+  //   return currentYear - birthYear;
+  // },
+
+  calcAge: function () {
+    return this.currentYear - this.birthYear;
+  },
+
+  // // not working for me for some reason
+  // calcAge: function () {
+  //   this.age = this.currentYear - this.birthYear;
+  //   return this.age;
+  // },
+
+  getSummary: function () {
+    return `${daniel.firstName} is a ${daniel.calcAge()} student, and has ${
+      this.hasDriversLicense ? `a` : `no`
+    } driver's license`;
+  },
+};
+
+console.log(daniel.getSummary());
+
+// console.log(daniel.calcAge());
+console.log(daniel.age); ////not working for me
+// console.log(`${daniel.firstName} is ${daniel.calcAge(2022, 1998)} years old`);
