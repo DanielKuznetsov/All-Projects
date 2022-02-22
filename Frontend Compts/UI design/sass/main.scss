@@ -91,12 +91,38 @@ body {
     height: 100%;
     border-bottom: 4px solid transparent;
     transition: all 0.35s;
+    position: relative;
+    cursor: pointer;
 
     &:hover {
       border-bottom: 4px solid #11a8ab;
       background-color: rgba(255, 255, 255, 0.2);
     }
+
+    &:nth-child(3)::after {
+      content: "5";
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      position: absolute;
+      top: 1.5rem;
+      right: 0.25rem;
+      background-color: rgb(206, 91, 91);
+      border-radius: 50%;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover:nth-child(3)::after {
+      transform: rotate(360deg);
+    }
   }
+
   &__link:link,
   &__link:visited {
     text-decoration: none;
