@@ -61,3 +61,15 @@ if (mark.calcBMI() > john.calcBMI()) {
 } else {
   console.log(`There is no winners :D`);
 }
+
+//loops
+//for loop keeps running while condition is true
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repitition ${rep}`);
+}
+
+const daniel1 = ["daniel", "kuznetsov", 24, "student"];
+
+for (let i = 0; i < 4; i++) {
+  console.log(daniel1[i]);
+}
