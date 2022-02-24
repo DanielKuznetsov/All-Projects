@@ -375,6 +375,15 @@ body {
 
 .text-primary {
   font-weight: 500;
+  color: #fff;
+  display: block;
+  font-size: 1.8rem; }
+
+.text-bold {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
   color: #fff; }
 
 body {
@@ -386,13 +395,14 @@ body {
 .container {
   max-width: 100rem;
   height: auto;
-  background-color: yellowgreen;
   margin: 12rem auto; }
 
 .header {
   width: 100%;
   height: auto;
   background-color: #394264;
+  border-radius: 0.65rem;
+  overflow: hidden;
   display: flex;
   justify-content: space-between; }
   .header__list {
@@ -455,3 +465,69 @@ body {
       height: 4rem;
       border-radius: 50%;
       border: 2px solid #606fa4; }
+
+.main {
+  width: inherit;
+  height: 70rem;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+  column-gap: 2rem; }
+
+.menu-box {
+  background-color: #394264;
+  border-radius: 0.65rem; }
+  .menu-box__title {
+    padding: 2.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #11a8ab;
+    border-top-left-radius: 0.65rem;
+    border-top-right-radius: 0.65rem; }
+  .menu-box__nav {
+    list-style: none; }
+    .menu-box__nav li {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.35s; }
+      .menu-box__nav li .icon {
+        width: 3rem;
+        height: 3rem; }
+    .menu-box__nav li:not(:last-child) {
+      border-bottom: 1px solid #1f253d; }
+    .menu-box__nav li:hover {
+      background-color: rgba(255, 255, 255, 0.2); }
+    .menu-box__nav li:hover .menu-box__number {
+      background-color: #ce5b5b; }
+  .menu-box__number {
+    margin-left: auto;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    width: 4rem;
+    background-color: #546192;
+    color: #fff;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.35s; }
+
+.two {
+  background-color: green; }
+
+.three {
+  background-color: purple; }
+
+.four {
+  background-color: red; }
+
+.five {
+  background-color: blue; }
+
+.six {
+  background-color: pink; }
