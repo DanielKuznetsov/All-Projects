@@ -32,11 +32,42 @@ for (i = 0; i < listOfNeighbours.length; i++) {
 }
 
 //EXAMPLE #4
-const percentages3 = [];
-let i = 0;
-while (i < population2.length) {
-  const perc = percentageOfWorld(population2[i]);
-  percentages3.push(perc);
-  i++;
+// const percentages3 = [];
+// let i = 0;
+// while (i < population2.length) {
+//   const perc = percentageOfWorld(population2[i]);
+//   percentages3.push(perc);
+//   i++;
+// }
+// console.log(percentages3);
+
+//EXAMPLE #5
+const bills1 = [1200, 178, 279, 100, 85, 250, 400, 600, 1750, 10];
+// const bills1 = [1200, 10];
+const tips1 = [];
+const totals1 = [];
+let average;
+
+const calcTip1 = function (bill) {
+  return bill >= 50 || bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+for (i = 0; i < bills1.length; i++) {
+  const tip = calcTip1(bills1[i]);
+  tips1.push(tip);
+  totals1.push(tip + bills1[i]);
 }
-console.log(percentages3);
+
+console.log(tips1);
+console.log(totals1);
+
+const calcAverage1 = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  const average = sum / arr.length;
+  return average;
+};
+
+console.log(calcAverage1(bills1));
