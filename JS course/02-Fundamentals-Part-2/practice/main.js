@@ -41,14 +41,26 @@
 // console.log(totalSum);
 
 //EX3
-const arr = [43, "what", 9, true, "cannot", false, "be", 3, true];
-const reversed = [];
 
-const reversedArr = function (arr) {
-  for (i = arr.length - 1; i >= 0; i--) {
-    reversed.push(arr[i]);
-  }
-  return reversed;
-};
+// const arr = [43, "what", 9, true, "cannot", false, "be", 3, true];
+// const reversed = [];
 
-console.log(reversedArr(arr));
+// const reversedArr = function (arr) {
+//   for (i = arr.length - 1; i >= 0; i--) {
+//     reversed.push(arr[i]);
+//   }
+//   return reversed;
+// };
+
+// console.log(reversedArr(arr));
+
+//EX4
+const num1 = 2;
+const num2 = 8;
+let sum = 0;
+
+for (i = num1; i <= num2; i++) {
+  sum += i;
+}
+
+console.log(sum);
