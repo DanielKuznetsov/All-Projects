@@ -88,29 +88,41 @@
 // console.log(calcSplitString("dad")); //Yes
 
 //EX6 add the array items onto 1 line and if 1 array is bigger than the other, still be able to add to 0 instead
-const arr_3 = [4, 6, 7, 23, 11, 5];
-const arr_4 = [8, 1, 9, 12];
-const zero = 0;
+// const arr_3 = [4, 6, 7, 23, 11, 5];
+// const arr_4 = [8, 1, 9, 12];
+// const zero = 0;
 
-const newArr = [];
+// const newArr = [];
 
-const calcArr = function (arr1, arr2) {
-  if (arr1.length > arr2.length) {
-    for (i = 0; i < arr1.length; i++) {
-      arr2.push(zero);
-      newArr.push(arr1[i] + arr2[i]);
-    }
-  } else {
-    for (i = 0; i < arr2.length; i++) {
-      arr1.push(zero);
-      newArr.push(arr1[i] + arr2[i]);
-    }
+// const calcArr = function (arr1, arr2) {
+//   if (arr1.length > arr2.length) {
+//     for (i = 0; i < arr1.length; i++) {
+//       arr2.push(zero);
+//       newArr.push(arr1[i] + arr2[i]);
+//     }
+//   } else {
+//     for (i = 0; i < arr2.length; i++) {
+//       arr1.push(zero);
+//       newArr.push(arr1[i] + arr2[i]);
+//     }
+//   }
+
+//   // for (i = 0; i < arr1.length; i++) {
+//   //   newArr.push(arr1[i] + arr2[i]);
+//   // }
+//   return newArr;
+// };
+
+// console.log(calcArr(arr_3, arr_4));
+
+//EX7 will print even numbers from the range
+const n = 23;
+const evenArr = [];
+
+for (i = 2; i <= n; i++) {
+  if (i % 2 === 0) {
+    evenArr.push(i);
   }
+}
 
-  // for (i = 0; i < arr1.length; i++) {
-  //   newArr.push(arr1[i] + arr2[i]);
-  // }
-  return newArr;
-};
-
-console.log(calcArr(arr_3, arr_4));
+console.log(evenArr);
