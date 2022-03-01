@@ -116,13 +116,69 @@
 // console.log(calcArr(arr_3, arr_4));
 
 //EX7 will print even numbers from the range
-const n = 23;
-const evenArr = [];
+// const n = 23;
+// const evenArr = [];
 
-for (i = 2; i <= n; i++) {
-  if (i % 2 === 0) {
-    evenArr.push(i);
-  }
-}
+// for (i = 2; i <= n; i++) {
+//   if (i % 2 === 0) {
+//     evenArr.push(i);
+//   }
+// }
 
-console.log(evenArr);
+// console.log(evenArr);
+
+//EX8
+//switch statement
+// for (i = 1; i <= 100; i++) {
+//   switch (true) {
+//     case i % 3 === 0:
+//       console.log(`${i} is Fizz`);
+//       break;
+//     case i % 5 === 0:
+//       console.log(`${i} is Buzz`);
+//       break;
+//     case i % 3 === 0 && i % 5 === 0:
+//       console.log(`${i} is FizzBuzz`);
+//       break;
+//     default:
+//       console.log(i);
+//   }
+// }
+
+//if statement
+// for (i = 1; i <= 100; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log(`${i} is a FizzBuzz`);
+//   } else if (i % 3 === 0) {
+//     console.log(`${i} is a Fizz`);
+//   } else if (i % 5 === 0) {
+//     console.log(`${i} is a Buzz`);
+//   }
+// }
+
+// const myFunction = function () {};
+// const myFunction2 = (a) => (a **= a);
+
+//EX9
+// let sum = 0;
+// while (true) {
+//   const value = Number(prompt("Enter a value"));
+
+//   if (!value) break;
+
+//   sum += value;
+// }
+
+// alert(`Sum is ${sum}`);
+
+//EX10 example 7 using continue
+// const n = 23;
+// const arr = [];
+// for (i = 1; i <= n; i++) {
+//   if (i % 2 !== 0) continue;
+//   arr.push(i);
+// }
+
+// console.log(arr);
+
+//EX11 prime numbers
