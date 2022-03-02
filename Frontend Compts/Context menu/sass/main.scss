@@ -47,8 +47,10 @@ body {
   &--side {
     border-radius: 0.75rem;
     box-shadow: 0 1rem 1.5rem -0.5rem rgba(#000, 0.3);
+    transform: translateX(5rem);
+    transition: all 0.3s;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 0.5rem;
     position: absolute;
