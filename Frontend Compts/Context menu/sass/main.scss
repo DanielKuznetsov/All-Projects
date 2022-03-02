@@ -1,0 +1,138 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/mixins";
+@import "base/base";
+@import "base/typography";
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg-primary: #d0d6df;
+  --color-bg-primary-offset: #f1f3f7;
+  --color-bg-secondary: #fff;
+  --color-text-primary: #3a3c42;
+  --color-text-primary-offset: #898c94;
+  --color-orange: #dc9960;
+  --color-green: #1eb8b1;
+  --color-purple: #657cc4;
+  --color-black: var(--color-text-primary);
+  --color-red: #d92027;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.container {
+  width: 22.5rem;
+  background-color: var(--color-bg-secondary);
+  margin: 15rem auto;
+  padding: 1rem 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1rem 1.5rem -0.5rem rgba(#000, 0.3);
+}
+
+.link-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1rem;
+
+  &--side {
+    border-radius: 0.75rem;
+    box-shadow: 0 1rem 1.5rem -0.5rem rgba(#000, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: absolute;
+    right: calc(-100% + 3rem);
+    top: 0;
+    background-color: #fff;
+    min-width: 17.5rem;
+    padding: 1rem;
+
+    .icon--1 {
+      color: #dc9960;
+    }
+    .icon--2 {
+      color: #657cc4;
+    }
+    .icon--3 {
+      color: #1eb8b1;
+    }
+    .icon--4 {
+      color: #3a3c42;
+    }
+  }
+
+  &__top {
+    padding-bottom: 1.5rem;
+  }
+  &__middle {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid #d0d6df;
+  }
+  &__bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid #d0d6df;
+  }
+
+  &__wrapper {
+    .icon {
+      width: 2.25rem;
+      height: 2.25rem;
+
+      &-span {
+        display: block;
+      }
+    }
+
+    &:hover,
+    &--side:hover {
+      background-color: #f1f3f7;
+    }
+    &--last:hover .icon,
+    &--last:hover .link-box__link:link,
+    &--last:hover .link-box__link:visited {
+      color: #d92027;
+    }
+    &--modal {
+      display: flex;
+      align-items: center;
+
+      .icon-modal {
+        margin-left: auto;
+
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+    &,
+    &--side {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.4rem 0.4rem 0.2rem 0.4rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 1.6rem;
+  }
+}
