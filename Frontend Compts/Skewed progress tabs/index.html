@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Starter</title>
+  </head>
+  <body>
+    <div class="skewed-box">
+      <ul>
+        <li tabindex="0">
+          <span><ion-icon class="icon" name="people-outline"></ion-icon></span>
+          <a href="#">Account</a>
+        </li>
+        <li tabindex="0">
+          <span><ion-icon class="icon" name="cube-outline"></ion-icon></span>
+          <a href="#">Shipping</a>
+        </li>
+        <li tabindex="0">
+          <span><ion-icon class="icon" name="card-outline"></ion-icon></span>
+          <a href="#">Payment</a>
+        </li>
+        <li tabindex="0">
+          <span
+            ><ion-icon class="icon" name="document-text-outline"></ion-icon>
+          </span>
+          <a href="#">Summary</a>
+        </li>
+      </ul>
+    </div>
+    <div class="details">
+      <div class="details__summary">
+        How it works
+        <span>
+          <ion-icon class="icon" name="help-circle-outline"></ion-icon>
+        </span>
+      </div>
+      <div class="details__aside">
+        <p>
+          Easy! The tabs (<code>&lt;a&gt;</code>-tags) is skewed by using
+          <code>transform: skewX(-30deg)</code>. Then we skew the elements
+          inside in the other direction, like this:
+          <code>transform: skewX(30deg)</code>, making them stand up straight
+          again.
+        </p>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

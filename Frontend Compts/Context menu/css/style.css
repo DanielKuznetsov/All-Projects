@@ -83,11 +83,16 @@ body {
     border-top: 1px solid #d0d6df; }
   .link-box__wrapper .icon {
     width: 2.25rem;
-    height: 2.25rem; }
+    height: 2.25rem;
+    color: #898c94; }
     .link-box__wrapper .icon-span {
       display: block; }
+  .link-box__wrapper:hover .icon {
+    color: #3a3c42; }
   .link-box__wrapper:hover, .link-box__wrapper--side:hover {
     background-color: #f1f3f7; }
+  .link-box__wrapper--side:hover .icon {
+    color: red; }
   .link-box__wrapper--last:hover .icon,
   .link-box__wrapper--last:hover .link-box__link:link,
   .link-box__wrapper--last:hover .link-box__link:visited {

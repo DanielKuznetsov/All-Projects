@@ -1,0 +1,150 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/mixins";
+
+@import "base/base";
+@import "base/typography";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+}
+
+.skewed-box {
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      display: block;
+      padding: 1rem 4rem;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transform: skew(-27.5deg);
+      cursor: pointer;
+      border: 2px solid #d1d5db;
+      transition: color 0.15s ease, border-color 0.15s ease;
+
+      &:not(:last-child) {
+        // border-right: 2px solid transparent;
+        // margin-left: -2px;
+      }
+
+      &:first-child {
+        border-top-left-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+      }
+
+      & > * {
+        transform: skew(27.5deg);
+      }
+
+      &:hover a,
+      &:active a,
+      &:focus a,
+      &:hover .icon,
+      &:active .icon,
+      &:focus .icon {
+        color: #6366f1;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: #6366f1;
+      }
+
+      span {
+        display: block;
+
+        .icon {
+          width: 3rem;
+          height: 3rem;
+          color: #6b7280;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.8rem;
+        color: #6b7280;
+      }
+    }
+  }
+}
+
+.details {
+  // background-color: green;
+  margin: 3rem 0;
+
+  &__summary {
+    justify-content: center;
+    font-size: 1.6rem;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    span {
+      display: block;
+    }
+
+    .icon {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+  }
+
+  &__aside {
+    width: 40rem;
+    background-color: #fff;
+    color: #6b7280;
+    padding: 2rem;
+    border: 2px solid #d1d5db;
+    border-radius: 1rem;
+    line-height: 1.5;
+    margin-top: 1.75rem;
+    position: relative;
+    // opacity: 0;
+    // transform: scale(0);
+    display: none;
+
+    &::before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: #fff;
+      border-top: 2px solid #d1d5db;
+      border-left: 2px solid #d1d5db;
+      // border-radius: 0.5rem;
+      position: absolute;
+      left: 50%;
+      top: -1.15rem;
+      transform: translateX(-50%) rotate(45deg);
+      // z-index: -1;
+    }
+
+    code {
+      font-weight: 600;
+    }
+  }
+}
+
+.active {
+  display: block;
+}

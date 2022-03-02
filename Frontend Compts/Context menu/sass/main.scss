@@ -91,15 +91,23 @@ body {
     .icon {
       width: 2.25rem;
       height: 2.25rem;
+      color: #898c94;
 
       &-span {
         display: block;
       }
     }
 
+    &:hover .icon {
+      color: #3a3c42;
+    }
+
     &:hover,
     &--side:hover {
       background-color: #f1f3f7;
+    }
+    &--side:hover .icon {
+      color: red;
     }
     &--last:hover .icon,
     &--last:hover .link-box__link:link,
