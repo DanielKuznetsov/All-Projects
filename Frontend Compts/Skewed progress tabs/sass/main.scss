@@ -33,6 +33,7 @@ body {
       cursor: pointer;
       border: 2px solid #d1d5db;
       transition: color 0.15s ease, border-color 0.15s ease;
+      outline: 0;
 
       &:not(:last-child) {
         // border-right: 2px solid transparent;
