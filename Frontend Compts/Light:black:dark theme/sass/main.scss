@@ -1,0 +1,138 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/mixins";
+
+@import "base/base";
+@import "base/typography";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --c-text-primary: #191919;
+  --c-text-secondary: #737374;
+  --c-border-primary: #ccc;
+  --c-bg-body: #ccc;
+  --c-bg-primary: #fff;
+  --c-bg-secondary: #d4d8dd;
+  --c-bg-button: #fff;
+  --slider-shadow: inset 0 1px 1px #ddd, 0 2px 3px #ccc;
+
+  &.dark-theme {
+    --c-text-primary: #eee;
+    --c-text-secondary: #d3d5db;
+    --c-border-primary: #454545;
+    --c-bg-primary: #323339;
+    --c-bg-secondary: #222128;
+    --c-bg-button: #494a50;
+    --slider-shadow: inset 0 1px 1px #767676;
+  }
+
+  &.black-theme {
+    --c-text-primary: #edeeef;
+    --c-text-secondary: #d4d7e1;
+    --c-border-primary: #323232;
+    --c-bg-primary: #1b1d23;
+    --c-bg-secondary: #000001;
+    --c-bg-button: #343844;
+    --slider-shadow: inset 0 1px 1px #555;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-bg-body);
+  color: var(--c-text-primary);
+  color: #fff;
+}
+
+.container {
+  width: 32.5rem;
+  height: auto;
+  background-color: #1b1d23;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.switch {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #737374;
+
+  &__title {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__box {
+    position: relative;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    width: 100%;
+    height: auto;
+    // background-color: yellowgreen;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &--container {
+      cursor: pointer;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      z-index: 10;
+
+      .icon-span {
+      }
+      .icon {
+        width: 2.25rem;
+        height: 2.25rem;
+      }
+    }
+    &--text {
+      display: block;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.theme-links {
+  padding-top: 1rem;
+  &__list {
+    list-style: none;
+
+    li {
+      // background-color: yellow;
+      cursor: pointer;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+
+      .icon-span {
+        display: block;
+
+        .icon {
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}
