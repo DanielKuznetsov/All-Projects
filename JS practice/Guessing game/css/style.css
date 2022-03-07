@@ -17,60 +17,65 @@ body {
 
 body {
   min-height: 100vh;
-  max-width: 100vw;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.main {
+  width: 50%;
+  height: 55rem;
+  background-color: #030380;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  line-height: 1;
-  position: relative; }
+  flex-direction: column;
+  gap: 2rem; }
 
-.btn--style {
-  background-color: none;
-  padding: 1.5rem;
-  border: 1px solid #d47b15;
-  border-radius: 1rem;
-  display: block;
-  background-color: aquamarine;
-  font-size: 1.6rem;
-  cursor: pointer; }
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  max-width: 70%;
-  height: auto;
-  padding: 6rem;
-  line-height: 1.35;
-  border-radius: 5px;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 10; }
-  .modal > * {
-    font-size: 1.6rem;
-    color: #000; }
-  .modal h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-align: center; }
-  .modal .close-modal {
-    position: absolute;
-    right: 2rem;
-    top: 1.2rem;
-    line-height: 1;
-    font-size: 4rem;
-    background-color: transparent;
-    border: none;
+.top {
+  height: 45%;
+  width: 70%;
+  background-color: orange; }
+  .top button {
+    width: 85%;
+    padding: 1rem;
+    font-size: 1.8rem;
+    background-color: darkcyan;
+    border: 1px solid #26b8b8;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    color: #fff;
     cursor: pointer; }
 
-.overlay {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 5; }
+.middle {
+  height: 25%;
+  width: 70%;
+  background-color: orange; }
+  .middle input {
+    padding: 0.45rem 1rem;
+    outline: none;
+    border-radius: 1rem;
+    border: 1px solid #000;
+    font-size: 1.4rem; }
 
-.hidden {
-  display: none; }
+.bottom {
+  height: 20%;
+  width: 70%;
+  background-color: orange; }
+
+.top,
+.middle,
+.bottom {
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column; }
+
+span {
+  display: block;
+  font-size: 1.8rem;
+  color: black; }
+
+.attempts-total {
+  display: inline; }

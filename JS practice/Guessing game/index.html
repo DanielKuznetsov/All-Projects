@@ -15,47 +15,26 @@
     <title>Starter</title>
   </head>
   <body>
-    <button class="btn btn--style" data-target="#modal1">Button 1</button>
-    <button class="btn btn--style" data-target="#modal2">Button 2</button>
-    <button class="btn btn--style" data-target="#modal3">Button 3</button>
-
-    <div class="modal hidden" id="modal1">
-      <button class="close-modal">&times;</button>
-      <h1>Modal title 1</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-    </div>
-
-    <div class="modal hidden" id="modal2">
-      <button class="close-modal">&times;</button>
-      <h1>Modal title 2</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-    </div>
-
-    <div class="modal hidden" id="modal3">
-      <button class="close-modal">&times;</button>
-      <h1>Modal title 3</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-    </div>
-
-    <div class="overlay hidden"></div>
+    <main class="main">
+      <div class="top">
+        <span>I have a random number</span>
+        <span>between 1 - 20</span>
+        <span>Dare to guess: <span class="guess-result"></span> </span>
+        <button class="check">check</button>
+      </div>
+      <div class="middle">
+        <span>Enter your guess below</span>
+        <input class="guess" type="number" />
+        <span
+          >Number of previous attempts: <span class="attempts-total">0</span>
+        </span>
+      </div>
+      <div class="bottom">
+        <span
+          >Your previous guesses: <span class="previous-scores"></span>
+        </span>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,46 +1,27 @@
-const btnOpenModal = document.querySelectorAll("[data-target]");
-const modal = document.querySelectorAll(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelectorAll(".close-modal");
+const secretNumber = Math.trunc(Math.random() * 20) + 1;
+const totalAttempts = [];
 
-// const openModal = function () {
-//   modal.classList.remove("hidden");
-//   overlay.classList.remove("hidden");
-// };
+document.querySelector(".check").addEventListener("click", function () {
+  const guess = Number(document.querySelector(".guess").value);
 
-// const closeModal = function () {
-//   modal.classList.add("hidden");
-//   overlay.classList.add("hidden");
-// };
+  //shows amount of total attempts
+  document.querySelector(".attempts-total").textContent =
+    totalAttempts.push(guess);
 
-// for (let i = 0; i < btnOpenModal.length; i++) {
-//   btnOpenModal[i].addEventListener("click", openModal);
-// }
+  //shows amounts of previous guesses
+  document.querySelector(".previous-scores").textContent = totalAttempts;
 
-// overlay.addEventListener("click", closeModal);
-// btnCloseModal.addEventListener("click", closeModal);
+  // document.querySelector(".guess-result").textContent = secretNumber;
+  console.log(secretNumber);
 
-//THIS IS LOOPING THROUGH ITEMS TO OPEN/CLOSE MODALS
-//FOR EACH LOOP
-btnOpenModal.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelector(btn.dataset.target).classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  });
-});
-
-for (let i = 0; i < btnCloseModal.length; i++) {
-  btnCloseModal[i].addEventListener("click", function () {
-    for (let y = 0; y < modal.length; y++) {
-      modal[y].classList.add("hidden");
-      overlay.classList.add("hidden");
-    }
-  });
-}
-
-overlay.addEventListener("click", function () {
-  for (i = 0; i < modal.length; i++) {
-    modal[i].classList.add("hidden");
-    overlay.classList.add("hidden");
+  if (secretNumber === guess) {
+    document.querySelector(".main").style.backgroundColor = "green";
+    document.querySelector(".guess-result").textContent = secretNumber;
+  } else if (guess > secretNumber) {
+    document.querySelector(".guess-result").textContent =
+      "Guessing number is higher";
+  } else if (guess < secretNumber) {
+    document.querySelector(".guess-result").textContent =
+      "Guessing number is lower";
   }
 });
