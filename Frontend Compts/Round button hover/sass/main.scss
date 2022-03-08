@@ -1,0 +1,110 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/mixins";
+
+@import "base/base";
+@import "base/typography";
+
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
+  transition: $property $duration $ease;
+}
+
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: "Mukta", sans-serif;
+  font-size: 1rem;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: $bg;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: auto;
+  // background-color: yellow;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 5.25rem;
+    border-radius: 50%;
+    background-color: $black;
+    transition: all 0.3s ease-in-out;
+  }
+
+  span {
+    display: block;
+
+    .icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      color: $white;
+      margin-left: -0.4rem;
+
+      &:first-child {
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:last-child {
+        margin-left: -2rem;
+        opacity: 0;
+        transition: all 0.35s ease-in-out;
+      }
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: $black;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    width: 100%;
+    border-radius: 20rem;
+    z-index: -1;
+  }
+
+  &:hover span .icon:first-child {
+    opacity: 0;
+    transform: translateX(1.75rem);
+  }
+  &:hover span .icon:last-child {
+    opacity: 1;
+    transform: translateX(0.25rem);
+  }
+
+  &:hover a {
+    color: $white;
+  }
+}

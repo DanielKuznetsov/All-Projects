@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #eee; }
+
+* {
+  box-sizing: border-box; }
+  *::before, *::after {
+    box-sizing: border-box; }
+
+body {
+  font-family: "Mukta", sans-serif;
+  font-size: 1rem;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: #f3f8fa; }
+
+.box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: auto;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  position: relative; }
+  .box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 5.25rem;
+    border-radius: 50%;
+    background-color: #282936;
+    transition: all 0.3s ease-in-out; }
+  .box span {
+    display: block; }
+    .box span .icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      color: #fff;
+      margin-left: -0.4rem; }
+      .box span .icon:first-child {
+        transition: all 0.3s ease-in-out; }
+      .box span .icon:last-child {
+        margin-left: -2rem;
+        opacity: 0;
+        transition: all 0.35s ease-in-out; }
+  .box a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #282936;
+    transition: all 0.3s ease-in-out; }
+  .box:hover::before {
+    width: 100%;
+    border-radius: 20rem;
+    z-index: -1; }
+  .box:hover span .icon:first-child {
+    opacity: 0;
+    transform: translateX(1.75rem); }
+  .box:hover span .icon:last-child {
+    opacity: 1;
+    transform: translateX(0.25rem); }
+  .box:hover a {
+    color: #fff; }
