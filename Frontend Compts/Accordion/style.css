@@ -135,8 +135,8 @@ body {
   line-height: 1.4;
 }
 
+.card-body--0,
 .card-body--1,
-.card-body--2,
-.card-body--3 {
+.card-body--2 {
   display: none;
 }
