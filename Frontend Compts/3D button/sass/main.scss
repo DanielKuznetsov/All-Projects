@@ -1,0 +1,78 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/mixins";
+
+@import "base/base";
+@import "base/typography";
+
+@import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
+
+$bg: #fff;
+$text: #382b22;
+$light-pink: #fff0f0;
+$pink: #ffe9e9;
+$dark-pink: #f9c4d2;
+$pink-border: #b18597;
+$pink-shadow: #ffe3e2;
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: $bg;
+}
+
+button {
+  display: block;
+  text-transform: uppercase;
+  background-color: $pink;
+  border: 2px solid $pink-border;
+  border-radius: 1.5rem;
+  padding: 2.25rem 2.75rem;
+  font-weight: 900;
+  font-size: 1.8rem;
+  position: relative;
+  transition: all 0.2s ease-in;
+  transform-style: preserve-3d;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $dark-pink;
+    border: 2px solid $pink-border;
+    border-radius: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 0 1rem 0 0 $pink-shadow;
+    // transform: translateY(1.5rem);
+    transform: translate3d(0, 1.75rem, -1.5rem);
+    transition: all 0.2s ease-in;
+    // z-index: -1;
+  }
+
+  &:hover {
+    transform: translateY(0.75rem);
+
+    &::before {
+      // transform: translateY(0.75rem);
+      transform: translate3d(0, 1rem, -0.5em);
+      box-shadow: 0 0.75rem 0 0 $pink-shadow;
+    }
+  }
+
+  &:active {
+    transform: translateY(1.75rem);
+
+    &::before {
+      transform: translate3d(0, 0, -0.5em);
+      box-shadow: 0 0 0 0 $pink-shadow;
+    }
+  }
+}
