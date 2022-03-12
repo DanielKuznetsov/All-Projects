@@ -119,6 +119,8 @@ body {
   height: 2rem;
   stroke: #fff;
   background-color: #333;
+
+  transition: all 0.35s ease-out;
 }
 
 /* ********************************* */
@@ -139,10 +141,6 @@ body {
 .card-body--1,
 .card-body--2 {
   display: none;
-}
-
-.card-icon {
-  transition: all 0.35s ease-out;
 }
 
 .moveable {

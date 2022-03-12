@@ -29,6 +29,7 @@ btnOpenModal.forEach((btn) => {
   });
 });
 
+//looping through close modals
 for (let i = 0; i < btnCloseModal.length; i++) {
   btnCloseModal[i].addEventListener("click", function () {
     for (let y = 0; y < modal.length; y++) {
@@ -38,6 +39,7 @@ for (let i = 0; i < btnCloseModal.length; i++) {
   });
 }
 
+//closing onclick overlay
 overlay.addEventListener("click", function () {
   for (i = 0; i < modal.length; i++) {
     modal[i].classList.add("hidden");
