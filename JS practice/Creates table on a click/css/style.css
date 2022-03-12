@@ -51,10 +51,26 @@ body {
     flex-basis: 25%; }
 
 table {
+  background-color: yellow;
+  color: black;
+  padding: 0;
   border-collapse: collapse;
-  border-spacing: 0; }
+  margin: 0 auto; }
 
-th,
+thead {
+  /*   background-color: green; */
+  border-top: 1px solid black; }
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /*   background-color: red; */ }
+
 td {
-  padding: 10px 20px;
-  border: 1px solid #000; }
+  border: 1px solid black;
+  width: 10rem;
+  padding: 1rem 0; }
+
+td {
+  border-top: none; }

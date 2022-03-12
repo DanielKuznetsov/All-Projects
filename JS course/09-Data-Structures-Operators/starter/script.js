@@ -56,6 +56,8 @@ const {
   categories: tags,
 } = restaurant;
 
+console.log(restaurantName);
+
 //Default values
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
