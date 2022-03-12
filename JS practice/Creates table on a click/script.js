@@ -45,5 +45,9 @@ const pushData = function (name, age, occupation) {
 const btn = document.querySelector(".btn");
 
 btn.addEventListener("click", function () {
-  pushData("daniel", 24, "student");
+  const nameFull = document.querySelector(".name").value;
+  const age = Number(document.querySelector("#age").value);
+  const occupation = document.querySelector(".occupation").value;
+
+  pushData(nameFull, age, occupation);
 });
