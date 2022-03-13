@@ -25,6 +25,10 @@ const restaurant = {
       open: 0, // Open 24 hours
       close: 24,
     },
+    sun: {
+      open: 12,
+      close: 20,
+    },
   },
 
   order: function (starterIndex, mainIndex) {
@@ -40,7 +44,17 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+
+  orderPizza: function (ingredient, ...others) {
+    console.log(
+      `Your pizza has ${
+        others.length + 1
+      } ingredients and the main one is ${ingredient}s `
+    );
+  },
 };
+
+restaurant.orderPizza('mashroom', 'pineapple', 'cheese', 'tomato', 'egg');
 
 //Using spread (...) operator in a function
 const ingredients = [
@@ -159,3 +173,27 @@ const array = [2, 3, 4];
 const newArray = [1, 9, ...array];
 console.log(newArray);
 console.log(...newArray);
+
+//SPREAD
+const someArray = [1, 2, ...[3, 5]];
+//REST
+const [s, d, ...others] = [1, 2, 3, 5, 6];
+console.log(s, d, others);
+console.log(others);
+
+//REST Objects
+const { sat, sun, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+//REST Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+const m = [23, 6, 7];
+add(2, 3, 4);
+add(...m);
