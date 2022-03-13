@@ -36,7 +36,31 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
+
+//Using spread (...) operator in a function
+const ingredients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt("Let's make pasta! Ingredient 2?"),
+  // prompt("Let's make pasta! Ingredient 3?"),
+];
+restaurant.orderPasta(...ingredients);
+
+//Adding items to arrays that's in an object
+const { mainMenu: currentMenu, starterMenu } = restaurant;
+const newMenu = [...currentMenu, 'Gnocci'];
+console.log(newMenu);
+console.log(...newMenu);
+
+//Copy arrays
+const currentMenuCopy = [...currentMenu];
+//Joint 2 arrays or more
+const jointArrays = [...currentMenu, ...starterMenu];
+console.log(jointArrays);
 
 restaurant.orderDelivery({
   time: '22:30',
@@ -44,6 +68,17 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 2,
 });
+
+//Spread operator in objects
+const newRestaurant = { foundedIn: 2022, ...restaurant, founder: 'Daniel' };
+console.log(newRestaurant);
+
+//Copying objects using spread operators is way easier
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'The Bungalow Kitchen';
+console.log(restaurantCopy.name);
+restaurant.name = 'Pavilions';
+console.log(restaurant.name);
 
 //OBJECT DESCTRUCTURING
 const { name, openingHours, categories } = restaurant;
@@ -113,3 +148,14 @@ console.log(v, i);
 //Default values
 const [t = 1, e = 1, u = 1] = [8, 5];
 console.log(t, e, u);
+
+//THE SPREAD OPERATOR (...)
+const array = [2, 3, 4];
+// const newArray = [1, 9];
+// const result = array.concat(newArray);
+// console.log(result);
+
+//OR
+const newArray = [1, 9, ...array];
+console.log(newArray);
+console.log(...newArray);
