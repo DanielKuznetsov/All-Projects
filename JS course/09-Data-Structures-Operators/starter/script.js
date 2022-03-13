@@ -179,7 +179,7 @@ const someArray = [1, 2, ...[3, 5]];
 //REST
 const [s, d, ...others] = [1, 2, 3, 5, 6];
 console.log(s, d, others);
-console.log(others);
+console.log(...others);
 
 //REST Objects
 const { sat, sun, ...weekdays } = restaurant.openingHours;
