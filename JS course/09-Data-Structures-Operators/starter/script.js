@@ -197,3 +197,18 @@ const add = function (...numbers) {
 const m = [23, 6, 7];
 add(2, 3, 4);
 add(...m);
+
+//OR & AND OPERATORS
+//OR operator accepts any value, any data type and always returns true value
+//IF THE FIRST VALUE TRUE, THEN THE REST OF THE OPERATOR WILL BE TRUE
+console.log(3 || 'Bobby'); //3
+console.log('' || 'Daniel'); //Daniel
+console.log(undefined || null); //null
+console.log(true || 0); //true
+console.log(undefined || 0 || '' || 'Hellow' || 23 || null); //Hellow
+
+//AND operator return False value. If it's true, all values must be true
+//IF THE FIRST VALUE FALSE, THEN THE REST OF THE OPERATOR WILL BE FALSE
+console.log(0 && 'Daniel'); //0
+console.log(7 && 'Daniel'); //Daniel
+console.log('Hellow' && 23 && null && 'Jonas'); //null
