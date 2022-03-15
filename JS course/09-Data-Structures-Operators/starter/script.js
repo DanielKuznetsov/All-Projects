@@ -4,6 +4,28 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+const weekdays1 = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const [mon, tue, wed, thu, fri, sat1, sun1] = weekdays1;
+const hours = {
+  mon: {
+    open: 12,
+    close: 22,
+  },
+  //ES6
+  [weekdays1[4]]: {
+    open: 11,
+    close: 23,
+  },
+  sat1: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+  sun1: {
+    open: 12,
+    close: 20,
+  },
+};
+
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -12,36 +34,21 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-    sun: {
-      open: 12,
-      close: 20,
-    },
-  },
+  //ES6 object literals
+  hours,
 
-  order: function (starterIndex, mainIndex) {
+  //much easier ES6 syntax
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+  orderDelivery({ starterIndex, mainIndex, time, address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 
@@ -101,7 +108,7 @@ console.log(name, openingHours, categories);
 //giving const variables new names (when dealing with 3rd party data)
 const {
   name: restaurantName,
-  openingHours: hours,
+  openingHours: ourHours,
   categories: tags,
 } = restaurant;
 
@@ -126,7 +133,7 @@ console.log(a, b);
 //Nested objects
 const {
   fri: { open: o, close: c },
-} = openingHours;
+} = hours;
 console.log(o, c);
 
 //ARRAY DESCTRUCTURING
@@ -182,7 +189,7 @@ console.log(s, d, others);
 console.log(...others);
 
 //REST Objects
-const { sat, sun, ...weekdays } = restaurant.openingHours;
+const { sat, sun, ...weekdays } = hours;
 console.log(weekdays);
 
 //REST Functions
@@ -322,3 +329,5 @@ for (const item of menu) console.log(item);
 for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
+
+//Enhanced object literal
