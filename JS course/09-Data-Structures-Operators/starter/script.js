@@ -221,3 +221,31 @@ console.log(guests); //will return 10 when supposed to return 0
 //nullish coalesing operator works only with UNDEFINED/NULL
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect); //0
+
+//LOGICAL ASSIGNMENT OPERATOR
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+//if object does not have value for the number of guests, then set it equal to 10
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+//OR logical assignment operator
+rest2.numGuests ||= 10; //10
+
+//NULLISH logical assignment operator (null or undefined)
+rest1.numGuests ??= 10; //0
+
+//AND logical operator
+rest1.owner ??= '<ANONYMOUS>';
+rest2.owner ??= '<ANONYMOUS>';
+
+console.log(rest1); //numGuests = 0
+console.log(rest2); //numGuests = 10
