@@ -212,3 +212,12 @@ console.log(undefined || 0 || '' || 'Hellow' || 23 || null); //Hellow
 console.log(0 && 'Daniel'); //0
 console.log(7 && 'Daniel'); //Daniel
 console.log('Hellow' && 23 && null && 'Jonas'); //null
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests); //will return 10 when supposed to return 0
+
+//NULLISH COALESING operator
+//nullish coalesing operator works only with UNDEFINED/NULL
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect); //0
