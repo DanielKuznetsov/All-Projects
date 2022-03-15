@@ -5,22 +5,20 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 const weekdays1 = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const [mon, tue, wed, thu, fri, sat1, sun1] = weekdays1;
 const hours = {
-  mon: {
+  thu: {
     open: 12,
     close: 22,
   },
-  //ES6
-  [weekdays1[4]]: {
+  fri: {
     open: 11,
     close: 23,
   },
-  sat1: {
+  sat: {
     open: 0, // Open 24 hours
     close: 24,
   },
-  sun1: {
+  sun: {
     open: 12,
     close: 20,
   },
@@ -60,6 +58,13 @@ const restaurant = {
     );
   },
 };
+
+for (const day of weekdays1) {
+  const open = restaurant.hours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+console.log((restaurant.hours.mon ??= `Store is closed`));
 
 restaurant.orderPizza('mashroom', 'pineapple', 'cheese', 'tomato', 'egg');
 
@@ -330,4 +335,23 @@ for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
 
-//Enhanced object literal
+//Optional chaining (?.)
+// console.log(hours.mon.open);
+//WITHOUT
+console.log((hours.thu ??= 'We are not open on Mondays. Sorry!'));
+//WITH
+console.log(restaurant?.hours?.mon); //if value before "?" exists, then it will output the result of what is after the dot "."
+
+//Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+//Array
+const users = [
+  {
+    name: 'Daniel',
+    email: 'danilkuznet@icloud.com',
+  },
+];
+
+console.log(users[0]?.name ?? `User array is empty`);
