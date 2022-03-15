@@ -108,8 +108,8 @@ const {
 console.log(restaurantName);
 
 //Default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
 //Mutating variables
 let a = 111;
@@ -243,9 +243,82 @@ rest2.numGuests ||= 10; //10
 //NULLISH logical assignment operator (null or undefined)
 rest1.numGuests ??= 10; //0
 
-//AND logical operator
-rest1.owner ??= '<ANONYMOUS>';
-rest2.owner ??= '<ANONYMOUS>';
+//AND logical operator - works best with nullish operator
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1); //numGuests = 0
 console.log(rest2); //numGuests = 10
+
+//CODING CHALLANGE
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1
+const [players1, players2] = game.players; //creating variable for each team
+//2
+const [gk, ...fP] = players1; //goalkeeper and field players of team#1
+//3
+const allPlayers = [...players1, ...players2]; //creating an array of all players
+//4
+const players1Final = [...players1, 'Thiago', 'Countino', 'Perisic']; //creating new array of Final players, adding 3 more
+//5
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+//6
+function printGoals(...players1) {
+  console.log(`${players1.length} goals were scored`);
+}
+//7
+team1 < team2 && console.log(`Team 1 is likely to win`);
+team1 > team2 && console.log(`Team 2 is likely to win`);
+
+printGoals(...game.scored);
+
+//the FOR-of loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
