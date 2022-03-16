@@ -381,3 +381,32 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+
+//Sets
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(...'hellow');
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+// orderSet.clear(); //remove all items in the set
+console.log(orderSet);
+
+//can be looped through
+for (const order of orderSet) console.log(order);
+
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = new Set(staff);
+// const staffUnique = [...new Set(staff)];//transition into an array
+console.log(staffUnique);
+// console.log(...staffUnique);//spread operator works on sets
