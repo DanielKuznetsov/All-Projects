@@ -59,11 +59,13 @@ const restaurant = {
   },
 };
 
+//using for of loop and a option chaining "?."
 for (const day of weekdays1) {
   const open = restaurant.hours[day]?.open ?? 'closed';
   console.log(`On ${day}, we open at ${open}`);
 }
 
+//Will print out 'Store is closed" if 'mon' does not exist
 console.log((restaurant.hours.mon ??= `Store is closed`));
 
 restaurant.orderPizza('mashroom', 'pineapple', 'cheese', 'tomato', 'egg');
@@ -355,3 +357,27 @@ const users = [
 ];
 
 console.log(users[0]?.name ?? `User array is empty`);
+
+//Looping Objects Keys
+//PROPERTY NAMES
+const properties = Object.keys(hours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days:`;
+
+for (const day of properties) {
+  openStr += ` ${day}, `;
+}
+
+console.log(openStr);
+//PROPERTY VALUES
+const values = Object.values(hours);
+console.log(values);
+
+//ENTIRE OBJECT
+const entries = Object.entries(hours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
