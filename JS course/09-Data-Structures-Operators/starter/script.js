@@ -4,6 +4,106 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+//STRING METHODS
+const airline = 'American Airline LA';
+const plane = 'A320';
+console.log(plane[0]);
+console.log(airline.length);
+console.log('HELLOW'.length);
+
+console.log(airline.indexOf('m'));
+console.log(airline.lastIndexOf('i'));
+console.log(airline.indexOf('American'));
+
+//Slice method
+console.log(airline.indexOf('n'));
+console.log(airline.slice(9));
+console.log(airline.slice(0, airline.indexOf(' '))); //slicing first word
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //slicing last word
+
+const checkMiddleSeat = function (seat) {
+  const s1 = seat.slice(-1);
+  s1 === 'B' || s1 === 'E'
+    ? console.log(`You got a middle seat`)
+    : console.log(`You got lucky`);
+};
+
+checkMiddleSeat('2E');
+
+const passanger = 'daNiEl';
+const passangerLower = passanger.toLowerCase();
+const passangerCorrect =
+  passangerLower[0].toUpperCase() + passangerLower.slice(1);
+console.log(passangerCorrect);
+
+//Compare emails
+const email = 'danilkuznet@icloud.com';
+const loginEmail = '   DanilKuzNet@Icloud.Com ';
+const normalizedEmail = loginEmail.toLowerCase().trim(); //trim() removes space
+console.log(email === normalizedEmail);
+
+//Replacing
+const priceRUS = '288,97 Rubl';
+const priceUS =
+  '$ ' + priceRUS.replace('Rubl', '$').replace(',', '.').slice(0, -1);
+console.log(priceUS); // $ 288.97 is what it looks like now
+
+//replacing entire word
+const announcement =
+  'All passangers come to the boarding door 23. Boarding door 23!';
+
+console.log(announcement.replaceAll('door', 'gate'));
+
+//Booleans in strings
+const plane2 = 'Air A320 neo';
+console.log(plane2.includes('A32')); //true
+console.log(plane2.startsWith('Air')); //true
+
+if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+  console.log('Part of the new AIrbus family');
+}
+
+//Split method
+console.log('hellow+world+tday+dmks'.split('+'));
+const [firstName1, lastName1] = 'Daniel Kuznetsov'.split(' ');
+console.log(firstName1);
+
+const newName = ['Mr.', firstName1, lastName1.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const nameUpper = [];
+
+  for (const n of names) {
+    nameUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(nameUpper);
+};
+
+capitalizeName('hello world daniel group seal beach');
+
+const maskCreditCard = function (number) {
+  const str = String(number);
+  const last = str.slice(-4); //taking last 4 digits
+  return last.padStart(str.length, '*');
+};
+
+const camelStr = function (str) {
+  const strUnder = str.toLowerCase();
+  const strSplit = strUnder.split('_');
+  console.log(
+    strSplit[0] +
+      strSplit[1].replace(strSplit[1][0], strSplit[1][0].toUpperCase())
+  );
+};
+
+camelStr('first_name');
+//////////////////////////////////////
+//////////////////////////////////////
+//////////////////////////////////////
+//////////////////////////////////////
+//////////////////////////////////////
 const weekdays1 = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const hours = {
   thu: {
@@ -410,3 +510,95 @@ const staffUnique = new Set(staff);
 // const staffUnique = [...new Set(staff)];//transition into an array
 console.log(staffUnique);
 // console.log(...staffUnique);//spread operator works on sets
+
+//Maps
+const restMap = new Map();
+restMap.set('name', 'Classico Italiano');
+
+//Maps can be chained like this
+restMap
+  .set(1, 'Fironze", "Italy')
+  .set(true, 'We are open :)')
+  .set(false, 'We are closed ;(')
+  .set('open', 11)
+  .set('close', 23);
+
+console.log(restMap.get(true));
+console.log(restMap.get('name'));
+console.log(restMap.get(1));
+
+const time = 12;
+console.log(
+  restMap.get(time > restMap.get('open') && time < restMap.get('close')) //the value of what is in () is 'true'
+);
+
+restMap.delete(1); //removing the value by setting a key
+console.log(restMap);
+
+// Example 1
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3][(true, 'Correct. YAY!')],
+//   [(true, 'Correct. Yay!')],
+//   [false, 'Try again'],
+// ]);
+
+//Converting Objects to Maps
+const hoursMap = new Map(Object.entries(hours));
+console.log(hoursMap.get('fri'));
+
+// console.log(Object.entries(hours));
+//For loop
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+
+// Coding Challenge #3
+
+/* 
+Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
+
+1. Create an array 'events' of the different game events that happened (no duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+      [FIRST HALF] 17: ⚽️ GOAL
+
+GOOD LUCK 😀
+*/
+
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// 1.
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+// 2.
+gameEvents.delete(64);
+console.log(gameEvents);
+// 3.
+const time2 = [...gameEvents.keys()].pop();
+console.log(
+  `An event happened, on average, every ${time2 / gameEvents.size} minutes`
+);
+// 4.
+for (const [time, event] of gameEvents) {
+  const half = time <= 45 ? ['FIRST'] : ['SECOND'];
+  console.log(`[${half} HALF] ${time}: ${event}`);
+  // time < 45 && console.log(`[FIRST HALF] ${time}: ${event}`);
+  // time > 45 && console.log(`[SECOND HALF] ${time}: ${event}`);
+}
