@@ -26,3 +26,38 @@
 // //Replacing all letters of "a" with "*"
 // const str = "abbsswafasnfbbsfda";
 // console.log(str.replaceAll("a", "*"));
+
+const orders = [
+  "Salad",
+  "Pasta",
+  "Pizza",
+  "Burger",
+  "Burger",
+  "Pasta",
+  "Tea",
+  "Tea",
+];
+
+//creates a set of values from an array above
+const orderSet = new Set(orders);
+console.log(`${orderSet.size} items were popular today`);
+
+//creates an array that is connecting every single value with a comma
+const a = [...orderSet].join(", ");
+console.log(a);
+
+//prints out the unique values
+let orderStr = `These are our popular items today: ${a}.`;
+console.log(orderStr);
+
+const equalItems = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    if (arr[i] === arr[i + 1]) {
+      sum += i;
+      console.log(`There is a match for ${arr[i]} and ${sum}`);
+    }
+  }
+};
+
+equalItems(orders);
