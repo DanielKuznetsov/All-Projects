@@ -471,8 +471,8 @@ for (const day of properties) {
 
 console.log(openStr);
 //PROPERTY VALUES
-const values = Object.values(hours);
-console.log(values);
+// const values = Object.values(hours);
+// console.log(values);
 
 //ENTIRE OBJECT
 const entries = Object.entries(hours);
