@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 *,
 *::before,
 *::after {
@@ -14,15 +15,6 @@ body {
   font-size: 1.6rem;
   line-height: 1;
   color: #eee; }
-
-* {
-  box-sizing: border-box; }
-
-html {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 100%; }
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -74,9 +66,6 @@ body {
 .card-1, .card-2, .card-3, .card-4 {
   display: none; }
 
-.active {
-  display: block; }
-
 .dots {
   display: flex;
   gap: 1rem;
@@ -90,5 +79,43 @@ span {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background-color: orange;
+  background-color: rgba(255, 166, 0, 0.5);
   cursor: pointer; }
+
+.active {
+  display: block; }
+
+.opacity {
+  opacity: 0;
+  transform: translateY(2rem); }
+
+.img-opacity {
+  opacity: 0.85; }
+
+.img-anmt {
+  animation: imgFade 1s ease-in forwards; }
+
+@keyframes imgFade {
+  100% {
+    opacity: 1; } }
+
+.transity {
+  animation: transity 0.4s ease-in-out forwards; }
+
+.transity-text {
+  animation: transity 0.7s ease forwards;
+  animation-delay: 0.2s; }
+
+@keyframes transity {
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+.span-active {
+  border-radius: 0.5rem;
+  animation: btnAnimate 0.3s ease-in-out forwards;
+  background-color: #ffa600; }
+
+@keyframes btnAnimate {
+  100% {
+    width: 2rem; } }
