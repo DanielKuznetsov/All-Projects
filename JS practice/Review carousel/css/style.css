@@ -71,10 +71,10 @@ body {
   color: #9b9797;
   line-height: 1.3; }
 
-.card-1, .card-2, .card-3 {
+.card-1, .card-2, .card-3, .card-4 {
   display: none; }
 
-.activate {
+.active {
   display: block; }
 
 .dots {

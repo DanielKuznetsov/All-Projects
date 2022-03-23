@@ -80,12 +80,13 @@ body {
 
   &-1,
   &-2,
-  &-3 {
+  &-3,
+  &-4 {
     display: none;
   }
 }
 
-.activate {
+.active {
   display: block;
 }
 
