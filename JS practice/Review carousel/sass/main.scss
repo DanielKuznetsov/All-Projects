@@ -97,19 +97,24 @@ span {
 }
 
 //Functionality classes - JS
+
+//Class that affects the entire card
 .active {
   display: block;
 }
 
+//Class for text and title
 .opacity {
   opacity: 0;
   transform: translateY(2rem);
 }
 
+//Class for img to change opacity
 .img-opacity {
   opacity: 0.85;
 }
 
+//Img class is adding when a btn is clicked
 .img-anmt {
   animation: imgFade 1s ease-in forwards;
 }
@@ -120,10 +125,12 @@ span {
   }
 }
 
+//Class for title animation
 .transity {
   animation: transity 0.4s ease-in-out forwards;
 }
 
+//Class for the text animation
 .transity-text {
   animation: transity 0.7s ease forwards;
   animation-delay: 0.2s;
@@ -136,6 +143,7 @@ span {
   }
 }
 
+//Class for btn animation
 .span-active {
   border-radius: 0.5rem;
   animation: btnAnimate 0.3s ease-in-out forwards;
