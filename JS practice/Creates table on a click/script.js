@@ -24,7 +24,11 @@ row_1.appendChild(heading_2);
 row_1.appendChild(heading_3);
 thead.appendChild(row_1);
 
-const pushData = function (name, age, occupation) {
+const pushData = function (
+  name = "Unknown",
+  age = undefined,
+  occupation = "Unknown"
+) {
   const row = document.createElement("th");
   const row_data_1 = document.createElement("td");
   row_data_1.textContent = name;

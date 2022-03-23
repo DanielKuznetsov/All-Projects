@@ -4,6 +4,9 @@ const btns = document.querySelectorAll("span");
 const cardTitles = document.querySelectorAll(".card__title");
 const cardTexts = document.querySelectorAll(".card__text");
 const imgs = document.querySelectorAll(".img");
+//Grabbing NEXT and PREV buttons
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 
 //Loop to un-select all card from all btns and effects
 btns.forEach((button) => {
@@ -42,3 +45,5 @@ cardTitles.forEach((title) => {
     img.classList.add("img-opacity");
   });
 });
+
+//Creating functionality of the next and prev buttons

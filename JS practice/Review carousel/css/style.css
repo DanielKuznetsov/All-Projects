@@ -43,7 +43,6 @@ body {
   height: 50rem;
   background-color: #fff;
   border-radius: 1rem;
-  overflow: hidden;
   position: relative; }
 
 .card__img-box .img {
@@ -119,3 +118,32 @@ span {
 @keyframes btnAnimate {
   100% {
     width: 2rem; } }
+
+.next-btns {
+  position: absolute;
+  right: 0;
+  bottom: -5.5%;
+  display: flex;
+  align-items: center;
+  gap: 1rem; }
+
+.btn-move {
+  background-color: transparent;
+  font-size: 1.8rem;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative; }
+  .btn-move::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+    transition: all 0.3s; }
+  .btn-move:hover::after {
+    width: 100%; }
