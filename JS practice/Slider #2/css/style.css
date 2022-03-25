@@ -18,19 +18,24 @@ body {
 body {
   max-width: 100vw;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: #5c5a5a;
   background-color: #ddd; }
 
 .slider-container {
   max-width: 50%;
   height: 16rem;
-  background-color: #fff;
   border-radius: 0.5rem;
+  background-color: #fff;
   position: relative;
   overflow: hidden; }
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out; }
 
 .card {
   display: flex;
@@ -47,19 +52,28 @@ body {
     background-color: #a10707; }
   .card__figure--3 {
     background-color: darkolivegreen; }
-  .card__content {
-    width: 100%; }
-    .card__content p {
-      line-height: 1.1;
-      color: #888787; }
-    .card__content span {
-      display: block;
-      margin-top: 1rem;
-      font-size: 1.8rem;
-      font-weight: 700;
-      font-style: italic; }
+  .card__content p {
+    line-height: 1.1;
+    color: #888787; }
+  .card__content span {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic; }
 
 .buttons {
   position: absolute;
   bottom: 1rem;
   right: 1rem; }
+
+.btn {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 1rem;
+  background-color: #eee;
+  cursor: pointer;
+  text-transform: uppercase; }
+  .btn:last-child {
+    margin-left: 1rem; }
