@@ -1,0 +1,11 @@
+.tag {
+  background-color: red;
+}
+
+span {
+  display: block;
+  padding: 2rem;
+  text-transform: uppercase;
+  background-color: greenyellow;
+  margin: 2rem;
+}
