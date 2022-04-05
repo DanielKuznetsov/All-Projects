@@ -83,11 +83,14 @@ const capitalizeName = function (name) {
 
 capitalizeName('hello world daniel group seal beach');
 
-const maskCreditCard = function (number) {
-  const str = String(number);
-  const last = str.slice(-4); //taking last 4 digits
-  return last.padStart(str.length, '*');
-};
+// const maskCreditCard = function (number) {
+//   const str = String(number);
+//   const last = str.slice(-4); //taking last 4 digits
+//   console.log(last)
+//   return last.padStart(str.length, '*');
+// };
+
+// console.log(maskCreditCard(6565743399875433));
 
 const camelStr = function (str) {
   const strUnder = str.toLowerCase();
@@ -602,3 +605,12 @@ for (const [time, event] of gameEvents) {
   // time < 45 && console.log(`[FIRST HALF] ${time}: ${event}`);
   // time > 45 && console.log(`[SECOND HALF] ${time}: ${event}`);
 }
+
+const maskCreditCard = function (number) {
+  const str = String(number);
+  const last = str.slice(-4); //taking last 4 digits
+  console.log(last);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(6565743399875433));
