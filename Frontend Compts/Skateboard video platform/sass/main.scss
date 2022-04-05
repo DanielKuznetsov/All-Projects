@@ -58,7 +58,7 @@ body {
 }
 
 .navbar {
-  flex: 0 0 20%;
+  flex-basis: 22.5rem;
   // background-color: blue;
   padding: 4rem 2.5rem;
   overflow: scroll;
@@ -148,14 +148,16 @@ body {
   }
 }
 
+//Supporting classes
 .icon {
   width: 1.6rem;
   height: 1.6rem;
+  color: #a6a7b2;
 }
 
 .text-secondary {
   font-weight: 500;
-  color: var(--body-color);
+  color: #a6a7b2;
   letter-spacing: 0.5px;
   font-size: 1.4rem;
 }
@@ -163,4 +165,212 @@ body {
 .main {
   flex: 1;
   // background-color: yellowgreen;
+  padding: 3.5rem 2.5rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+
+  &__search {
+    width: 50%;
+  }
+
+  &__input {
+    width: 100%;
+    display: block;
+    padding: 0.75rem 1rem;
+    background: #302e3a;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    color: #aeadb3;
+    font-family: inherit;
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+
+    img {
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    span {
+      color: #fff;
+    }
+
+    .icon {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  .circle {
+    position: relative;
+    padding: 0.25rem;
+  }
+
+  .circle::after {
+    content: "";
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background-color: #ff4d4d;
+    position: absolute;
+    top: 0.15rem;
+    right: 0.55rem;
+    box-shadow: 0 0 0 0.1rem #1f1d2b;
+  }
+}
+
+//Main body part
+.box {
+  max-width: 100%;
+
+  &__title {
+    margin-top: 2rem;
+    color: #fff;
+    font-size: 1.6;
+    font-weight: 500;
+  }
+}
+
+.banners {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3.5rem;
+
+  & > * {
+    border-radius: 2rem;
+  }
+
+  &__left {
+    flex: 1 1 55%;
+    background-image: url("https://assets.codepen.io/3364143/skate-removebg-preview.png");
+    background-position: 140%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-color: #32a7e2;
+  }
+  &__right {
+    background-image: url("https://c0.anyrgb.com/images/1020/945/venice-beach-2018-outdoors-sport-men-jumping-desert-sunset-extreme-sports-one-person-action.jpg");
+    background-size: 139%;
+    flex: 1 1 30%;
+    filter: saturate(1.4);
+  }
+
+  &__author {
+    display: flex;
+    margin-top: 5rem;
+
+    &--1 {
+      gap: 1rem;
+    }
+
+    &--2 {
+      flex-direction: column;
+      gap: 1.5rem;
+
+      .info__title {
+        margin-bottom: 1rem;
+      }
+    }
+
+    img {
+      width: 4.5rem;
+      height: 4.5rem;
+      // box-shadow: 0 0 0 0.35rem #32a7e2, 0 0 0 0.4rem #fff;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      //instead of adding box-shadow on an img, some padding will do it
+      padding: 0.4rem;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 0.5rem;
+
+      &__title {
+        color: #fff;
+      }
+
+      p:last-child {
+        color: #fff;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    width: 5rem;
+
+    span {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0.1rem;
+      right: 0.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      border-radius: 50%;
+    }
+
+    .icon-box {
+      bottom: 0.25rem;
+      right: 0.55rem;
+
+      &--1 {
+        box-shadow: 0 0 0 0.25rem #32a7e2;
+      }
+
+      &--2 {
+        box-shadow: 0 0 0 0.25rem #fff3d0;
+      }
+    }
+
+    .icon {
+      color: #32a7e2;
+      width: 1.35rem;
+      height: 1.35rem;
+    }
+  }
+}
+
+.bn {
+  height: 30rem;
+  padding: 2.5rem;
+
+  .text {
+    color: #fff;
+    width: 17rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
 }

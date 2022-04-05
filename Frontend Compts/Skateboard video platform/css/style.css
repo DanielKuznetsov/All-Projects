@@ -58,7 +58,7 @@ body {
   border-radius: 2.25rem; }
 
 .navbar {
-  flex: 0 0 20%;
+  flex-basis: 22.5rem;
   padding: 4rem 2.5rem;
   overflow: scroll;
   scrollbar-width: thin;
@@ -114,13 +114,160 @@ body {
 
 .icon {
   width: 1.6rem;
-  height: 1.6rem; }
+  height: 1.6rem;
+  color: #a6a7b2; }
 
 .text-secondary {
   font-weight: 500;
-  color: var(--body-color);
+  color: #a6a7b2;
   letter-spacing: 0.5px;
   font-size: 1.4rem; }
 
 .main {
-  flex: 1; }
+  flex: 1;
+  padding: 3.5rem 2.5rem; }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit; }
+  .top__search {
+    width: 50%; }
+  .top__input {
+    width: 100%;
+    display: block;
+    padding: 0.75rem 1rem;
+    background: #302e3a;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    color: #aeadb3;
+    font-family: inherit; }
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem; }
+  .profile__img {
+    width: 4rem;
+    height: 4rem; }
+    .profile__img img {
+      border-radius: 50%;
+      cursor: pointer; }
+  .profile__name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer; }
+    .profile__name span {
+      color: #fff; }
+    .profile__name .icon {
+      width: 1.8rem;
+      height: 1.8rem; }
+  .profile .icon {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer; }
+  .profile .circle {
+    position: relative;
+    padding: 0.25rem; }
+  .profile .circle::after {
+    content: "";
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background-color: #ff4d4d;
+    position: absolute;
+    top: 0.15rem;
+    right: 0.55rem;
+    box-shadow: 0 0 0 0.1rem #1f1d2b; }
+
+.box {
+  max-width: 100%; }
+  .box__title {
+    margin-top: 2rem;
+    color: #fff;
+    font-size: 1.6;
+    font-weight: 500; }
+
+.banners {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3.5rem; }
+  .banners > * {
+    border-radius: 2rem; }
+  .banners__left {
+    flex: 1 1 55%;
+    background-image: url("https://assets.codepen.io/3364143/skate-removebg-preview.png");
+    background-position: 140%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-color: #32a7e2; }
+  .banners__right {
+    background-image: url("https://c0.anyrgb.com/images/1020/945/venice-beach-2018-outdoors-sport-men-jumping-desert-sunset-extreme-sports-one-person-action.jpg");
+    background-size: 139%;
+    flex: 1 1 30%;
+    filter: saturate(1.4); }
+  .banners__author {
+    display: flex;
+    margin-top: 5rem; }
+    .banners__author--1 {
+      gap: 1rem; }
+    .banners__author--2 {
+      flex-direction: column;
+      gap: 1.5rem; }
+      .banners__author--2 .info__title {
+        margin-bottom: 1rem; }
+    .banners__author img {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      padding: 0.4rem; }
+    .banners__author .info {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 0.5rem; }
+      .banners__author .info__title {
+        color: #fff; }
+      .banners__author .info p:last-child {
+        color: #fff;
+        font-size: 1.2rem; }
+  .banners__img {
+    position: relative;
+    width: 5rem; }
+    .banners__img span {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0.1rem;
+      right: 0.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      border-radius: 50%; }
+    .banners__img .icon-box {
+      bottom: 0.25rem;
+      right: 0.55rem; }
+      .banners__img .icon-box--1 {
+        box-shadow: 0 0 0 0.25rem #32a7e2; }
+      .banners__img .icon-box--2 {
+        box-shadow: 0 0 0 0.25rem #fff3d0; }
+    .banners__img .icon {
+      color: #32a7e2;
+      width: 1.35rem;
+      height: 1.35rem; }
+
+.bn {
+  height: 30rem;
+  padding: 2.5rem; }
+  .bn .text {
+    color: #fff;
+    width: 17rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2; }
