@@ -51,7 +51,7 @@ body {
   justify-content: center; }
 
 .container {
-  width: 80%;
+  width: 90%;
   height: 90%;
   background-color: #1f1d2b;
   display: flex;
@@ -125,13 +125,21 @@ body {
 
 .main {
   flex: 1;
-  padding: 3.5rem 2.5rem; }
+  padding: 3.5rem 3.5rem;
+  overflow: scroll;
+  position: relative;
+  width: 100%; }
 
 .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: inherit; }
+  .top .one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit; }
   .top__search {
     width: 50%; }
   .top__input {
@@ -203,12 +211,14 @@ body {
     background-position: 140%;
     background-size: 80%;
     background-repeat: no-repeat;
-    background-color: #32a7e2; }
+    background-color: #32a7e2;
+    position: relative; }
   .banners__right {
     background-image: url("https://c0.anyrgb.com/images/1020/945/venice-beach-2018-outdoors-sport-men-jumping-desert-sunset-extreme-sports-one-person-action.jpg");
     background-size: 139%;
     flex: 1 1 30%;
-    filter: saturate(1.4); }
+    filter: saturate(1.4);
+    position: relative; }
   .banners__author {
     display: flex;
     margin-top: 5rem; }
@@ -261,6 +271,15 @@ body {
       color: #32a7e2;
       width: 1.35rem;
       height: 1.35rem; }
+  .banners__time {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: rgba(37, 41, 54, 0.6);
+    padding: 0.45rem 0.8rem;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.5rem; }
 
 .bn {
   height: 30rem;
@@ -271,3 +290,105 @@ body {
     font-size: 2.4rem;
     font-weight: 600;
     line-height: 1.2; }
+
+.videos-section {
+  margin-top: 3rem; }
+  .videos-section .box__title {
+    font-size: 2.2rem;
+    letter-spacing: 0.5px; }
+
+.videos {
+  width: 100%;
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem; }
+  .videos__card {
+    background-color: #2c293d;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative; }
+    .videos__card:hover .videos__wrapper {
+      transform: scale(1.5); }
+    .videos__card:hover .videos__content p:first-child {
+      opacity: 0; }
+    .videos__card:hover .videos__info {
+      right: 18%;
+      bottom: -8.5%; }
+    .videos__card:hover .videos__info img {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0.2rem;
+      border-color: rgba(255, 255, 255, 0.5); }
+    .videos__card:hover .videos__info .icon-box {
+      transform: scale(0.4);
+      right: -0.35rem;
+      bottom: 0; }
+    .videos__card:hover .videos__time {
+      opacity: 0; }
+  .videos__wrapper {
+    position: relative;
+    transition: all 0.4s; }
+    .videos__wrapper video {
+      width: 100%;
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      cursor: pointer; }
+  .videos__info {
+    position: absolute;
+    right: 10%;
+    bottom: -17.5%;
+    transition: all 0.4s; }
+    .videos__info img {
+      padding: 0.4rem;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      transition: all 0.4s; }
+    .videos__info .icon-box {
+      background-color: #32a7e2;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      bottom: 0.25rem;
+      box-shadow: 0 0 0 0.25rem #2c293d;
+      transition: all 0.4s; }
+      .videos__info .icon-box .icon {
+        color: #fff;
+        width: 1rem;
+        height: 1rem; }
+  .videos__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem; }
+    .videos__content p:first-child {
+      transition: all 0.25s; }
+    .videos__content-text--1 {
+      color: #fff;
+      line-height: 1.5;
+      font-weight: 600; }
+    .videos__content-text--2 {
+      font-size: 1.2rem; }
+  .videos__time {
+    background-color: rgba(37, 41, 54, 0.6);
+    padding: 0.45rem 0.8rem;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 1.25rem;
+    top: 1rem;
+    font-size: 1.2rem;
+    transition: all 0.2s; }
+
+.title-dot {
+  color: lightgreen; }
+  .title-dot--2 {
+    color: lightcoral; }
