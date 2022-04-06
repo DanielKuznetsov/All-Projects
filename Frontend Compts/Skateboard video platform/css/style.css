@@ -125,16 +125,22 @@ body {
 
 .main {
   flex: 1;
-  padding: 3.5rem 3.5rem;
+  padding: 0 3.5rem 3.5rem 3.5rem;
   overflow: scroll;
   position: relative;
   width: 100%; }
 
 .top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: inherit; }
+  width: inherit;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 3rem 0 2rem 0;
+  background: linear-gradient(to bottom, #1f1d2b 0%, #1f1d2b 92%, rgba(31, 29, 43, 0) 100%); }
+  .top-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
   .top .one {
     display: flex;
     justify-content: space-between;
@@ -192,12 +198,19 @@ body {
     box-shadow: 0 0 0 0.1rem #1f1d2b; }
 
 .box {
-  max-width: 100%; }
+  max-width: 100%;
+  margin-top: -2.5rem; }
   .box__title {
     margin-top: 2rem;
     color: #fff;
     font-size: 1.6;
     font-weight: 500; }
+    .box__title--sticky {
+      position: sticky;
+      top: 8rem;
+      margin-top: 1rem;
+      padding-top: 2rem;
+      z-index: 10; }
 
 .banners {
   display: flex;

@@ -1,5 +1,3 @@
-
-
 // h1.addEventListener("click", function () {
 //   h1.textContent = myName;
 //   h1.style.backgroundColor = "red";
