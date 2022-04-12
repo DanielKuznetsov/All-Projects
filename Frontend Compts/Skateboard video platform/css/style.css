@@ -147,7 +147,14 @@ body {
     align-items: center;
     width: inherit; }
   .top__search {
-    width: 50%; }
+    width: 50%;
+    display: flex;
+    align-items: center; }
+    .top__search .icon {
+      margin-left: -2.5rem;
+      line-height: 1;
+      padding: 0;
+      cursor: pointer; }
   .top__input {
     width: 100%;
     display: block;
@@ -156,7 +163,7 @@ body {
     border: none;
     outline: none;
     border-radius: 0.5rem;
-    color: #aeadb3;
+    color: #fff;
     font-family: inherit; }
 
 .profile {

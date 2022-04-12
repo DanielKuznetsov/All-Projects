@@ -74,3 +74,26 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// SLICE ---not mutable
+const arr2 = arr.slice();
+// console.log(arr2);
+// console.log(arr.slice(-1));
+
+// SPLICE ---mutate the original array
+// console.log(arr.splice(2));
+// console.log(arr.splice(-1));
+console.log(arr2);
+
+// REVERSE ---mutate the original array
+console.log(arr2.reverse());
+
+// CONCAT
+const letters = arr.concat(arr2);
+console.log(letters);
+
+// JOIN
+const name = 'Daniel';
+
+console.log(letters.join(' - '));
