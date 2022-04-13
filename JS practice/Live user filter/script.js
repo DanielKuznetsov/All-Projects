@@ -40,3 +40,19 @@ function filterData(searchTerm) {
     }
   });
 }
+
+const arr1 = [100, 200, 300];
+
+let temp = 0;
+
+function myFunction(arr) {
+  arr.forEach((item) => {
+    if (temp < item) {
+      temp = item;
+    }
+  });
+
+  return temp;
+}
+
+console.log(myFunction(arr1));
