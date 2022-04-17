@@ -79,7 +79,7 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
+// displayMovements(account1.movements);
 
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, current) => {
@@ -89,31 +89,31 @@ const calcDisplayBalance = function (movements) {
   labelBalance.textContent = `${balance ?? '0'} €`;
 };
 
-calcDisplayBalance(account1.movements);
+// calcDisplayBalance(account1.movements);
 
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumIn.textContent = `${incomes} €`;
 
-  const withdrawals = movements
+  const withdrawals = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
 
   labelSumOut.textContent = `${Math.abs(withdrawals)} €`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .filter(int => int >= 1)
     .reduce((acc, current) => acc + current, 0);
 
-  labelSumInterest.textContent = `${interest} €`;
+  labelSumInterest.textContent = `${interest.toFixed(2)} €`;
 };
 
-calcDisplaySummary(account1.movements);
+// calcDisplaySummary(account1.movements);
 
 const createUsernames = function (accounts) {
   accounts.forEach(account => {
@@ -128,6 +128,40 @@ const createUsernames = function (accounts) {
 createUsernames(accounts);
 
 console.log(accounts);
+
+//Event handlers
+let currentAccount;
+
+btnLogin.addEventListener('click', function (e) {
+  //Prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+
+  if (currentAccount?.pin === +inputLoginPin.value) {
+    //Display UI and welcome message
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+
+    containerApp.style.opacity = '1';
+
+    //Display movements
+    displayMovements(currentAccount.movements);
+
+    //Display balance
+    calcDisplayBalance(currentAccount.movements);
+
+    //Display summary
+    calcDisplaySummary(currentAccount);
+
+    //Clear the input fields
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -154,13 +188,21 @@ console.log(accounts);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-//Array method chaining
-const totalDepositsUSD = movements
-  .filter(mov => mov > 0)
-  .map(mov => mov * 1.1)
-  .reduce((acc, mov) => acc + mov, 0);
+//Find method
+// const firstWithdrawal = movements.find(mov => mov < 0);
+// console.log(firstWithdrawal);
 
-console.log(`Total deposits in US dollar: $${Math.floor(totalDepositsUSD)}`);
+// const account = accounts.find(account =>
+//   account.owner.toLowerCase().startsWith('jess')
+// );
+
+//Array method chaining
+// const totalDepositsUSD = movements
+//   .filter(mov => mov > 0)
+//   .map(mov => mov * 1.1)
+//   .reduce((acc, mov) => acc + mov, 0);
+
+// console.log(`Total deposits in US dollar: $${Math.floor(totalDepositsUSD)}`);
 
 // Reduce method
 // const balance = movements.reduce((total, current) => {
@@ -345,13 +387,13 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
-const calcAverageHumanAge = dogAges => {
-  const humanAgesAverage = dogAges
-    .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
-    .filter(dogAge => dogAge >= 18)
-    .reduce((acc, adultDog, i, arr) => acc + adultDog / arr.length, 0);
+// const calcAverageHumanAge = dogAges => {
+//   const humanAgesAverage = dogAges
+//     .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
+//     .filter(dogAge => dogAge >= 18)
+//     .reduce((acc, adultDog, i, arr) => acc + adultDog / arr.length, 0);
 
-  return `The average human age of dogs: ${humanAgesAverage}`;
-};
+//   return `The average human age of dogs: ${humanAgesAverage}`;
+// };
 
-console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
+// console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
