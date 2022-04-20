@@ -94,7 +94,7 @@ const displayMovements = function (movements, sort = false) {
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__value">${mov}€</div>
+        <div class="movements__value">${mov.toFixed(2)}€</div>
       </div>
     `;
 
@@ -104,19 +104,19 @@ const displayMovements = function (movements, sort = false) {
 
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${acc.balance}€`;
+  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
 };
 
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = `${incomes}€`;
+  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${Math.abs(out)}€`;
+  labelSumOut.textContent = `${Math.abs(out).toFixed(2)}€`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
@@ -126,7 +126,7 @@ const calcDisplaySummary = function (acc) {
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 };
 
 const createUsernames = function (accs) {
@@ -206,7 +206,7 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
@@ -251,3 +251,35 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+console.log(Number.parseInt('30px', 10)); //30
+console.log(Number.parseInt('e23', 10)); //NaN
+console.log(Number.parseFloat('2.5rem')); //2.5
+console.log(Number.isNaN(20)); //false
+console.log(Number.isFinite(20)); //true
+console.log(Number.isFinite('20')); //false
+
+console.log(Math.max(2, 33, 4, 5, '3'));
+console.log(Math.min('2', 33, 4, 5, '3'));
+
+console.log(Math.floor(Math.random() * 22) + 1);
+
+//Random number between 10-20
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
+console.log(randomInt(10, 20));
+
+//Rounding integers
+console.log(Math.trunc(23.22)); //23
+console.log(Math.round(23.52)); //24
+console.log(Math.ceil(26.92)); //27
+console.log(Math.floor(26.92)); //26
+
+//Rounding decimals
+console.log((2.359).toFixed(1)); //always returns a string
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach((row, i) => {
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+    if (i % 3 === 0) row.style.backgroundColor = 'lightgreen';
+    if (i % 2 === 1) row.style.backgroundColor = 'lightblue';
+  });
+});
