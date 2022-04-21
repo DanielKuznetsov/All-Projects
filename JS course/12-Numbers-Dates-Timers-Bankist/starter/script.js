@@ -81,7 +81,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
-const formatMovementDate = function (date) {
+const formatMovementDate = function (date, locale) {
   const calcDaysPassed = (date1, date2) =>
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
@@ -90,13 +90,15 @@ const formatMovementDate = function (date) {
   if (daysPassed === 0) return 'Today';
   if (daysPassed === 1) return 'Yesterday';
   if (daysPassed <= 7) return `${daysPassed} days ago`;
-  else {
-    const day = `${date.getDate()}`.padStart(2, 0);
-    const month = `${date.getMonth() + 1}`.padStart(2, 0);
-    const year = date.getFullYear();
 
-    return `${day}/${month}/${year}`;
-  }
+  // else {
+  //   const day = `${date.getDate()}`.padStart(2, 0);
+  //   const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  //   const year = date.getFullYear();
+
+  //   return `${day}/${month}/${year}`;
+
+  return new Intl.DateTimeFormat(locale).format(date);
 };
 
 const displayMovements = function (acc, sort = false) {
@@ -111,7 +113,7 @@ const displayMovements = function (acc, sort = false) {
 
     // Exporting data into a new function
     const date = new Date(acc.movementsDates[i]);
-    const displayDate = formatMovementDate(date);
+    const displayDate = formatMovementDate(date, acc.locale);
 
     const html = `
       <div class="movements__row">
@@ -203,14 +205,20 @@ btnLogin.addEventListener('click', function (e) {
 
     //Create current date and time
     const now = new Date();
-    const day = now.getDate();
-    const month = `${now.getMonth() + 1}`.padStart(2, 0);
-    const year = now.getFullYear();
-    const hour = `${now.getHours()}`.padStart(2, 0);
-    const min = `${now.getMinutes()}`.padStart(2, 0);
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+      // weekday: 'long',
+    };
+    // const locale = navigator.language;
+    const locale = currentAccount.locale;
 
-    labelDate.textContent = `${month}/${day}/${year}, ${hour}:${min}`;
-
+    labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(
+      now
+    );
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
