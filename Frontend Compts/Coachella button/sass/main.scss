@@ -1,0 +1,55 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/mixins";
+
+@import "base/base";
+@import "base/typography";
+
+html {
+  cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor.png),
+    auto;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button,
+a {
+  cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor-hover.png),
+    pointer;
+}
+
+button {
+  padding: 2rem 4rem;
+  font-size: 1.8rem;
+  background-image: url("https://media-prd.coachella.com/content/coachella-2022/nav-bg-fill-black.png");
+  background-position: 0 -100%;
+  background-repeat: repeat-x;
+  outline: none;
+  background-color: rgb(206, 233, 245);
+  border: 2px solid #000;
+  transition: 2s cubic-bezier(0.1, 0.67, 0.78, 0.82);
+
+  &:focus,
+  &:hover {
+    background-position: 500% 100%;
+  }
+
+  &:hover a {
+    color: #fff;
+    transition: color 0.2s;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.2s;
+}
