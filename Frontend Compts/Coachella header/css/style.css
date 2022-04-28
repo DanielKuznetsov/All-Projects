@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #eee; }
+
+body {
+  max-width: 100vw;
+  min-height: 100vh; }
+
+html {
+  cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor.png), auto; }
+
+.container {
+  background-color: #ddd;
+  height: 150rem;
+  position: relative;
+  transition: all 0.3s; }
+  .container__after::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150rem;
+    background-color: none;
+    animation: sliderAni 2s alternate;
+    animation-fill-mode: forwards; }
+
+@keyframes sliderAni {
+  100% {
+    background-color: rgba(255, 255, 0, 0.35); } }
+
+.img {
+  width: 10rem;
+  height: 10rem;
+  margin-top: 17rem;
+  position: relative; }
+
+.header {
+  max-width: inherit;
+  padding: 5rem;
+  position: relative; }
+
+.nav {
+  max-width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20; }
+  .nav__list ul {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none; }
+    .nav__list ul li a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #3a3a3a;
+      letter-spacing: 0.5px;
+      cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor-hover.png), pointer; }
+  .nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    color: #3a3a3a;
+    font-weight: 600; }
+    .nav__logo .logo-link {
+      cursor: pointer; }
+    .nav__logo .logo-stick {
+      height: 2.8rem; }
+
+.dropdown {
+  background-color: yellowgreen;
+  height: 50rem;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: -60rem;
+  left: 0;
+  z-index: 10; }
+
+.dropdown__animation {
+  top: 0;
+  transition: all 0.5s; }
+
+.ani {
+  transition: all 0.5s; }
