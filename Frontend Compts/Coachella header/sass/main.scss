@@ -36,7 +36,7 @@ html {
 
 @keyframes sliderAni {
   100% {
-    background-color: rgba(yellow, 0.35);
+    background-color: rgba(yellow, 0.25);
   }
 }
 
@@ -69,12 +69,12 @@ html {
     list-style: none;
 
     li {
-      padding: 1.5rem 4rem;
+      padding: 1.5rem 3rem;
     }
 
     li a {
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       color: #3a3a3a;
       letter-spacing: 0.5px;
       cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor-hover.png),
@@ -101,10 +101,10 @@ html {
 }
 
 .dropdown {
-  background-color: red;
+  background-color: #fffdf4;
   height: 55rem;
   width: 100vw;
-  overflow: hidden;
+  // overflow: hidden;
 
   position: absolute;
   top: -65rem;
@@ -117,14 +117,10 @@ html {
 
   z-index: 10;
 
-  // & > * {
-  //   pointer-events: none;
-  // }
-
   &__inner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background-color: yellow;
+    // background-color: yellow;
     width: 80%;
     height: 75%;
     align-self: flex-end;
@@ -132,7 +128,7 @@ html {
   }
 
   &__links {
-    background-color: green;
+    // background-color: green;
     padding: 7rem 3rem;
     position: relative;
     overflow: hidden;
@@ -145,6 +141,11 @@ html {
       flex-direction: column;
       flex-wrap: wrap;
       gap: 5rem;
+
+      transition: display 0.25s ease-in-out;
+
+      //JS
+      // display: none;
 
       li a {
         font-size: 2.2rem;
@@ -172,6 +173,8 @@ html {
       max-width: 45rem;
       display: block;
       position: absolute;
+
+      //JS
       // display: none;
     }
   }
