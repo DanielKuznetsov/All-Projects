@@ -107,8 +107,8 @@ html {
   overflow: hidden;
 
   position: absolute;
-  // top: -65rem;
-  top: 0;
+  top: -65rem;
+  // top: 0;
   left: 0;
 
   display: flex;
@@ -116,6 +116,10 @@ html {
   justify-content: center;
 
   z-index: 10;
+
+  // & > * {
+  //   pointer-events: none;
+  // }
 
   &__inner {
     display: grid;
@@ -147,6 +151,8 @@ html {
         font-weight: 800;
         color: #3a3a3a;
         text-decoration: none;
+        cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor-hover.png),
+          pointer;
       }
     }
   }
@@ -160,7 +166,6 @@ html {
   }
 
   &__imgs {
-    margin-top: -5%;
     position: relative;
 
     img {
