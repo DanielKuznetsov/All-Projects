@@ -66,8 +66,11 @@ html {
   &__list ul {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
     list-style: none;
+
+    li {
+      padding: 1.5rem 4rem;
+    }
 
     li a {
       text-decoration: none;
@@ -87,7 +90,8 @@ html {
     font-weight: 600;
 
     .logo-link {
-      cursor: pointer;
+      cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor-hover.png),
+        pointer;
     }
 
     .logo-stick {
@@ -97,22 +101,79 @@ html {
 }
 
 .dropdown {
-  background-color: yellowgreen;
-  height: 50rem;
+  background-color: red;
+  height: 55rem;
   width: 100vw;
   overflow: hidden;
 
   position: absolute;
-  top: -60rem;
+  // top: -65rem;
+  top: 0;
   left: 0;
 
-  // transform: translate(-5rem, -60rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   z-index: 10;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: yellow;
+    width: 80%;
+    height: 75%;
+    align-self: flex-end;
+    margin-left: -7.5rem;
+  }
+
+  &__links {
+    background-color: green;
+    padding: 7rem 3rem;
+    position: relative;
+    overflow: hidden;
+
+    ul {
+      width: 100%;
+      height: 30rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 5rem;
+
+      li a {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #3a3a3a;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+
+    &:not(:nth-child(4)) {
+      display: none;
+    }
+  }
+
+  &__imgs {
+    margin-top: -5%;
+    position: relative;
+
+    img {
+      max-width: 45rem;
+      display: block;
+      position: absolute;
+      // display: none;
+    }
+  }
 }
 
 //utility class for dropdown animation
 .dropdown__animation {
-  // transform: translate(-5rem, -10rem);
   top: 0;
   transition: all 0.5s;
 }
