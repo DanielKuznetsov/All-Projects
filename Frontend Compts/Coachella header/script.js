@@ -12,15 +12,17 @@ links.forEach((link, i) => {
     container.classList.add("container__after");
 
     linkLists.forEach((list) => {
-      list.style.display = "none";
+      list.style.opacity = "0";
+      list.style.pointerEvents = "none";
     });
 
     navImgs.forEach((list) => {
-      list.style.display = "none";
+      list.style.opacity = "0";
     });
 
-    linkLists[i].style.display = "flex";
-    navImgs[i].style.display = "flex";
+    linkLists[i].style.opacity = "1";
+    linkLists[i].style.pointerEvents = "auto";
+    navImgs[i].style.opacity = "1";
 
     const dropBlock = document.querySelector(".dropdown__animation");
     dropBlock.onmouseleave = () => {

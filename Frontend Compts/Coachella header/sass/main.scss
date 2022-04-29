@@ -63,6 +63,11 @@ html {
   position: relative;
   z-index: 20;
 
+  &__img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
   &__list ul {
     display: flex;
     align-items: center;
@@ -104,7 +109,7 @@ html {
   background-color: #fffdf4;
   height: 55rem;
   width: 100vw;
-  // overflow: hidden;
+  overflow: hidden;
 
   position: absolute;
   top: -65rem;
@@ -142,10 +147,8 @@ html {
       flex-wrap: wrap;
       gap: 5rem;
 
-      transition: display 0.25s ease-in-out;
-
-      //JS
-      // display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
 
       li a {
         font-size: 2.2rem;
@@ -160,10 +163,6 @@ html {
 
   &__list {
     position: absolute;
-
-    &:not(:nth-child(4)) {
-      display: none;
-    }
   }
 
   &__imgs {
@@ -173,9 +172,6 @@ html {
       max-width: 45rem;
       display: block;
       position: absolute;
-
-      //JS
-      // display: none;
     }
   }
 }
