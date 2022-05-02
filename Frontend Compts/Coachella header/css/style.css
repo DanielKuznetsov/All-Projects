@@ -74,7 +74,10 @@ html {
       font-weight: 800;
       color: #3a3a3a;
       letter-spacing: 0.5px;
-      cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor-hover.png), pointer; }
+      cursor: url(https://media-prd.coachella.com/content/coachella-2022/cursor-hover.png), pointer;
+      letter-spacing: 0.5px; }
+    .nav__list ul .link {
+      position: relative; }
   .nav__logo {
     display: flex;
     align-items: center;
