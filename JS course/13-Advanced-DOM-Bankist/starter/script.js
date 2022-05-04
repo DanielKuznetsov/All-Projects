@@ -44,16 +44,16 @@ message.innerHTML = `We use coockies for improved functionality and analytics.
 <button class="btn btn--close-cookie">Got it!</button>`;
 const header = document.querySelector('.header');
 
-header.prepend(message);
+// header.prepend(message);
 // header.append(message.cloneNode(true));
 // header.before(message);
 // header.after(message);
 
-document
-  .querySelector('.btn--close-cookie')
-  .addEventListener('click', function () {
-    message.remove();
-  });
+// document
+//   .querySelector('.btn--close-cookie')
+//   .addEventListener('click', function () {
+//     message.remove();
+//   });
 
 //Styling an element
 message.style.backgroundColor = '#343413';
@@ -62,7 +62,7 @@ message.style.width = '120%';
 console.log(getComputedStyle(message).color);
 
 //changing css variable color property
-document.documentElement.style.setProperty('--color-primary', 'orangered');
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 //Attributes
 const logo = document.querySelector('.nav__logo');
@@ -116,3 +116,13 @@ btnScrollTo.addEventListener('click', function (e) {
   //   behavior: 'smooth',
   // });
 });
+
+const h1 = document.querySelector('h1');
+
+const alertH1 = function (e) {
+  alert('addEventListener: Great! You are reading the heading :D');
+
+  h1.removeEventListener('mouseenter', alertH1);
+};
+
+h1.addEventListener('mouseenter', alertH1);
