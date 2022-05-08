@@ -38,6 +38,10 @@ body {
     align-items: center;
     cursor: pointer;
     padding: 1.8rem 0;
+
+    &--active {
+      border-bottom: 2px solid black;
+    }
   }
 
   &__btn {
@@ -63,7 +67,8 @@ body {
     display: grid;
     grid-template-columns: 40% 60%;
     opacity: 0;
-    transition: all 0.5s;
+    pointer-events: none;
+    transition: all 0.3s;
 
     position: absolute;
     top: 0;
@@ -71,6 +76,7 @@ body {
 
     &--active {
       opacity: 1;
+      pointer-events: auto;
     }
   }
 

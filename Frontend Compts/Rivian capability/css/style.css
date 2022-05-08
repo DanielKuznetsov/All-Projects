@@ -41,6 +41,8 @@ body {
     align-items: center;
     cursor: pointer;
     padding: 1.8rem 0; }
+    .nav__item--active {
+      border-bottom: 2px solid black; }
   .nav__btn {
     outline: none;
     border: none;
@@ -59,12 +61,14 @@ body {
     display: grid;
     grid-template-columns: 40% 60%;
     opacity: 0;
-    transition: all 0.5s;
+    pointer-events: none;
+    transition: all 0.3s;
     position: absolute;
     top: 0;
     left: 0; }
     .content__wrapper--active {
-      opacity: 1; }
+      opacity: 1;
+      pointer-events: auto; }
   .content__body p {
     max-width: 75%;
     line-height: 1.5;
