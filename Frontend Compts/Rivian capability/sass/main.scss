@@ -9,8 +9,8 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   color: #000;
   background-color: rgb(233, 223, 202);
 }
@@ -19,11 +19,11 @@ body {
   width: 80%;
   height: auto;
   // background-color: yellowgreen;
+  margin-top: -40rem;
 }
 
 .nav {
   // background-color: yellow;
-  padding: 1.8rem 0;
   border-bottom: 1px solid black;
 
   &__list {
@@ -36,6 +36,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    padding: 1.8rem 0;
   }
 
   &__btn {
@@ -55,10 +57,21 @@ body {
 
 .content {
   margin-top: 5rem;
+  position: relative;
 
   &__wrapper {
     display: grid;
     grid-template-columns: 40% 60%;
+    opacity: 0;
+    transition: all 0.5s;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &--active {
+      opacity: 1;
+    }
   }
 
   &__body {
