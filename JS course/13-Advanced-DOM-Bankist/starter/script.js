@@ -41,8 +41,8 @@ document.addEventListener('keydown', function (e) {
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 
-const allSections = document.querySelectorAll('.section');
-console.log(allSections);
+// const allSections = document.querySelectorAll('.section');
+// console.log(allSections);
 
 const buttons = document.getElementsByTagName('button');
 console.log(buttons);
@@ -280,3 +280,24 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   rootMargin: `-${navHeight.height}px`,
 });
 headerObserver.observe(header);
+
+// Reveling sections on scroll
+const allSections = document.querySelectorAll('.section');
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshhold: 0.15,
+});
+
+allSections.forEach(section => {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
