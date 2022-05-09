@@ -238,3 +238,14 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 // nav.addEventListener('mouseout', function (e) {
 //   handleHover(e, 1);
 // });
+
+// Sticky navigation
+const initalCoords = section1.getBoundingClientRect();
+console.log(initalCoords);
+
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+
+  if (window.scrollY > initalCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+});
