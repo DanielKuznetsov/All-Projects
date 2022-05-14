@@ -35,21 +35,33 @@ const getCountryAndNeigbour = function (country) {
     renderCountry(data);
 
     //Get neighbour country
-    const [neighbour] = data.borders;
+    // const [neighbour] = data.borders;
 
-    if (!neighbour) return;
+    // if (!neighbour) return;
 
-    //AJAX call country 2
-    const request2 = new XMLHttpRequest();
-    request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
-    request2.send();
+    // //AJAX call country 2
+    // const request2 = new XMLHttpRequest();
+    // request2.open('GET', `https://restcountries.com/v2/alpha/${neighbour}`);
+    // request2.send();
 
-    request2.addEventListener('load', function () {
-      const data2 = JSON.parse(this.responseText);
+    // request2.addEventListener('load', function () {
+    //   const data2 = JSON.parse(this.responseText);
 
-      renderCountry(data2, 'neighbour');
+    //   renderCountry(data2, 'neighbour');
+    // });
+
+    data.borders.forEach(border => {
+      const request2 = new XMLHttpRequest();
+      request2.open('GET', `https://restcountries.com/v2/alpha/${border}`);
+      request2.send();
+
+      request2.addEventListener('load', function () {
+        const data2 = JSON.parse(this.responseText);
+
+        renderCountry(data2, 'neighbour');
+      });
     });
   });
 };
 
-getCountryAndNeigbour('costa rica');
+getCountryAndNeigbour('mexico');
