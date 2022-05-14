@@ -4,8 +4,6 @@ const displayBtn = function (entries) {
   entries.forEach((entry) => {
     entry.target.classList.toggle("show", !entry.isIntersecting);
     if (entry.isIntersecting) observer.unobserve(entry.target);
-    // loadNewCards();
-    // observer.observe(document.querySelector(".btn:last-child"));
   });
 };
 
@@ -18,9 +16,9 @@ btns.forEach((btn) => observer.observe(btn));
 
 function loadNewCards() {
   for (let i = 0; i < 10; i++) {
-    const card = document.createElement("div");
+    const card = document.createElement("button");
     card.textContent = "New Card";
-    // card.classList.add("btn");
+    card.classList.add("btn");
     observer.observe(card);
     document.querySelector(".container").append(card);
   }
