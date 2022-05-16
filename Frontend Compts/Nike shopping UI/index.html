@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script defer src="script.js"></script>
     <title>Starter</title>
   </head>
   <body>
@@ -28,7 +38,7 @@
           <div class="card-title">
             <p class="title">Picked items</p>
           </div>
-          <div class="shoe">
+          <!-- <div class="shoe">
             <div class="shoe__img-wrapper">
               <img
                 src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/air-zoom-pegasus-36-mens-running-shoe-wide-D24Mcz-removebg-preview.png"
@@ -49,7 +59,7 @@
               <span class="shoe__price">$108.97</span>
               <div class="shoe__add-to-cart" data-card-num="1">add to cart</div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="cart">
@@ -62,7 +72,33 @@
           </div>
           <div class="card-title">
             <p class="title">Your cart</p>
-            <p class="subtitle">Your cart is empty</p>
+            <!-- <p class="subtitle">Your cart is empty</p> -->
+          </div>
+          <div class="card-item">
+            <div class="card-item__left">
+              <div class="img-wrapper">
+                <img
+                  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/air-zoom-pegasus-36-mens-running-shoe-wide-D24Mcz-removebg-preview.png"
+                  alt="Air Zoom"
+                />
+              </div>
+            </div>
+            <div class="card-item__right">
+              <p class="title">Nike Air Zoom Pegasus 36</p>
+              <p class="price">$108.97</p>
+              <div class="incr-tab">
+                <span class="icon-wrapper icon-back"
+                  ><ion-icon class="icon" name="chevron-back-outline"></ion-icon
+                ></span>
+                <p class="icnr">1</p>
+                <span class="icon-wrapper icon-forward"
+                  ><ion-icon
+                    class="icon"
+                    name="chevron-forward-outline"
+                  ></ion-icon
+                ></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
