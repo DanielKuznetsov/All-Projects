@@ -58,14 +58,13 @@ const createShoes = function (shoes) {
   });
 };
 
-createShoes(shoes);
-
-const addToCart = function (items) {
+const addToCart = function (items, incr = 1) {
   const btnsCart = document.querySelectorAll(".btn-cart");
 
-  btnsCart.forEach((btnCart) => {
+  btnsCart.forEach((btnCart, i) => {
     btnCart.addEventListener("click", function (e) {
       const item = items[e.target.dataset.item];
+      let incr = 1;
 
       const cartShoe = `
       <div class="card-item">
@@ -84,7 +83,7 @@ const addToCart = function (items) {
           <span class="icon-wrapper icon-back"
             ><ion-icon class="icon" name="chevron-back-outline"></ion-icon
           ></span>
-          <p class="icnr">1</p>
+          <p class="incr-text" data-item-num="${i}">${incr}</p>
           <span class="icon-wrapper icon-forward"
             ><ion-icon
               class="icon"
@@ -96,8 +95,33 @@ const addToCart = function (items) {
     </div>`;
 
       cart.insertAdjacentHTML("beforeend", cartShoe);
+      removeCartTitle(cart);
+
+      const tabForward = document.querySelector(".icon-forward");
+      const tabBack = document.querySelector(".icon-back");
+      const incrText = document.querySelector(".incr-text");
+      incrTab(tabForward, tabBack, incrText, incr);
     });
   });
 };
 
+createShoes(shoes);
 addToCart(shoes);
+
+const removeCartTitle = function (cartParent) {
+  console.log(cart.children);
+  if (cartParent.children.length > 2) {
+    document.querySelector(".subtitle-cart").style.display = "none";
+  }
+};
+
+const incrTab = function (btnForward, btnBack, textTab, incr) {
+  btnForward.addEventListener("click", function () {
+    incr++;
+    textTab.textContent = incr;
+  });
+  btnBack.addEventListener("click", function () {
+    incr--;
+    textTab.textContent = incr;
+  });
+};
