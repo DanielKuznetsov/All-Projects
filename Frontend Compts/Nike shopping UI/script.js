@@ -95,12 +95,17 @@ const addToCart = function (items, incr = 1) {
     </div>`;
 
       cart.insertAdjacentHTML("beforeend", cartShoe);
-      removeCartTitle(cart);
+
+      const children = [...cart.children];
+      children.forEach((child) => {});
 
       const tabForward = document.querySelector(".icon-forward");
       const tabBack = document.querySelector(".icon-back");
       const incrText = document.querySelector(".incr-text");
-      incrTab(tabForward, tabBack, incrText, incr);
+
+      incrTab(tabForward, tabBack, incrText, incr, children);
+
+      removeCartTitle(cart);
     });
   });
 };
@@ -109,13 +114,12 @@ createShoes(shoes);
 addToCart(shoes);
 
 const removeCartTitle = function (cartParent) {
-  console.log(cart.children);
   if (cartParent.children.length > 2) {
     document.querySelector(".subtitle-cart").style.display = "none";
   }
 };
 
-const incrTab = function (btnForward, btnBack, textTab, incr) {
+const incrTab = function (btnForward, btnBack, textTab, incr, children) {
   btnForward.addEventListener("click", function () {
     incr++;
     textTab.textContent = incr;
@@ -123,5 +127,7 @@ const incrTab = function (btnForward, btnBack, textTab, incr) {
   btnBack.addEventListener("click", function () {
     incr--;
     textTab.textContent = incr;
+    // if (incr === 0) {
+    // }
   });
 };
