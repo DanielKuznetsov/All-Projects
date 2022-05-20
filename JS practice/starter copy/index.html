@@ -4,9 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Destructuring</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+
+    <title>To-do list</title>
   </head>
   <body>
-    <script src="script.js"></script>
+    <h1>todos</h1>
+    <form id="form">
+      <input
+        type="text"
+        class="input"
+        id="input"
+        placeholder="Enter your todo"
+        autocomplete="off"
+      ></input>
+
+      <ul class="todos" id="todos">
+        <!-- <li>My First todo</li>
+        <li class="completed">My Second todo</li> -->
+      </ul>
+    </form>
+
+    <small>Left click to toggle completed. <br> Right click to delete todo</small>
   </body>
 </html>
