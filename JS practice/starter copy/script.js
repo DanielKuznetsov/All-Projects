@@ -2,6 +2,12 @@ const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 const todosUl = document.querySelector("#todos");
 
+const todos = JSON.parse(localStorage.getItem("todos"));
+
+if (todos) {
+  todos.forEach((todo) => addTodo(todo));
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -37,5 +43,25 @@ function addTodo(todo) {
     todosUl.appendChild(todoEl);
 
     input.value = "";
+
+    updateLS();
   }
+}
+
+// localStorage.setItem("name", JSON.stringify(obj));
+// JSON.parse(localStorage.getItem(obj));
+
+function updateLS() {
+  const todosEl = document.querySelectorAll("li");
+
+  const todos = [];
+
+  todosEl.forEach((todoEl) => {
+    todos.push({
+      text: todoEl.innerText,
+      completed: todoEl.classList.contains("completed"),
+    });
+  });
+
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
