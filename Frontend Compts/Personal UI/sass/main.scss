@@ -25,6 +25,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: $black;
+  font-size: 1.6rem;
 }
 
 .container {
@@ -33,17 +35,14 @@ body {
   background-color: #fff;
 
   display: flex;
-  // position: relative;
+  // overflow: hidden;
 }
 
 .nav {
   // background-color: yellowgreen;
   flex-basis: 15%;
-  transform: translateY(-1.75rem);
+  transform: translateY(-2rem);
   margin-left: 3rem;
-  // position: absolute;
-  // left: 3rem;
-  // top: -1.75rem;
 
   &__list {
     list-style-type: none;
@@ -63,9 +62,10 @@ body {
     }
   }
   &__icon {
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     transition: all 0.25s ease;
+    color: #fff;
   }
   &__icon--wrapper {
   }
@@ -73,6 +73,106 @@ body {
 
 .info {
   flex: 1;
-  background-color: red;
-  margin: 3rem 4rem;
+  // background-color: yellow;
+  // padding: 4.5rem 4rem 0 4.5rem;
+  overflow: hidden;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo {
+  & > * {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &__logo {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: $hulu;
+    color: $logo;
+  }
+  &__amount {
+    padding: 1rem;
+    background-color: $green;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transform: rotate(-90deg);
+    right: -2.05rem;
+    bottom: 10rem;
+    color: #fff;
+    transition: all 0.35s ease-in;
+
+    &:hover {
+      transform: rotate(0) scale(1.15);
+      background-color: $aqua;
+    }
+  }
+}
+
+.screen {
+  height: 100%;
+  // background-color: red;
+  padding: 4.5rem 4rem 0 4.5rem;
+  transition: all 0.5s ease-in;
+
+  &--title {
+    color: $green;
+    font-size: 1.8rem;
+    margin-bottom: 3.5rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  &__form--subtitle {
+    font-family: $heading;
+    font-size: 1rem;
+    color: $gray;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  &__label {
+    width: 85%;
+    border-bottom: 1px solid $green;
+
+    button {
+      cursor: pointer;
+      background-color: #dddddd;
+      color: #3fb6a8;
+      padding: 0.5rem;
+      border: none;
+
+      &:focus,
+      &:hover {
+        background-color: rgba(235, 225, 225, 0.85);
+      }
+    }
+  }
+
+  &__input {
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 0.5rem 0;
+    margin-top: 1rem;
+
+    &::placeholder {
+      font-size: 1.2rem;
+      font-family: inherit;
+    }
+  }
+}
+
+.input--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

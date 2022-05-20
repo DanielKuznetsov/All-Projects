@@ -21,28 +21,29 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
+    <script defer src="script.js"></script>
     <title>Starter</title>
   </head>
   <body>
     <div class="container">
       <nav class="nav">
         <ul class="nav__list">
-          <li class="nav__item">
+          <li class="nav__item" data-nav-num="0">
             <div class="nav__icon--wrapper">
               <ion-icon class="nav__icon" name="person-outline"></ion-icon>
             </div>
           </li>
-          <li class="nav__item">
+          <li class="nav__item" data-nav-num="1">
             <div class="nav__icon--wrapper">
               <ion-icon class="nav__icon" name="card-outline"></ion-icon>
             </div>
           </li>
-          <li class="nav__item">
+          <li class="nav__item" data-nav-num="2">
             <div class="nav__icon--wrapper">
               <ion-icon class="nav__icon" name="albums-outline"></ion-icon>
             </div>
           </li>
-          <li class="nav__item">
+          <li class="nav__item" data-nav-num="3">
             <div class="nav__icon--wrapper">
               <ion-icon
                 class="nav__icon"
@@ -50,14 +51,290 @@
               ></ion-icon>
             </div>
           </li>
-          <li class="nav__item">
+          <li class="nav__item" data-nav-num="4">
             <div class="nav__icon--wrapper">
               <ion-icon class="nav__icon" name="settings-outline"></ion-icon>
             </div>
           </li>
         </ul>
       </nav>
-      <div class="info"></div>
+      <div class="info">
+        <div class="promo">
+          <h3 class="promo__logo">hulu</h3>
+          <small class="promo__amount">Get $10</small>
+        </div>
+
+        <div class="screen" data-screen-num="0">
+          <h2 class="screen--title">Personal Info</h2>
+          <form class="screen__form">
+            <div class="screen__label">
+              <p class="screen__form--subtitle">full name</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="Julie Park"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">birthday</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="April 30"
+                />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">gender</p>
+              <div class="input--wrapper">
+                <input class="screen__input" type="text" placeholder="Female" />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">email</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="danilkuznet@icloud.com"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">password</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="*********"
+                />
+                <button>change</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="screen" data-screen-num="1">
+          <h2 class="screen--title">Personal Info</h2>
+          <form class="screen__form">
+            <div class="screen__label">
+              <p class="screen__form--subtitle">full name</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="Julie Park"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">birthday</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="April 30"
+                />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">gender</p>
+              <div class="input--wrapper">
+                <input class="screen__input" type="text" placeholder="Female" />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">email</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="danilkuznet@icloud.com"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">password</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="*********"
+                />
+                <button>change</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="screen" data-screen-num="2">
+          <h2 class="screen--title">Personal Info</h2>
+          <form class="screen__form">
+            <div class="screen__label">
+              <p class="screen__form--subtitle">full name</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="Julie Park"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">birthday</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="April 30"
+                />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">gender</p>
+              <div class="input--wrapper">
+                <input class="screen__input" type="text" placeholder="Female" />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">email</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="danilkuznet@icloud.com"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">password</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="*********"
+                />
+                <button>change</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="screen" data-screen-num="3">
+          <h2 class="screen--title">Personal Info</h2>
+          <form class="screen__form">
+            <div class="screen__label">
+              <p class="screen__form--subtitle">full name</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="Julie Park"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">birthday</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="April 30"
+                />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">gender</p>
+              <div class="input--wrapper">
+                <input class="screen__input" type="text" placeholder="Female" />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">email</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="danilkuznet@icloud.com"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">password</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="*********"
+                />
+                <button>change</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="screen" data-screen-num="4">
+          <h2 class="screen--title">Personal Info</h2>
+          <form class="screen__form">
+            <div class="screen__label">
+              <p class="screen__form--subtitle">full name</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="Julie Park"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">birthday</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="April 30"
+                />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">gender</p>
+              <div class="input--wrapper">
+                <input class="screen__input" type="text" placeholder="Female" />
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">email</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="danilkuznet@icloud.com"
+                />
+                <button>update</button>
+              </div>
+            </div>
+            <div class="screen__label">
+              <p class="screen__form--subtitle">password</p>
+              <div class="input--wrapper">
+                <input
+                  class="screen__input"
+                  type="text"
+                  placeholder="*********"
+                />
+                <button>change</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

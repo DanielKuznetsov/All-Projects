@@ -22,7 +22,9 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  color: #070707;
+  font-size: 1.6rem; }
 
 .container {
   width: 60rem;
@@ -32,7 +34,7 @@ body {
 
 .nav {
   flex-basis: 15%;
-  transform: translateY(-1.75rem);
+  transform: translateY(-2rem);
   margin-left: 3rem; }
   .nav__list {
     list-style-type: none;
@@ -47,11 +49,85 @@ body {
       transform: scale(1.25);
       color: #3fb6a8; }
   .nav__icon {
-    width: 2rem;
-    height: 2rem;
-    transition: all 0.25s ease; }
+    width: 2.2rem;
+    height: 2.2rem;
+    transition: all 0.25s ease;
+    color: #fff; }
 
 .info {
   flex: 1;
-  background-color: red;
-  margin: 3rem 4rem; }
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+.promo > * {
+  position: absolute;
+  cursor: pointer; }
+
+.promo__logo {
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: "Nunito Sans", sans-serif;
+  color: #3dbb3d; }
+
+.promo__amount {
+  padding: 1rem;
+  background-color: #7ed386;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transform: rotate(-90deg);
+  right: -2.05rem;
+  bottom: 10rem;
+  color: #fff;
+  transition: all 0.35s ease-in; }
+  .promo__amount:hover {
+    transform: rotate(0) scale(1.15);
+    background-color: #3fb6a8; }
+
+.screen {
+  height: 100%;
+  padding: 4.5rem 4rem 0 4.5rem;
+  transition: all 0.5s ease-in; }
+  .screen--title {
+    color: #7ed386;
+    font-size: 1.8rem;
+    margin-bottom: 3.5rem; }
+  .screen__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+  .screen__form--subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: #777777;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    text-transform: uppercase; }
+  .screen__label {
+    width: 85%;
+    border-bottom: 1px solid #7ed386; }
+    .screen__label button {
+      cursor: pointer;
+      background-color: #dddddd;
+      color: #3fb6a8;
+      padding: 0.5rem;
+      border: none; }
+      .screen__label button:focus, .screen__label button:hover {
+        background-color: rgba(235, 225, 225, 0.85); }
+  .screen__input {
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 0.5rem 0;
+    margin-top: 1rem; }
+    .screen__input::placeholder {
+      font-size: 1.2rem;
+      font-family: inherit; }
+
+.input--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
