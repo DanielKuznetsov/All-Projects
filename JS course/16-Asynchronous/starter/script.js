@@ -118,19 +118,172 @@ const getCountryData = function (country) {
     });
 };
 
-btn.addEventListener('click', function () {
-  getCountryData('usa');
-});
+// btn.addEventListener('click', function () {
+//   getCountryData('usa');
+// });
 
 // Challenge #1
-const whereAmI = function (lat, lng) {
-  fetch(`https://geocode.xyz/${lat}, ${lng}?geoit=json`)
-    .then(res => res.json())
-    .then(data => {
-      getCountryData(data.country);
-    });
-};
+// const whereAmI = function (lat, lng) {
+//   fetch(`https://geocode.xyz/${lat}, ${lng}?geoit=json`)
+//     .then(res => res.json())
+//     .then(data => {
+//       getCountryData(data.country);
+//     });
+// };
 
 // whereAmI(52.508, 13.381);
-whereAmI(19.037, 72.873);
+// whereAmI(19.037, 72.873);
 // whereAmI(-33.933, 18.474);
+
+// console.log('Test start');
+// setTimeout(() => console.log('Test start #1'), 0);
+
+// Promise.resolve('Resolved promise #1').then(res => console.log(res));
+// console.log('Test end');
+
+// Promise.resolve('hellow').then(res => console.log(res));
+
+// const lotteryPromise = new Promise((resolve, reject) => {
+//   console.log('lottery is happening');
+//   setTimeout(() => {
+//     if (Math.random() >= 0.5) {
+//       resolve('You WIN !');
+//     } else {
+//       reject(new Error('You lost your money !'));
+//     }
+//   }, 2000);
+// });
+
+// lotteryPromise
+//   .then(res => {
+//     console.log(res);
+//   })
+//   .catch(err => console.error(err));
+
+// const wait = function (seconds) {
+//   return new Promise(resolve => {
+//     setTimeout(resolve, seconds * 1000);
+//   });
+// };
+
+// wait(2.5)
+//   .then(() => {
+//     console.log(`DONE`);
+//     return wait(1); //returning another promise
+//   })
+//   .then(() => {
+//     console.log('waited for 1 second');
+//   });
+
+// // promises with Geolocation API
+// const getPosition = function () {
+//   return new Promise((resolve, reject) => {
+//     // navigator.geolocation.getCurrentPosition(position => {
+//     //   resolve(position), err => reject(err)
+//     // });
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
+
+// getPosition().then(pos => {
+//   const { latitude, longitude } = pos.coords;
+
+//   whereAmI(latitude, longitude);
+// });
+
+///////////////////////////////////////
+// Coding Challenge #2
+
+/* 
+Build the image loading functionality that I just showed you on the screen.
+
+Tasks are not super-descriptive this time, so that you can figure out some stuff on your own. Pretend you're working on your own 😉
+
+PART 1
+1. Create a function 'createImage' which receives imgPath as an input. This function returns a promise which creates a new image (use document.createElement('img'))
+ and sets the .src attribute to the provided image path. When the image is done loading, append it to the DOM element with the 'images' class, and resolve the 
+ promise. The fulfilled value should be the image element itself. In case there is an error loading the image ('error' event), reject the promise.
+
+If this part is too tricky for you, just watch the first part of the solution.
+
+PART 2
+2. Comsume the promise using .then and also add an error handler;
+3. After the image has loaded, pause execution for 2 seconds using the wait function we created earlier;
+4. After the 2 seconds have passed, hide the current image (set display to 'none'), and load a second image (HINT: Use the image element returned by 
+  the createImage promise to hide the current image. You will need a global variable for that 😉);
+5. After the second image has loaded, pause execution for 2 seconds again;
+6. After the 2 seconds have passed, hide the current image.
+
+TEST DATA: Images in the img folder. Test the error handler by passing a wrong image path. Set the network speed to 'Fast 3G' in the dev tools Network tab, 
+otherwise images load too fast.
+
+GOOD LUCK 😀
+*/
+
+// const wait = function (seconds) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve();
+//     }, seconds * 1000);
+//   });
+// };
+
+// const imagesWrapper = document.querySelector('.images');
+
+// const createImage = function (imgPath) {
+//   return new Promise((resolve, reject) => {
+//     const img = document.createElement('img');
+//     img.src = imgPath;
+
+//     img.addEventListener('load', () => {
+//       imagesWrapper.appendChild(img);
+//       resolve(img);
+//     });
+
+//     img.addEventListener('error', () => {
+//       reject(new Error('Image not found'));
+//     });
+//   });
+// };
+
+// let currentImg;
+
+// createImage('./img/img-1.jpg')
+//   .then(img => {
+//     currentImg = img;
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//     return createImage('./img/img-2.jpg');
+//   })
+//   .then(img => {
+//     currentImg = img;
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//     return createImage('./img/img-3.jpg');
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//   })
+//   .catch(err => {
+//     console.error(err);
+//   });
+
+// const whereAmI = function (lat, lng) {
+//   fetch(`https://geocode.xyz/${lat}, ${lng}?geoit=json`)
+//     .then(res => res.json())
+//     .then(data => {
+//       getCountryData(data.country);
+//     });
+// };
+
+const whereAmI = async function (country) {
+  const res = await fetch(`https://restcountries.com/v2/name/${country}`);
+  const [data] = await res.json();
+  renderCountry(data);
+};
+
+whereAmI('usa');
