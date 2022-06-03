@@ -30,9 +30,12 @@ function addTodo(todo) {
 
     todoEl.innerText = todoText;
 
-    todoEl.addEventListener("click", () =>
-      todoEl.classList.toggle("completed")
-    );
+    todoEl.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      todoEl.classList.toggle("completed");
+      updateLS();
+    });
 
     todoEl.addEventListener("contextmenu", (e) => {
       e.preventDefault();
@@ -48,9 +51,6 @@ function addTodo(todo) {
   }
 }
 
-// localStorage.setItem("name", JSON.stringify(obj));
-// JSON.parse(localStorage.getItem(obj));
-
 function updateLS() {
   const todosEl = document.querySelectorAll("li");
 
@@ -65,3 +65,8 @@ function updateLS() {
 
   localStorage.setItem("todos", JSON.stringify(todos));
 }
+
+// // save in the local storage
+// localStorage.setItem("name", JSON.stringify(obj));
+// // get something from the local storage
+// JSON.parse(localStorage.getItem(obj));

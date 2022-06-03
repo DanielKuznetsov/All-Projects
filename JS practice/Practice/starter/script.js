@@ -1,37 +1,23 @@
-class HttpError extends Error {
-  constructor(response) {
-    super(`${response.status} for ${response.url}`);
-    this.name = "HttpError";
-    this.response = response;
+function countPositivesSumNegatives(input) {
+  var newArr = [];
+  var positiveNumber = 0;
+  var negativeNumber = 0;
+
+  // Validate Input
+  if (input === null || input.length === 0) return newArr;
+
+  // Loop through array of Numbers
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] == 0) continue;
+    // Count positives
+    else if (input[i] > 0) positiveNumber++;
+    // Sum negatives
+    else if (input[i] < 0) negativeNumber += input[i];
   }
+
+  // Prepare Output
+  newArr.push(positiveNumber);
+  newArr.push(negativeNumber);
+
+  return newArr;
 }
-
-function loadJson(url) {
-  return fetch(url).then((response) => {
-    if (response.status == 200) {
-      return response.json();
-    } else {
-      throw new HttpError(response);
-    }
-  });
-}
-
-// Ask for a user name until github returns a valid user
-async function demoGithubUser() {
-  let name = prompt("Enter a name?", "iliakan");
-
-  try {
-    const response = await loadJson(`https://api.github.com/users/${name}`);
-    const user = await response.json();
-    alert(`Full name: ${user.name}.`);
-  } catch (err) {
-    if (err instanceof HttpError && err.response.status == 404) {
-      alert("No such user, please reenter.");
-      return demoGithubUser();
-    } else {
-      throw err;
-    }
-  }
-}
-
-demoGithubUser();
