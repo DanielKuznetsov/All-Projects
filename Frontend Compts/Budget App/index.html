@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <script defer src="script.js"></script>
+    <title>Starter</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="money">
+        <div class="money-wrapper">
+          <p>Money Earned</p>
+          <span class="money-earned">$4500.00</span>
+        </div>
+        <div class="money-wrapper">
+          <p>Money Available</p>
+          <span class="money-available">$4500.00</span>
+        </div>
+        <div class="money-wrapper">
+          <p>Money Spent</p>
+          <span class="money-spent">$4500.00</span>
+        </div>
+      </div>
+      <div class="form-wrapper">
+        <div class="form">
+          <div class="form-input-wrapper">
+            <input
+              type="text"
+              class="form-input form-description"
+              placeholder="Description"
+            />
+            <input
+              type="text"
+              class="form-input form-amount"
+              placeholder="Amount"
+            />
+          </div>
+          <div class="form-btns">
+            <button class="btn income">Add Income</button>
+            <button class="btn expense">Add Expense</button>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content-card content-income">
+          <h3 class="income-color">Income</h3>
+          <ul class="content-list list-income">
+            <li class="list-item">
+              <p>sold car</p>
+              <span class="income-color">$4500</span>
+            </li>
+          </ul>
+        </div>
+        <div class="content-card content-expense">
+          <h3 class="expense-color">Expenses</h3>
+          <ul class="content-list list-expense">
+            <li class="list-item">
+              <p>sold car</p>
+              <span class="expense-color">$4500</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

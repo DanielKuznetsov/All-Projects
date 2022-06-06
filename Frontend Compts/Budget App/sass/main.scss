@@ -1,0 +1,138 @@
+// @import url(../sass/base/_base.scss);
+
+@import "abstract/mixins";
+
+@import "base/base";
+@import "base/typography";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  color: #000;
+}
+
+.container {
+  background-color: hsl(203, 100%, 92%);
+  padding: 5rem 10rem;
+}
+
+.money {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-wrapper {
+    text-align: center;
+    background-color: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 2rem;
+
+    span {
+      margin-top: 1rem;
+      display: block;
+    }
+  }
+
+  &-earned {
+    color: rgb(46, 188, 21);
+  }
+
+  &-available {
+    color: rgb(109, 108, 108);
+  }
+
+  &-spent {
+    color: rgb(160, 12, 12);
+  }
+}
+
+.form {
+  text-align: center;
+  margin-top: 7.5rem;
+  transform: translateX(50%);
+  // background-color: green;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-input {
+    background-color: #fff;
+    border-radius: 1.25rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+  }
+
+  &-description {
+    flex: 1;
+  }
+
+  &-amount {
+    width: 20%;
+  }
+
+  &-btns {
+    margin-top: 1.5rem;
+
+    .btn {
+      padding: 0.5rem 0.65rem;
+      border-radius: 2rem;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .income {
+      background-color: rgb(46, 188, 21);
+    }
+    .expense {
+      background-color: rgb(160, 12, 12);
+    }
+  }
+}
+
+.content {
+  // background-color: yellow;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 4rem;
+
+  &-card {
+    text-align: center;
+  }
+
+  &-list {
+    list-style-type: none;
+    padding: 0 2.5rem;
+    margin-top: 1.5rem;
+
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: 0.5rem 1.25rem;
+      border-radius: 1.25rem;
+
+      p {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.income-color {
+  color: rgb(46, 188, 21);
+}
+
+.expense-color {
+  color: rgb(160, 12, 12);
+}
