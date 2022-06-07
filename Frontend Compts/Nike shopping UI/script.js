@@ -53,7 +53,7 @@ class UI {
     </div>
     <div class="shoe__activity">
       <span class="shoe__price">$${shoe.shoePrice}</span>
-      <div class="shoe__add-to-cart btn-cart">add to cart</div>
+      <button class="shoe__add-to-cart btn-cart">add to cart</button>
     </div>
     </div>
     `;
@@ -94,6 +94,35 @@ class UI {
 
     cart.insertAdjacentHTML("beforeend", cartShoe);
   }
+
+  static showIncrement(el) {
+    const incrTab = document.querySelector(".incr-tab");
+    let incr = 1;
+
+    incrTab.addEventListener("click", (e) => {
+      const incrEl = document.querySelector(".incr-text");
+
+      if (e.target.closest(".icon-back")) {
+        console.log("icon back is clicked");
+
+        incr--;
+
+        if (incr === 0) {
+          el.removeAttribute("disabled");
+          e.currentTarget.parentElement.parentElement.remove();
+        }
+
+        incrEl.textContent = incr;
+      }
+
+      if (e.target.closest(".icon-forward")) {
+        console.log("icon forward is clicked");
+        incr++;
+
+        incrEl.textContent = incr;
+      }
+    });
+  }
 }
 
 class Cart {
@@ -115,6 +144,10 @@ document.querySelector(".picking").addEventListener("click", (e) => {
 
     const shoeItem = new Cart(photo, name, price);
     UI.displayCart(shoeItem);
+
+    e.target.setAttribute("disabled", "disabled");
+
+    UI.showIncrement(e.target);
   }
 });
 
