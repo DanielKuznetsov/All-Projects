@@ -95,7 +95,8 @@ body {
       justify-content: space-between;
       background-color: #fff;
       padding: 0.5rem 1.25rem;
-      border-radius: 1.25rem; }
+      border-radius: 1.25rem;
+      margin-bottom: 0.75rem; }
       .content-list .list-item p {
         font-weight: 700; }
 
@@ -104,3 +105,6 @@ body {
 
 .expense-color {
   color: #a00c0c; }
+
+.alert {
+  margin-bottom: 1.5rem; }

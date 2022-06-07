@@ -121,6 +121,7 @@ body {
       background-color: #fff;
       padding: 0.5rem 1.25rem;
       border-radius: 1.25rem;
+      margin-bottom: 0.75rem;
 
       p {
         font-weight: 700;
@@ -135,4 +136,8 @@ body {
 
 .expense-color {
   color: rgb(160, 12, 12);
+}
+
+.alert {
+  margin-bottom: 1.5rem;
 }
