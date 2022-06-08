@@ -99,6 +99,36 @@ class UI {
     const cart = document.querySelector(".cart");
     cart.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
+      if (
+        e.target.classList.contains("icon-back") ||
+        e.target.classList.contains("icon-i-back")
+      ) {
+        let incrEl = +e.target.closest(".incr-tab").children[1].textContent;
+        const incrElText = e.target.closest(".incr-tab").children[1];
+
+        incrEl--;
+
+        if (incrEl === 0) {
+          // btn.removeAttribute("disabled");
+          e.target.closest(".card-item").remove();
+        }
+
+        incrElText.textContent = incrEl;
+        console.log(e.target.closest(".incr-tab").children[1].textContent);
+      }
+
+      if (
+        e.target.classList.contains("icon-forward") ||
+        e.target.classList.contains("icon-i-forward")
+      ) {
+        let incrEl = +e.target.closest(".incr-tab").children[1].textContent;
+        const incrElText = e.target.closest(".incr-tab").children[1];
+
+        incrEl++;
+
+        incrElText.textContent = incrEl;
+        console.log(e.target.closest(".incr-tab").children[1].textContent);
+      }
     });
   }
 }
