@@ -11,6 +11,7 @@ class UI {
       heel collar and tongue reduce bulk, while exposed cables give
       you a snug fit at higher speeds.`,
         shoePrice: "108.97",
+        btn: "grayish",
       },
       {
         bgColor: "purpleish",
@@ -19,6 +20,7 @@ class UI {
         shoeName: "Nike Air Zoom Pegasus 36 Shield",
         shoeText: `The Nike Air Zoom Pegasus 36 Shield gets updated to conquer wet routes. A water-repellent upper combines with an outsole that helps create grip on wet surfaces, letting you run in confidence despite the weather.`,
         shoePrice: "89.97",
+        btn: "purpleish",
       },
       {
         bgColor: "yellowish",
@@ -27,6 +29,7 @@ class UI {
         shoeName: "Nike Cruz One",
         shoeText: `Designed for steady, easy-paced movement, the Nike CruzrOne keeps you going. Its rocker-shaped sole and plush, lightweight cushioning let you move naturally and comfortably. The padded collar is lined with soft wool, adding luxury to every step, while mesh details let your foot breathe. There’s no finish line—there’s only you, one step after the next.`,
         shoePrice: "100.97",
+        btn: "yellowish",
       },
     ];
 
@@ -53,7 +56,7 @@ class UI {
     </div>
     <div class="shoe__activity">
       <span class="shoe__price">$${shoe.shoePrice}</span>
-      <button class="shoe__add-to-cart btn-cart">add to cart</button>
+      <button class="shoe__add-to-cart btn-cart ${shoe.btn}" data-btn="${shoe.btn}">add to cart</button>
     </div>
     </div>
     `;
@@ -65,7 +68,7 @@ class UI {
     const cart = document.querySelector(".cart");
 
     const cartShoe = `
-    <div class="card-item">
+    <div class="card-item" data-btn="${shoe.btn}">
     <div class="card-item__left">
       <div class="img-wrapper">
         <img
@@ -99,6 +102,7 @@ class UI {
     const cart = document.querySelector(".cart");
     cart.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
+
       if (
         e.target.classList.contains("icon-back") ||
         e.target.classList.contains("icon-i-back")
@@ -109,7 +113,11 @@ class UI {
         incrEl--;
 
         if (incrEl === 0) {
-          // btn.removeAttribute("disabled");
+          const btnDataSet = e.target.closest(".card-item").dataset.btn;
+          document
+            .querySelector(`.shoe__add-to-cart.${btnDataSet}`)
+            .removeAttribute("disabled");
+
           e.target.closest(".card-item").remove();
         }
 
@@ -134,10 +142,11 @@ class UI {
 }
 
 class Cart {
-  constructor(photo, name, price) {
+  constructor(photo, name, price, btn) {
     this.photo = photo;
     this.name = name;
     this.price = price;
+    this.btn = btn;
   }
 }
 
@@ -149,13 +158,17 @@ document.querySelector(".picking").addEventListener("click", (e) => {
     const name =
       e.target.parentElement.previousElementSibling.children[0].textContent;
     const price = e.target.previousElementSibling.textContent;
+    const btnDataSet = e.target.dataset.btn;
 
-    const shoeItem = new Cart(photo, name, price);
+    const shoeItem = new Cart(photo, name, price, btnDataSet);
     UI.displayCart(shoeItem);
 
-    e.target.setAttribute("disabled", "disabled");
+    const btn = e.target;
+    // console.log(btn.dataset.btn);
 
-    UI.showIncrement(e.target);
+    btn.setAttribute("disabled", "disabled");
+
+    UI.showIncrement(btn);
   }
 });
 
