@@ -79,12 +79,12 @@ class UI {
       <p class="price">${shoe.price}</p>
       <div class="incr-tab">
         <span class="icon-wrapper icon-back"
-          ><ion-icon class="icon" name="chevron-back-outline"></ion-icon
+          ><ion-icon class="icon icon-i-back" name="chevron-back-outline"></ion-icon
         ></span>
         <p class="incr-text">1</p>
         <span class="icon-wrapper icon-forward"
           ><ion-icon
-            class="icon"
+            class="icon icon-i-forward"
             name="chevron-forward-outline"
           ></ion-icon
         ></span>
@@ -95,32 +95,10 @@ class UI {
     cart.insertAdjacentHTML("beforeend", cartShoe);
   }
 
-  static showIncrement(el) {
-    const incrTab = document.querySelector(".incr-tab");
-    let incr = 1;
-
-    incrTab.addEventListener("click", (e) => {
-      const incrEl = document.querySelector(".incr-text");
-
-      if (e.target.closest(".icon-back")) {
-        console.log("icon back is clicked");
-
-        incr--;
-
-        if (incr === 0) {
-          el.removeAttribute("disabled");
-          e.currentTarget.parentElement.parentElement.remove();
-        }
-
-        incrEl.textContent = incr;
-      }
-
-      if (e.target.closest(".icon-forward")) {
-        console.log("icon forward is clicked");
-        incr++;
-
-        incrEl.textContent = incr;
-      }
+  static showIncrement(btn) {
+    const cart = document.querySelector(".cart");
+    cart.addEventListener("click", (e) => {
+      e.stopImmediatePropagation();
     });
   }
 }
