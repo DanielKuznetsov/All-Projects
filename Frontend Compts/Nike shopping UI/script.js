@@ -98,8 +98,9 @@ class UI {
     cart.insertAdjacentHTML("beforeend", cartShoe);
   }
 
-  static showIncrement(btn) {
+  static showIncrement() {
     const cart = document.querySelector(".cart");
+
     cart.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
 
@@ -119,10 +120,11 @@ class UI {
             .removeAttribute("disabled");
 
           e.target.closest(".card-item").remove();
+          UI.updateCartLength();
         }
 
         incrElText.textContent = incrEl;
-        console.log(e.target.closest(".incr-tab").children[1].textContent);
+        // console.log(e.target.closest(".incr-tab").children[1].textContent);
       }
 
       if (
@@ -135,9 +137,19 @@ class UI {
         incrEl++;
 
         incrElText.textContent = incrEl;
-        console.log(e.target.closest(".incr-tab").children[1].textContent);
+        // console.log(e.target.closest(".incr-tab").children[1].textContent);
       }
     });
+  }
+
+  static updateCartLength() {
+    const cartSubtitle = document.querySelector(".subtitle");
+
+    // console.log(document.querySelector(".cart").children.length);
+
+    document.querySelector(".cart").children.length > 2
+      ? (cartSubtitle.style.display = "none")
+      : (cartSubtitle.style.display = "block");
   }
 }
 
@@ -169,11 +181,11 @@ document.querySelector(".picking").addEventListener("click", (e) => {
     btn.setAttribute("disabled", "disabled");
 
     UI.showIncrement(btn);
+    UI.updateCartLength();
   }
 });
-
-// Event: Increment Number of Shoes
 
 // Remove "Cart is empty" text
 
 document.addEventListener("DOMContentLoaded", UI.readShoes);
+document.addEventListener("DOMContentLoaded", UI.updateCartLength);
