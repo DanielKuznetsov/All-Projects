@@ -185,7 +185,5 @@ document.querySelector(".picking").addEventListener("click", (e) => {
   }
 });
 
-// Remove "Cart is empty" text
-
 document.addEventListener("DOMContentLoaded", UI.readShoes);
 document.addEventListener("DOMContentLoaded", UI.updateCartLength);
