@@ -2,9 +2,9 @@ export const shoppingCart = 10;
 const cart = [];
 
 // Blocking code
-console.log('Start fetching users..');
-await fetch('https://jsonplaceholder.typicode.com/users');
-console.log('Fetching fetching users');
+// console.log('Start fetching users..');
+// await fetch('https://jsonplaceholder.typicode.com/users');
+// console.log('Fetching fetching users');
 
 export { cart };
 
