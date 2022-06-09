@@ -87,3 +87,8 @@ console.log(shoppingCart2.cart);
 
 // ---- import
 // const { addToCart } = require("./script2.js")
+
+// Trigger rebuild
+// if (module.hot) {
+//   module.hot.accept();
+// }
