@@ -1,0 +1,20 @@
+{
+  "name": "forklify",
+  "version": "1.0.0",
+  "description": "Recipe application",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "None",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0"
+  },
+  "dependencies": {
+    "sass": "^1.52.3"
+  }
+}
