@@ -164,3 +164,6 @@ const showRecipe = async () => {
 };
 
 showRecipe();
+
+//https://forkify-api.herokuapp.com/v2
+//https://forkify-v2.netlify.app/
