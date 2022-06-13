@@ -7,7 +7,7 @@ import "./node_modules/chart.js/dist/chart.js";
 const appData = new AppData();
 
 const API = new FetchWrapper(
-  "https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/dk"
+  "https://firestore.googleapis.com/v1/projects/jsdemo-3f387/databases/(default)/documents/YOURNAMESPACEHERE"
 );
 
 const form = document.querySelector("#create-form");

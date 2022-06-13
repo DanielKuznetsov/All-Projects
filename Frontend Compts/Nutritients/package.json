@@ -1,7 +1,6 @@
 {
   "name": "starter-copy-2",
   "version": "1.0.0",
-  "description": "",
   "main": "app-data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,6 @@
   "dependencies": {
     "chart.js": "^3.8.0",
     "node-snackbar": "^0.1.16"
-  }
+  },
+  "description": ""
 }
