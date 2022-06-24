@@ -1,0 +1,32 @@
+.task-btn {
+  padding: 0.75rem 1.25rem;
+  background-color: $cl-secondary-hover;
+  border: none;
+  border-radius: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+
+  .icon {
+    color: $cl-white;
+  }
+
+  span {
+    font-size: $fs-heading-medium;
+    color: $cl-white;
+  }
+}
+
+.dots-btn {
+  padding: 0.25rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}

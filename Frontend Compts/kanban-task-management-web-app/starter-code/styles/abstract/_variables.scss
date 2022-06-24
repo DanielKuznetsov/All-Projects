@@ -1,0 +1,32 @@
+// Colors
+$cl-primary: #635fc7;
+$cl-primary-hover: #a8a4ff;
+$cl-secondary: rgba($cl-primary, 0.1);
+$cl-secondary-hover: rgba($cl-primary, 0.25);
+$cl-destructive: #ea5555;
+$cl-destructive-hover: #ff9898;
+
+$cl-todo: #49c4e5;
+$cl-doing: #8471f2;
+$cl-done: #67e2a3;
+
+$cl-black: #000112;
+$cl-very-dark-grey: #20212c;
+$cl-dark-grey: #2b2c37;
+$cl-medium-grey: #828fa3;
+$cl-light-grey: #f4f7fd;
+$cl-lines-dark: #3e3f4e;
+$cl-lines-light: #e4ebfa;
+$cl-white: #fff;
+
+// Font size
+$fs-heading-xl: 2rem;
+$fs-heading-large: 1.6rem;
+$fs-heading-medium: 1.4rem;
+$fs-heading-small: 1.2rem;
+
+// Line-height
+$lh-xl: 2rem;
+$lh-large: 1.65rem;
+$lh-medium: 1.5rem;
+$lh-small: 1.25rem;

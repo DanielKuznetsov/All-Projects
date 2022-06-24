@@ -1,0 +1,14 @@
+{
+  "name": "kanban-task-management-web-app",
+  "version": "1.0.0",
+  "description": "![Design preview for the Kanban task management web app coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass starter-code/styles/main.scss starter-code/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

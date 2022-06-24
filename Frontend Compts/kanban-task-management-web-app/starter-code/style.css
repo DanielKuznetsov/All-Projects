@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+.p-medium {
+  font-size: 1.3rem;
+  line-height: 1.65rem; }
+
+.p-bold {
+  font-size: 1.2rem;
+  line-height: 1.25rem; }
+
+.task-btn {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(99, 95, 199, 0.25);
+  border: none;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer; }
+  .task-btn .icon {
+    color: #fff; }
+  .task-btn span {
+    font-size: 1.4rem;
+    color: #fff; }
+
+.dots-btn {
+  padding: 0.25rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+  .dots-btn .icon {
+    width: 1.75rem;
+    height: 1.75rem; }
+
+body {
+  max-width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.25rem;
+  font-family: "Plus Jakarta Sans", sans-serif; }
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: yellow; }
+
+.platform {
+  flex: 1;
+  height: inherit;
+  background-color: peru; }
+
+.navbar {
+  height: 8rem;
+  width: 100%;
+  background-color: #fff;
+  padding: 3rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .navbar__title {
+    font-size: 2rem;
+    color: #000112;
+    font-weight: bold; }
+  .navbar__tasks {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; }
+
+.navigation {
+  width: 30rem;
+  height: inherit;
+  background-color: yellowgreen; }

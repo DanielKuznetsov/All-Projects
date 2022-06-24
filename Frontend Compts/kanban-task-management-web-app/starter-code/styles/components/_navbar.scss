@@ -1,0 +1,22 @@
+.navbar {
+  height: 8rem;
+  width: 100%;
+  background-color: $cl-white;
+  padding: 3rem 2.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-size: $fs-heading-xl;
+    color: $cl-black;
+    font-weight: bold;
+  }
+
+  &__tasks {
+    display: flex; 
+    align-items: center;
+    gap: 0.75rem;
+  }
+}

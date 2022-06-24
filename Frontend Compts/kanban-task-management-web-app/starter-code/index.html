@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Kanban task management web app</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="navigation">
+        <!-- <div class="logo"></div> -->
+      </div>
+      <div class="platform">
+        <div class="navbar">
+          <div class="navbar__title">
+            <p>Platform Launch</p>
+          </div>
+          <div class="navbar__tasks">
+            <button class="task-btn">
+              <ion-icon class="icon" name="add-outline"></ion-icon>
+              <span>Add New Task</span>
+            </button>
+            <button class="dots-btn">
+              <ion-icon
+                class="icon"
+                name="ellipsis-vertical-outline"
+              ></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="app"></div>
+      </div>
+    </main>
+  </body>
+</html>
