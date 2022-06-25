@@ -1,1 +1,16 @@
- 
+.app {
+  max-width: 100%;
+  height: 100%;
+  background-color: yellow;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &-empty {
+    &__text {
+      font-size: $fs-heading-large;
+      color: $cl-medium-grey;
+    }
+  }
+}
