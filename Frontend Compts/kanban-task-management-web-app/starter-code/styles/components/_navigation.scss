@@ -1,5 +1,4 @@
 .navigation {
-  width: 30rem;
   height: inherit;
   background-color: $cl-white;
   border-right: 2px solid $cl-secondary;
@@ -12,7 +11,7 @@
     background-color: $cl-white;
     // height: in JS file;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     flex-direction: column;
 
