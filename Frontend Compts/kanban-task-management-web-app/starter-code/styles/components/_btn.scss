@@ -1,6 +1,7 @@
+// Navbar buttons
 .task-btn {
   padding: 0.75rem 1.25rem;
-  background-color: $cl-secondary-hover;
+  background-color: $cl-primary;
   border: none;
   border-radius: 1.5rem;
 
@@ -8,6 +9,11 @@
   align-items: center;
   gap: 0.35rem;
   cursor: pointer;
+  transition: background-color 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    background-color: $cl-secondary-hover;
+  }
 
   .icon {
     color: $cl-white;
@@ -28,5 +34,47 @@
   .icon {
     width: 1.75rem;
     height: 1.75rem;
+  }
+}
+
+// Navigation board buttons
+.boards__btn {
+  width: 100%;
+  padding: 1rem 2.4rem;
+  background: transparent;
+  // background-color: $cl-primary;
+  border: none;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  font-size: $fs-heading-medium;
+  color: $cl-medium-grey;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &:hover {
+    background-color: $cl-primary;
+    color: $cl-white;
+  }
+}
+
+.boards__add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 2.4rem;
+  margin-top: 1.6rem;
+  background-color: transparent;
+  font-size: $fs-heading-medium;
+  color: $cl-primary;
+  border: none;
+  cursor: pointer;
+
+  .icon {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
