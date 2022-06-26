@@ -50,6 +50,29 @@
   }
   &__num-tasks {
   }
+
+  &__add {
+    &-btn {
+      flex-shrink: 0;
+      width: 28rem;
+      height: 100%;
+      background-color: $cl-linear;
+      border: none;
+      border-radius: 1rem;
+      cursor: pointer;
+      font-size: $fs-heading-xl;
+      color: $cl-medium-grey;
+      font-weight: 500;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      .icon {
+      }
+    }
+  }
 }
 
 .task {

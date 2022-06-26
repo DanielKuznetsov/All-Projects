@@ -57,6 +57,22 @@ html {
   color: #828fa3;
   letter-spacing: 0.25rem; }
 
+.board__add-btn {
+  flex-shrink: 0;
+  width: 28rem;
+  height: 100%;
+  background-color: #e9effa;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #828fa3;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; }
+
 .task__list {
   list-style: none; }
 
