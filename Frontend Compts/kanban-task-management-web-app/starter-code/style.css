@@ -17,9 +17,7 @@ html {
   line-height: 1.25rem; }
 
 .app {
-  height: 100%;
-  padding: 2.5rem;
-  background-color: red; }
+  height: 100%; }
 
 .app-empty {
   display: flex;
@@ -32,18 +30,66 @@ html {
     margin-bottom: 2.4rem; }
 
 .columns {
-  background-color: yellowgreen;
   width: 100%;
   height: 100%;
+  padding: 2.5rem;
   display: flex;
   gap: 2rem;
   overflow: scroll; }
 
-.test-div {
+.board__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.5rem; }
+
+.board__color {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #49c4e5;
+  border-radius: 50%;
+  display: block; }
+
+.board__name {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #828fa3;
+  letter-spacing: 0.25rem; }
+
+.task__list {
+  list-style: none; }
+
+.task__item {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 2.5rem 0 2.25rem 1.85rem;
+  margin-top: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.4rem 0.6rem rgba(54, 78, 126, 0.1); }
+
+.task__btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 1rem; }
+  .task__btn span {
+    font-size: 1.4rem;
+    color: #000112;
+    font-weight: 500; }
+
+.task__subtasks {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #828fa3; }
+
+.test-div,
+.board {
   flex-shrink: 0;
-  width: 25rem;
-  height: 10rem;
-  background-color: black; }
+  width: 28rem;
+  height: auto; }
 
 .add-btn {
   padding: 0.75rem 1.25rem;
