@@ -62,34 +62,6 @@ html {
   justify-content: center;
   gap: 0.5rem; }
 
-.task__list {
-  list-style: none; }
-
-.task__item {
-  width: 100%;
-  height: auto;
-  background-color: #fff;
-  padding: 2.5rem 0 2.25rem 1.85rem;
-  margin-top: 2rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 0.4rem 0.6rem rgba(54, 78, 126, 0.1); }
-
-.task__btn {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  cursor: pointer;
-  margin-bottom: 1rem; }
-  .task__btn span {
-    font-size: 1.4rem;
-    color: #000112;
-    font-weight: 500; }
-
-.task__subtasks {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #828fa3; }
-
 .add-btn {
   padding: 0.75rem 1.25rem;
   background-color: #635fc7;
@@ -150,6 +122,34 @@ html {
     width: 1.25rem;
     height: 1.25rem; }
 
+.task__list {
+  list-style: none; }
+
+.task__item {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 2.5rem 0 2.25rem 1.85rem;
+  margin-top: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.4rem 0.6rem rgba(54, 78, 126, 0.1); }
+
+.task__btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 1rem; }
+  .task__btn span {
+    font-size: 1.4rem;
+    color: #000112;
+    font-weight: 500; }
+
+.task__subtasks {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #828fa3; }
+
 body {
   width: 100%;
   font-size: 1.2rem;
@@ -157,17 +157,19 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif; }
 
 .main {
-  display: grid;
-  grid-template-columns: 20% 80%;
+  display: flex;
   width: 100%;
-  height: 100vh;
-  background-color: yellow; }
+  height: 100vh; }
 
 .platform {
+  width: 100%;
   height: inherit;
-  background-color: #f4f7fd; }
+  background-color: #f4f7fd;
+  overflow: hidden;
+  position: relative; }
 
 .app {
+  width: 100%;
   height: 100%; }
 
 .board {
@@ -201,6 +203,7 @@ body {
     gap: 0.75rem; }
 
 .navigation {
+  width: 30rem;
   height: inherit;
   background-color: #fff;
   border-right: 2px solid rgba(99, 95, 199, 0.1); }
@@ -279,3 +282,21 @@ body {
       border: none;
       color: inherit;
       cursor: pointer; }
+
+.see-nav-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 5%; }
+  .see-nav-wrapper .see-nav-btn {
+    background-color: #635fc7;
+    border: none;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none; }
+    .see-nav-wrapper .see-nav-btn .icon {
+      color: #fff; }

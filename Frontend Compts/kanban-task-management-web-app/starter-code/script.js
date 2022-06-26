@@ -10,3 +10,14 @@ const fixAppHeight = (elOffset, element) => {
 
 fixAppHeight(logoEl, navigationBody);
 fixAppHeight(navbarEl, app);
+
+const hideSidebarBtn = document.querySelector(".hide-sidebar__btn");
+hideSidebarBtn.addEventListener("click", () => {
+  document.querySelector(".navigation").style.display = "none";
+  document.querySelector(".see-nav-btn").style.display = "block";
+});
+
+document.querySelector(".see-nav-btn").addEventListener("click", () => {
+  document.querySelector(".navigation").style.display = "block";
+  document.querySelector(".see-nav-btn").style.display = "none";
+});
