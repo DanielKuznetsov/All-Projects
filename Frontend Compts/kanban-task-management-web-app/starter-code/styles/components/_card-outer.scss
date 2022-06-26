@@ -1,0 +1,36 @@
+
+.task {
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    width: 100%;
+    height: auto;
+    background-color: $cl-white;
+    padding: 2.5rem 0 2.25rem 1.85rem;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.4rem 0.6rem rgba(rgb(54, 78, 126), 0.1);
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    span {
+      font-size: $fs-heading-medium;
+      color: $cl-black;
+      font-weight: 500;
+    }
+  }
+
+  &__subtasks {
+    font-size: $fs-heading-small;
+    font-weight: 500;
+    color: $cl-medium-grey;
+  }
+}

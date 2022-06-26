@@ -17,3 +17,23 @@ body {
   height: inherit;
   background-color: $cl-light-grey;
 }
+
+.app {
+  height: 100%;
+}
+
+.board {
+  flex-shrink: 0;
+  width: 28rem;
+  height: auto;
+}
+
+.columns {
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem;
+
+  display: flex;
+  gap: 2rem;
+  overflow: scroll;
+}
