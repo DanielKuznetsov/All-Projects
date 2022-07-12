@@ -32,13 +32,55 @@
     <title>Kanban task management web app</title>
   </head>
   <body>
-    <main class="main">
-      <div class="form__column">
-        <div class="form__column-wrapper">
-          <p></p>
+    <div class="new-column">
+      <div class="new-column__wrapper">
+        <div>
+          <p class="new-column__title">Add New Column</p>
+          <form>
+            <label for="column-name" for="">Column Name</label>
+            <input
+              type="text"
+              placeholder="e.g. Web Design"
+              name="column-name"
+              id="column-name"
+            />
+          </form>
+        </div>
+        <div>
+          <button class="add-btn new-column__btn">
+            <ion-icon class="icon" name="add-outline"></ion-icon>
+            <span>Add New Column</span>
+          </button>
+          <button class="add-btn new-column__btn-edit">
+            <span>Edit Column</span>
+          </button>
         </div>
       </div>
+    </div>
 
+    <!-- <div class="edit-column">
+      <div class="edit-column__wrapper">
+        <div>
+          <p class="edit-column__title">Edit Columns</p>
+          <form>
+            <label for="column-name" for="">Column Name</label>
+            <select class="column-select">
+              <option>Choose column</option>
+              <option>Todos</option>
+              <option>Work</option>
+            </select>
+          </form>
+        </div>
+        <div>
+          <button class="add-btn new-column__btn">
+            <ion-icon class="icon" name="add-outline"></ion-icon>
+            <span>Save Changes</span>
+          </button>
+        </div>
+      </div>
+    </div> -->
+
+    <main class="main">
       <div class="navigation">
         <div class="logo">
           <svg width="153" height="26" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +192,7 @@
         </div>
 
         <div class="app app-empty">
-          <div class="columns">
+          <!-- <div class="columns">
             <div class="board">
               <div class="board__title">
                 <span class="board__color"></span>
@@ -169,9 +211,10 @@
                   </p>
                 </li>
               </ul>
-            </div>
+            </div> -->
 
             <!-- DO NOT TOUCH - THIS IS FOR THE BUTTON ADD A BOARD -->
+            <!-- -------------------------------- -->
             <!-- <div class="board__add">
               <button class="board__add-btn">
                 <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
@@ -183,14 +226,14 @@
                 New Column
               </button>
             </div> -->
-
-            <!-- <p class="app-empty__text">
+        
+            <p class="app-empty__text">
               This board is empty. Create a new column to get started.
             </p>
-            <button class="add-btn">
+            <button class="add-btn add-board-btn">
               <ion-icon class="icon" name="add-outline"></ion-icon>
               <span>Add New Task</span>
-            </button> -->
+            </button>
           </div>
         </div>
       </div>
