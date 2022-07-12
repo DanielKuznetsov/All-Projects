@@ -33,6 +33,12 @@
   </head>
   <body>
     <main class="main">
+      <div class="form__column">
+        <div class="form__column-wrapper">
+          <p></p>
+        </div>
+      </div>
+
       <div class="navigation">
         <div class="logo">
           <svg width="153" height="26" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +148,8 @@
             </button>
           </div>
         </div>
-        <div class="app">
+
+        <div class="app app-empty">
           <div class="columns">
             <div class="board">
               <div class="board__title">
@@ -163,7 +170,9 @@
                 </li>
               </ul>
             </div>
-            <div class="board__add">
+
+            <!-- DO NOT TOUCH - THIS IS FOR THE BUTTON ADD A BOARD -->
+            <!-- <div class="board__add">
               <button class="board__add-btn">
                 <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -173,16 +182,16 @@
                 </svg>
                 New Column
               </button>
-            </div>
-          </div>
+            </div> -->
 
-          <!-- <p class="app-empty__text">
-            This board is empty. Create a new column to get started.
-          </p>
-          <button class="add-btn">
-            <ion-icon class="icon" name="add-outline"></ion-icon>
-            <span>Add New Task</span>
-          </button> -->
+            <!-- <p class="app-empty__text">
+              This board is empty. Create a new column to get started.
+            </p>
+            <button class="add-btn">
+              <ion-icon class="icon" name="add-outline"></ion-icon>
+              <span>Add New Task</span>
+            </button> -->
+          </div>
         </div>
       </div>
     </main>

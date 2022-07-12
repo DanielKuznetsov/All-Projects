@@ -78,3 +78,27 @@
     height: 1.25rem;
   }
 }
+
+// Button to show navigation
+.see-nav-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+
+  .see-nav-btn {
+    background-color: $cl-primary;
+    border: none;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: none;
+
+    .icon {
+      color: $cl-white;
+    }
+  }
+}

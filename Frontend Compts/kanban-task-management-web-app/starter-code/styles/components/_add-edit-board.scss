@@ -1,0 +1,19 @@
+.test-div {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-2 {
+    width: 40rem;
+    height: 30rem;
+    background-color: $cl-white;
+  }
+}
