@@ -6,38 +6,51 @@ export default function App() {
   return (
     <div className="App">
       <h1>Welcome to React Router!</h1>
+      <Link to="/about">About</Link>
+      <br />
+      <Link to="/">Home</Link>
+
       <Routes>
-        <Route exact path="/products/:id" element={<Home />} />
-        {/* <Route exact path="/about" element={<About />} /> */}
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/products" element={<Products />} />
       </Routes>
     </div>
-  );
-}
-
-function Home() {
-  return (
-    <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-    </>
   );
 }
 
 function About() {
   return (
     <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>That feels like an existential question, don't you think?</p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
+      <h1>ABOUT</h1>
+      <p>Some paragraph</p>
+      <Link to="/">Click to be directed to the "Home" page</Link>
+    </>
+  );
+}
+
+function Home() {
+  return (
+    <>
+      <h1>Home</h1>
+      <p>Some paragraph</p>
+      <Link to="/about">Click to be directed to the "About" page</Link>
+      <br />
+      <Link to="/products">Click to be directed to the "Products" page</Link>
+    </>
+  );
+}
+
+function Products() {
+  return (
+    <>
+      <ul>
+        <li>Product 1</li>
+        <li>Product 2</li>
+        <li>Product 3</li>
+      </ul>
+
+      <Link to="/about">Click to be directed to the "About" page</Link>
     </>
   );
 }

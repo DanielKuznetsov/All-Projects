@@ -136,6 +136,12 @@ html {
   justify-content: center;
   gap: 0.5rem; }
 
+.board-btn-hide button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 .add-btn {
   padding: 0.75rem 1.25rem;
   background-color: #635fc7;

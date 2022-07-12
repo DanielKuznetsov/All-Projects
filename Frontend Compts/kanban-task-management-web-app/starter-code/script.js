@@ -30,12 +30,16 @@ function hideAddBoardBtnDiv() {
 }
 
 const addBoardBtn = document.querySelector(".add-board-btn");
+const addBoardBtn2 = document.querySelector(".boards__add-btn");
 
-function handleAddBoardClick() {
-  document.querySelector(".add-board-btn").addEventListener("click", () => {
+function handleAddBoardClick(btn) {
+  btn?.addEventListener("click", () => {
     document.querySelector(".new-column").style.display = "block";
   });
 }
+
+handleAddBoardClick(addBoardBtn);
+handleAddBoardClick(addBoardBtn2);
 
 function addNewBoard() {
   const columnNameInput = document.querySelector("#column-name");
@@ -46,6 +50,8 @@ function addNewBoard() {
   clickOutsideDiv(outsideDiv);
 
   addColumnBtn.addEventListener("click", () => {
+    if (!columnNameInput.value) return;
+
     boards.push(columnNameInput.value);
 
     const columnsContainer = document.querySelector(".columns");
