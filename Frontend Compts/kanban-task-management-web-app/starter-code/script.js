@@ -25,7 +25,8 @@ document.querySelector(".see-nav-btn").addEventListener("click", () => {
 let boards = [];
 
 function hideAddBoardBtnDiv() {
-  boards.length > 0 && app.classList.add("app-empty__none");
+  const boardBtnAdd = document.querySelector(".board-btn-hide");
+  boards.length > 0 && boardBtnAdd.classList.add("app-empty__none");
 }
 
 const addBoardBtn = document.querySelector(".add-board-btn");
@@ -40,11 +41,35 @@ function addNewBoard() {
   const columnNameInput = document.querySelector("#column-name");
   const addColumnBtn = document.querySelector(".new-column__btn");
   const outsideDiv = document.querySelector(".new-column");
+
+  //outside click
   clickOutsideDiv(outsideDiv);
 
-  addColumnBtn.addEventListener("click", () => {});
+  addColumnBtn.addEventListener("click", () => {
+    boards.push(columnNameInput.value);
+
+    const columnsContainer = document.querySelector(".columns");
+
+    const markup = ` 
+    <div class="board">
+      <div class="board__title">
+        <span class="board__color"></span>
+        <p class="board__name">
+          ${columnNameInput.value} <span class="board__num-tasks">(0)</span>
+        </p>
+      </div>
+    `;
+
+    columnNameInput.value = "";
+    hideAddBoardBtnDiv();
+    columnsContainer.style.display = "flex";
+    // columnsContainer.style.backgroundColor = "yellowgreen";
+
+    columnsContainer.insertAdjacentHTML("beforeend", markup);
+  });
 }
 
+// Outside click of any div
 function clickOutsideDiv(div) {
   div.addEventListener("click", (e) => {
     if (e.target === div) {
